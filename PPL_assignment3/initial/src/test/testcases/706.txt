@@ -1,0 +1,16 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            main() {}
+            foo() {}
+            bar() {}
+        }
+        Class DEF {
+            bar() {}
+            bar(w: Int; f: Float) {}
+        }
+        

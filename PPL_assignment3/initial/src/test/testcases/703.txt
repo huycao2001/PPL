@@ -1,0 +1,16 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            Val a: Int = 1;
+            Val b: Float = 1.2;
+            Val a: Float = 1;
+        }
+        Class DEF {
+            Var b : Float;
+            Var a : Int;
+        }
+        

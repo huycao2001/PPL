@@ -1,0 +1,13 @@
+
+        Class Program {
+          main() {
+            Foreach (i In 1 .. 5) {
+              Break;
+              If (True) {
+                Break;
+              }
+              Val a: Int;
+            }
+          }
+        }
+        

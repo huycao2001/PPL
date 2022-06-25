@@ -1,0 +1,13 @@
+
+        Class Shape {
+            Var $num1, $num2 : String = "Harry", "Potter";
+            Constructor(){}
+            Constructor(a: String ; b : String){
+                $num1 = a; 
+                $num2 = b;
+            }
+
+            Destructor(){}
+            
+        }
+        

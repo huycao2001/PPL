@@ -1,0 +1,13 @@
+
+        ## Multi elsIf ## 
+        Class Program{
+            main(){
+                Elseif(a > 3){
+                    a = a + 1; 
+                }
+                Elseif(a == 3){
+                    a = a/ 2; 
+                }
+            }
+        }
+        

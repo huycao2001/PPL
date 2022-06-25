@@ -1,0 +1,9 @@
+
+                    Class Huycao{}
+                    Class Huycao2{
+                    function(){
+                        
+                        Var c:Huycao;
+                        Var a:Datcao;
+                    }
+                    }

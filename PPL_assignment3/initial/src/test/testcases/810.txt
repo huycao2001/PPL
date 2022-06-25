@@ -1,0 +1,7 @@
+
+        Class C {}
+        Class A{
+            Var c: C = New C(); 
+            Var d: C = New C(1); 
+        }
+        

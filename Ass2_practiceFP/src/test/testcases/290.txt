@@ -1,0 +1,11 @@
+
+        Class Program{
+            func(){
+                Foreach (1 In 1-1+2+3*5 .. 1 + 1 + 1 + 2 * 3 By -2+1/2*3){
+                    Out.println("Always");
+                }
+                Return;
+            }
+        }
+
+    

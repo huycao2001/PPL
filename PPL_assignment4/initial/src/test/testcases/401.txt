@@ -1,0 +1,7 @@
+
+        Class Shape{
+
+        }
+        Class Shape{
+            Var vv : Int;
+        }

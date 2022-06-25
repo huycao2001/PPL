@@ -1,0 +1,7 @@
+
+        Class Program{
+            main(){
+                (a::$func().arr[1][2]).test();
+            }
+        }
+        

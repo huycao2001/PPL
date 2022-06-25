@@ -1,0 +1,9 @@
+
+        Class Program {
+            a() {
+                Val a : ABC = Null;
+                Val b : BCD = New X();
+                a = New XYZ(0x123 + 00, a - 0B1 * b, 0231 / 7.1230 + d, "Hello World");
+            }
+        }
+        

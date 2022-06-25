@@ -1,0 +1,7 @@
+
+        Class Shape {
+            $func() {
+                a.b().c[1][2] = d.foo() +. Self.foo();
+            }
+        }
+        

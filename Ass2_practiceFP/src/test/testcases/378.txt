@@ -1,0 +1,10 @@
+
+        Class A{
+            $func(a_a, b_b, c_c : Int){
+                Return;
+                Return !!!!!! New _().B52();
+                {}
+                Continue;
+            }
+        }    
+        

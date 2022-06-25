@@ -1,0 +1,10 @@
+
+        Class myProgram{
+            Val num1 : Int;
+
+            ComputeSth(a,b : Int; c,d : Float){
+                num1 = a + b - c * d;
+                Return num1;
+            }
+        }
+        

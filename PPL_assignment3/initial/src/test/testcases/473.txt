@@ -1,0 +1,7 @@
+
+        Class Program{
+            main(){
+                Var a: Int = 5 + 4 + 4 + 4;
+                Var b: Int = a.maxSize;
+            }
+        }

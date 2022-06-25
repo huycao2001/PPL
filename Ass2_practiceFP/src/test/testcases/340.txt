@@ -1,0 +1,8 @@
+
+        Class Sharp{
+            foo(){
+                _ID = New X().Y().Z();
+                Var C : Array[Int, 0B1010];
+            }
+        }
+        

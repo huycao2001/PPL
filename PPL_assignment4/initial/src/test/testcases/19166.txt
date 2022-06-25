@@ -1,0 +1,11 @@
+
+        Class Program {
+          main() {
+          }
+          Var e: Boolean = 2 == 2;
+          Var f: Boolean = 2 != 3;
+          Var g: Boolean = True != False;
+          Var h: Boolean = !True && ("TOKI WO" ==. "TOMARE");
+          Var eatThis: Boolean = 2.3 == 2.3;
+        }
+        

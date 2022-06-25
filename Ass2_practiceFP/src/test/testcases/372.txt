@@ -1,0 +1,10 @@
+
+        Class iPhone:Apple{
+            Var $Battery : Int;
+            foo( i : Array [Boolean , 073]){
+                a = 01050203;
+                b.c(Null, Self, Null, Array(1)).f = 0xABC12DEF;
+                g[l][w[x]]=0B101011;
+            }
+        }
+        

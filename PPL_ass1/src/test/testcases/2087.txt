@@ -1,0 +1,1 @@
+Class _{}Class _8{Constructor (_:Array [Array [Boolean ,0x2F],0x2F]){}Var __,_X:Float ;Val J,$a:Array [String ,2];}

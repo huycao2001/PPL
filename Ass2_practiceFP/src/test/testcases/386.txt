@@ -1,0 +1,10 @@
+
+        Class Clock:Computer{
+            func(){
+                Foreach(i In real_time .. 0 By 1){
+                    Self::$DoSth();
+                    Continue;
+                }
+            }
+        }
+        

@@ -1,0 +1,14 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class A{
+            Constructor(){}
+        }
+        Class B{}
+        Class ABC {
+            Val c : A = New A();
+            Val b : B = Self.c;
+        }

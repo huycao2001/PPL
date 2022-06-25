@@ -1,0 +1,15 @@
+
+        Class Program {
+          main() {
+          }
+          foo(){
+            Var a: String = "Hail 2 U";
+            Return 2;
+            Return;
+            Return 3.2;
+            Return a;
+            Return Self;
+            Return Array(Array(3.5,4e2), Array(6.2, 0e4));
+          }
+        }
+        

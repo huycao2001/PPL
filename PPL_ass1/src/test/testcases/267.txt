@@ -1,0 +1,11 @@
+ 
+        Class Program{
+            other(a : Int){
+
+            }
+
+            main(){
+                
+            }
+        }
+        

@@ -1,0 +1,18 @@
+
+        Class Program {
+            main()
+            {
+                Val list : LinkedList = New LinkedList();
+                list.head = New Node(1);
+                list.head.next = New Node(0x12F3);
+                list.head.next.next = New Node(0B101);
+                list.head.next.next.next = New Node(0312412);
+                System.out.println("Given Linked list");
+                list.printList(head);
+                head = list.reverse(head);
+                System.out.println("Newline");
+                System.out.println("Reversed linked list ");
+                list.printList(tail);
+            }
+        }
+        

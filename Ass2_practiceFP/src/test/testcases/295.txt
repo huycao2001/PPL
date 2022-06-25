@@ -1,0 +1,7 @@
+Class Program {
+            main() {
+                Var a,b,c,d,e,f,g,h : Int;
+                a = 0x123456ABCDEF;
+                
+            }
+        }

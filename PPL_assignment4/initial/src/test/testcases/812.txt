@@ -1,0 +1,12 @@
+
+        Class C {
+            Destructor(){}
+            Destructor(){
+                Val a : Int = 1;
+            }
+        }
+        Class A{
+            Var c: C = New C(); 
+            Var d: C = New C(1); 
+        }
+        

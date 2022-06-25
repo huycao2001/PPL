@@ -1,0 +1,23 @@
+Class Pirate {
+            Gold(ratings: Array[Int, 10]) {
+                Var n, res: Int = rating.size(), 0;
+                Var count: Array[Int, 0123567];
+                Foreach(i In 0 .. n) {
+                    count[i] = (1+2)*3 + 4 * 5 / 6;
+                }
+                Foreach(i In 1 .. n){
+                    If (ratings[i] > ratings[i-1]) {
+                        count[i] = count[i-1] + 1;
+                    }
+                }
+                Foreach(i In n-2 + 3 /2 *4  .. 0 By -1) {
+                    If ((ratings[i] > ratings[(i+1)]) && (count[i] <= count[(i+1)])) {
+                        count[i] = count[(i+1)] + 1;
+                    }
+                }
+                Foreach(i In 0 .. n) {
+                    result = result + count[i];
+                }
+                Return result*result;
+            }
+        }

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Device),[AttributeDecl(Instance,VarDecl(Id(weight),FloatType,FloatLit(0.0))),AttributeDecl(Instance,VarDecl(Id(smart),BoolType,BooleanLit(False)))]),ClassDecl(Id(Router),Id(Device),[MethodDecl(Id(start),Instance,[],Block([Return(CallExpr(Self(),Id(status),[]))]))])])

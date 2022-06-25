@@ -1,0 +1,7 @@
+
+        Class C{
+            func(){
+                Return;
+            }
+        }
+        

@@ -1,0 +1,9 @@
+
+        Class Program {
+            main(){
+                Var a : Int = 1;
+                Val b : Array[Int, 2] = Array(1, a);
+                Return;
+            }
+        }
+        

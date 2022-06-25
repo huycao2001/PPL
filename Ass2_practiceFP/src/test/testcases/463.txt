@@ -1,0 +1,1 @@
+Class _{Constructor (_J:Array [Array [Array [Array [Array [Array [Array [Array [String ,41],0x6],0xD_4],0b1],0XA],047],047],0B10000];__4k_,t:_){Val KOP,_:Float ;}Val $5:Float ;}

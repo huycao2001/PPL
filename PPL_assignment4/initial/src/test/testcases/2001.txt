@@ -1,0 +1,12 @@
+
+                Class A {
+                    Constructor(){
+                        Return;
+                    }
+                }
+                Class B{
+                    foo(){
+                        Var b:A = New A();
+                    }
+                }
+            

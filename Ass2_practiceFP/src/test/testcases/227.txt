@@ -1,0 +1,17 @@
+
+        Class Program
+        {
+            fibonacci(myNum:Int){
+                If((myNum == 0) || (myNum == 1)){
+                        Return 1;
+                }
+                Else{
+                    Return Self.fibonacci(myNum - 1) + Self.fibonacci(myNum - 1);
+                }
+            }
+            main (){
+                Val my_num : Int = 10;
+                Var ans : Int = Self.fibonacci(my_num);
+                Out.println(ans);
+            }
+        }

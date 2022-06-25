@@ -1,0 +1,13 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            main() {}
+            foo() {}
+            bar() {}
+            foo() {}
+        }
+        

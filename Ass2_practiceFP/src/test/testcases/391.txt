@@ -1,0 +1,11 @@
+
+        Class Program{
+            main(){
+                If(C1 != C2){
+                    Break;
+                    Self.Exit(EXIT_FAILURE);
+                    Return;
+                }
+            }
+        }
+        

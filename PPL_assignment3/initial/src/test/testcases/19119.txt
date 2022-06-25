@@ -1,0 +1,11 @@
+
+        Class Program {
+          Var a: String = "Koikaze";
+          main() {
+            Val a: String = "Sutaaraito taifuun";
+          }
+          foo(a: String) {
+            Var a: Int;
+          }
+        }
+        

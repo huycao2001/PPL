@@ -1,0 +1,16 @@
+
+        Class A {
+          Var $a: Int = 1;
+          Var a: Int = 2;
+          Constructor(a: Int) {
+          }
+        }
+        Class Program {
+          Var a: Int = 3;
+          main() {
+            Var A: A = New A(Self.a);
+            Self.a = A.a;
+            Self.a = A::$A;
+          }
+        }
+        

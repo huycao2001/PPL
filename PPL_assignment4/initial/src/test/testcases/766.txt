@@ -1,0 +1,13 @@
+
+        Class Program {
+            main(){
+                Val a : Array[Int, 1] = Array(1);
+                Val b : Array[String, 2] = Array("Hello", "World");
+                Val c : Array[Array[Int, 2], 2] = Array(Array(1, 2), Array(2, 3));
+                Val d : Array[Int, 2] = c[0];
+                Val e : Array[Array[Array[Int, 2], 2], 2] = Array(Array(Array(2, 3), Array(4, 5)), Array(Array(6, 7), Array(5 * 8, 7 % 2)));
+                Val f : Array[Int, 2] = Array(2, 3.0);
+                Return;
+            }
+        }
+        

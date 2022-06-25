@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Computer),[MethodDecl(Id(display),Instance,[],Block([Call(Self(),Id(print),[])]))])])

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Book),[AttributeDecl(Static,ConstDecl(Id($Page),ArrayType(213282,StringType),None)),MethodDecl(Id(Constructor),Instance,[],Block([])),MethodDecl(Id(addBook),Instance,[param(Id(book),ArrayType(5322,StringType))],Block([AssignStmt(ArrayCell(FieldAccess(Id(Book),Id($arr)),[IntLit(0)]),StringLit(Hello World))]))])])

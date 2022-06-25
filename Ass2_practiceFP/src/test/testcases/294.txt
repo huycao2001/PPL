@@ -1,0 +1,8 @@
+Class Program {
+            main() {
+                Var c, h: Int = 50, 30;
+                Var d: Int = Math.int(System.input("Enter D: "));
+                Var Q: Int = Math.int(2 * c * d / h);
+                Out.println(Math.round(Math.sqrt(Math.abs(Math.log(Q)))));
+            }
+        }

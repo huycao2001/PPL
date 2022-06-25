@@ -1,0 +1,23 @@
+
+        Class Program {
+          main() {
+            If (True) {
+              Var a: Int;
+              Foreach (a In 1 .. 100 By 2) {
+                If (True) {
+                  Var a: Int;
+                }
+                If (False) {
+                  Var a: Int;
+                }
+              }
+              Foreach (a In 1 .. 2) {
+              }
+              If (False) {
+                Val a: Int = 2;
+              }
+            }
+            B::$somethingIdk();
+          }
+        }
+        

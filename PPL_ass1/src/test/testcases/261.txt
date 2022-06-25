@@ -1,0 +1,5 @@
+
+        Class Program{
+            Var clone : String = "##comment in a string##";
+        }
+        

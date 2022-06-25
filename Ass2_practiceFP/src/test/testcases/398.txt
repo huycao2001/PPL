@@ -1,0 +1,24 @@
+
+        Class Smart:Home{
+            Val $Camera : Module;
+            detect(Camera : Module){
+                If(Self.detect() == True){
+                    Return True;
+                }
+                Else{
+                    Return False;
+                }
+                Break;
+            }
+            func(){
+                Self.DoSth();
+                Foreach(i In Device .. 0 By 0x123){}
+                Foreach(i In Device.ABC() .. 0){}
+                If(1){}
+                Elseif(2){}
+                Else{}
+                lhs = "Hello World";
+                {{{{{{{{{{}}}}}}}}}}
+            }
+        }
+        

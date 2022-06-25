@@ -1,0 +1,1 @@
+Class E5w{Val _:Array [Array [Array [Array [Array [Array [Array [Boolean ,16],58],0x6],0x3],0X30],0B1000000],05_2];Var q:Array [String ,0x1_E];}

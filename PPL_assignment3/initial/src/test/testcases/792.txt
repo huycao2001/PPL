@@ -1,0 +1,13 @@
+
+        Class A{
+            Constructor(){}
+            Var $a : A = New A();
+            Var a : A = A::$a;
+        }
+        Class Program {
+            main(){
+                Var b : A = New A();
+                Val b : Int = 1;
+                Return;
+            }
+        }

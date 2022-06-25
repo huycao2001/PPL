@@ -1,0 +1,17 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Boolean = 10 > 2;
+                Val b : Boolean = 1 < 2;
+                Val c : Boolean = 2 <= 2;
+                Val d : Boolean = 2 >= 2;
+                Val e, f, g, h : Boolean = 1.0 > 2.0, 3.0 < 4.0, 5.6 >= 5.5, 4.8 <= 10.0;
+                Val i, j, k, l : Boolean = 1 > 2.0, 2.2 < 1000, 5 >= 0.5, 6.2 <= 10e10;
+                Val m : Boolean = True > False;
+            }
+        }

@@ -1,0 +1,11 @@
+
+        Class Home{
+                Constructor(){
+                    Home::$people = Home::$people + 1;
+                }
+                Destructor(){
+                    Home::$people = Null;
+                    Return True;
+                }
+        }
+        

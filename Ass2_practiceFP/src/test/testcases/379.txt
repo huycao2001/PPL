@@ -1,0 +1,5 @@
+
+        Class Shape{
+            Var $Circle : Array[Array[Array[Boolean, 023],50],0XE_62];
+        }
+        

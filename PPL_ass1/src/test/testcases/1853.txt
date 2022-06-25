@@ -1,0 +1,1 @@
+Class O{Var T:Array [String ,0125];}Class w{Constructor (_4:_;_20_,W,_FO:SO_;u_:String ){_::$AR();}$B7r(){} }Class Em{Destructor (){} }

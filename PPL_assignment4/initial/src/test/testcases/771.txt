@@ -1,0 +1,8 @@
+
+        Class Program {
+            main(){
+                Val a : Array[Float, 2] = Array(1, 2);
+                Return;
+            }
+        }
+        

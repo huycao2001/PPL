@@ -1,0 +1,13 @@
+
+        Class Program
+        {
+            main(){
+                Val myArray: Array[String, 5] = Array("No","clue","what","im","doing");
+                Val sum: String = "";
+                Foreach (i In 1 .. 5){
+                    sum = sum +. myArray[i];
+                }
+                Out.println(sum);
+            }
+        }
+        

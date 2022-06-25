@@ -1,0 +1,11 @@
+
+        Class Program {
+          main() {
+          }
+          Var $a: Float = -1;
+          foo() {
+            Program::$a = -1.2;
+          }
+          Var b: Int = -12.4;
+        }
+        

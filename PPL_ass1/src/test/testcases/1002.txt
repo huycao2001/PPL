@@ -1,0 +1,1 @@
+Class a:H{Constructor (l,B3,j,_,_:Array [Int ,4];c6t:Array [Boolean ,4];_:Array [Boolean ,4]){}Var u:Array [Array [String ,055],0B1_10];}

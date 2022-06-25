@@ -1,0 +1,10 @@
+
+            Class Program{
+                main(){
+                    Self.a = Self.b * Self.c - Self::$e + (Self.x - Self.Y());
+                    Self.a = Self::$A();
+                    Self::$b = Self.B();
+                    Self.a = Self.$A;
+                }
+            }
+        

@@ -1,0 +1,14 @@
+
+            Class Shape {
+                getShape() {
+                    Foreach (i In 1 .. 10 By 0.5) {
+                        Var v : Int = 6+8-9;
+                    }
+
+                    If (s ==. "narutobaco" ){
+                        Var d,c: Float = 6.3e45, .e45;
+                    }
+                    
+                }
+            }
+    

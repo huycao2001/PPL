@@ -1,0 +1,1 @@
+Class G{}Class _:_1{Var $s:Array [Array [Boolean ,0x34],87];Constructor (_,_:Array [Array [Array [Array [Array [Array [Int ,2],87],01_4],0B1],0B11011],0x8_79]){}Destructor (){}Var $1,$q__:Array [Array [Boolean ,063],0B1];}Class _4{Var $c:Float ;}Class _{}

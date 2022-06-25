@@ -1,0 +1,1 @@
+Class _Hp__{Constructor (o4:Array [Array [Float ,0B1],0x1_1];__tm,_:Array [String ,7];T_9:String ;_:Array [Int ,01];w_:Boolean ){} }

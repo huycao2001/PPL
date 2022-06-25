@@ -1,0 +1,12 @@
+
+        Class P{}
+        Class C : P{}
+        Class Program {
+          main() {
+            Var arr: Array[Int, 3];
+            arr = Array(New C(), New C(), New C());
+            arr[2] = New C();
+            arr[0] = True;
+          }
+        }
+        

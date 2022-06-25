@@ -1,0 +1,12 @@
+
+        Class Program {
+          Val i: Int = 2;
+        }
+        Class Subprogram : Program {
+          Var s: String = "OMEGALUL";
+        }
+        Class Subsubprogram : Subprogram {
+          Var $f: String = "OMEGALUL";
+          Var $f: Float;
+        }
+        

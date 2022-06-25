@@ -1,0 +1,19 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+            method() {
+                Var a : Int = 1;
+                Var b : Int = a;
+                Val c : Int = 1;
+                If (True) {
+                    Return c;
+                } Else {
+                    Return a;
+                }
+            }
+            method2() {
+                Val b : Int = Self.method();
+            }
+        }

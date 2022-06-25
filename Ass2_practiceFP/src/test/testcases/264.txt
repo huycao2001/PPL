@@ -1,0 +1,22 @@
+
+        ## Multi If ## 
+        Class Program{
+            main(){
+                Var a : Int = 0x123456;
+                If(a > 2){
+                    ## do sth##
+                }
+
+                If ( a > 3 ){
+                    a = a - 1; 
+                }
+
+                If ( a > 4 ){
+
+                }
+                If(a > 5){
+                    a = a /3; 
+                }
+            }
+        }
+        

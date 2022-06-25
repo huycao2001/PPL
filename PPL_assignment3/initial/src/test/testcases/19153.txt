@@ -1,0 +1,10 @@
+
+        Class Program {
+          main() {
+            Var arr: Array[Int, 2] = Array(1,2);
+            Var b: Float;
+            b = arr[1];
+            arr[1] = b;
+          }
+        }
+        

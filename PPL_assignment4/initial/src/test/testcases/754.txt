@@ -1,0 +1,15 @@
+
+        Class ABC{}
+        Class DEF{
+            main() {
+                Return;
+            }
+        }
+        Class Program {
+            abc(){}
+            abcedf(){}
+            mainAAA() {
+                Return;
+            }
+        }
+        

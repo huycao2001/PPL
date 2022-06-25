@@ -1,0 +1,7 @@
+
+        Class Program{
+          main(){
+            Val a: Array[Array[Int, 2], 2] = Array(Array(True, ("You" ==. "TheGuySheToldYouNotToWorryAbout")), Array(23.3 > 32, !False));
+          }
+        }
+        

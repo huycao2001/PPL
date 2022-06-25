@@ -1,0 +1,14 @@
+
+        Class Person{
+            Val is_Student : Boolean = True;
+            learn(status : String){
+                If (is_Student == True){
+                    Self.is_learning = True;
+                }
+                Else{
+                    Self.is_learning = False;
+                    Self.working = True;
+                }
+            }
+        }
+        

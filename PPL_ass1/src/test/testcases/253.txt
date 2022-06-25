@@ -1,0 +1,8 @@
+
+            Class Program{
+                main(){
+                    Var a : Array[Int,4] = Array(1,2,3,4);
+                    Out.println(a[a[a[a[a[a[a[a[a[a[a[i]]]]]]]]]]]);
+                }
+            }
+        

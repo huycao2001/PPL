@@ -1,0 +1,767 @@
+
+"""
+ * @author nhphung
+"""
+from AST import * 
+from Visitor import *
+from Utils import Utils
+from StaticError import *
+
+### Update indeclared identifer -> delete parameter Identifier() in visit Assign.
+
+
+def getTheRoot(c):
+    while (c.parentScope != None):
+        c = c.parentScope
+    return c
+
+def getClassNode(c, name):
+    while (c.parentScope != None):
+        c = c.parentScope
+    for node in c.children:
+        if node.symbol.name == name:
+            return node
+    return None
+
+def returnType(c, name):
+
+
+    while(c.parentScope != None ): 
+        for i in c.children:
+
+            if i.symbol.name == name:
+
+
+                return i.symbol.mtype # Class type (with CLass name)
+
+        c = c.parentScope # Move up to thr previous scope.
+    return None # 
+
+def findMembers(c, name, attribute = True):
+    # name is Class ID.
+    # attribute is set to True when we are looking for att 
+    # attribute is set to false when are looking for methods.
+    currentScope = getClassNode(c, name) # Find the Class node
+    if attribute:
+        members = [node for node in currentScope.children if type(node.symbol.mtype) != MType]
+    else:
+        members = [node for node in currentScope.children if type(node.symbol.mtype) == MType]
+    if currentScope.symbol.superClass == None:
+        return members
+    else:
+        return members + findMembers(currentScope, currentScope.symbol.superClass, attribute)
+
+
+def isCoerced(typeDecl, typeAssign ,c= None ):
+
+    if type(typeDecl) is FloatType:
+        if type(typeAssign) in [FloatType, IntType]:
+            return True
+    elif type(typeDecl) == ClassType and type(typeAssign) == ClassType:
+        if typeDecl.classname.name == typeAssign.classname.name:
+            return True
+        # superClassance check
+        AssignedClassName = typeAssign.classname.name
+        # Find the Class node whose name is AssignedClass 
+        ClassNode = None
+        while(c.parentScope != None) :
+            c = c.parentScope
+        for node in c.children : 
+            if node.symbol.name == AssignedClassName  : 
+                ClassNode = node
+                break
+
+        if ClassNode.symbol.superClass != None:
+            return isCoerced(typeDecl, ClassType(Id(ClassNode.symbol.superClass)) , c)
+        else:
+            return typeDecl.classname.name == typeAssign.classname.name
+    if type(typeDecl) == type(typeAssign) :
+        return True
+        
+    return False
+
+
+def isValueConst(target , scope) : # target is the expression we want to check.
+
+    if type(target) == Id : 
+
+        while(type(scope.symbol.mtype) != CType ) : 
+            # print("c is " , c )
+            # print("children is " , c.children)
+            for node in scope.children : 
+                if target.name == node.symbol.name : 
+
+                    return node.symbol.isConst
+
+        return False   
+    if type(target ) == UnaryOp : 
+        return isValueConst(target.body , scope) 
+    if type(target) == BinaryOp : 
+
+        return isValueConst(target.left , scope) and isValueConst(target.right , scope)   
+    if type(target) in [IntLiteral, FloatLiteral, StringLiteral, BooleanLiteral, ArrayLiteral, NewExpr, SelfLiteral] : 
+            return True   
+    if type(target) == FieldAccess : 
+        if type(target.obj) == SelfLiteral : 
+            parentClass = scope.parentScope
+            while(type(parentClass.symbol.mtype) != CType) :
+                parentClass = parentClass.parentScope
+            Attributes_Nodes = [child for child in parentClass.children if type(child.symbol.mtype) != MType] # list of Node
+            
+            for i in Attributes_Nodes : 
+                if i.symbol.name == target.fieldname.name : 
+                    return i.symbol.isConst
+            raise Undeclared(Attribute() , target.fieldname.name)
+            
+        elif type(target.obj) == Id :
+            ClassName = returnType(scope , target.obj.name)
+
+            ClassNode = getClassNode(scope , ClassName.classname.name)
+            Attributes_Nodes = [child for child in ClassNode.children if type(child.symbol.mtype) != MType] # list of Node
+            for i in Attributes_Nodes : 
+                if i.symbol.name == target.fieldname.name : 
+                    return i.symbol.isConst
+            raise Undeclared(Attribute() , target.fieldname.name)
+
+        #return False
+    elif isinstance(target, (FieldAccess, CallExpr) ):
+
+        return isValueConst(target.obj , scope)   
+    return False
+    # return
+
+
+class CType: 
+    def __str__(self):
+        return "typeOFClass"
+
+
+class BlockFlag:
+    def __str__(self):
+        return "BlockFlag"
+
+class IfFlag:
+    def __str__(self):
+        return "IfFlag"
+
+class ForFlag:
+    def __str__(self):
+        return "ForFlag"
+
+class ElifFlag:
+    def __str__(self):
+        return "ElifFlag"
+
+
+
+class MType:
+    def __init__(self,partype,rettype):
+        self.partype = partype
+        self.rettype = rettype
+
+    def __repr__(self):
+        return "MType([" + ', '.join(str(x) for x in self.partype) + "], " + str(self.rettype) + ")"
+
+# pass down the parent node to the children and children will be added there. 
+
+class node(object):
+    def __init__(self, symbol, children = [], parentScope = None):
+        self.symbol = symbol
+        self.children = children
+        self.parentScope = parentScope
+
+    def __str__(self, level=0):
+        clone = "None" if self.parentScope == None else self.parentScope.symbol.name
+        ret = "\t"*level + repr(self.symbol) + " , Parent node is " + clone + "\n"
+        for child in self.children:
+            ret += child.__str__(level+1)
+        return ret
+
+    def __repr__(self):
+        return str(self.symbol)
+
+class Symbol:
+    def __init__(self,name,mtype,value = None,kind=None , superClass=None , isConst = False):
+        self.name = name
+        self.mtype = mtype
+        self.value = value
+        self.kind = kind #static or instance
+        self.superClass = superClass 
+        self.isConst = isConst # is this a const or not ? 
+
+    def __repr__(self):
+        return "Symbol(" + str(self.name) + ", " + str(self.mtype) + ', ' + str(self.value) + ', ' + str(self.kind) + ', ' + str(self.superClass) + ', '+  str(self.isConst) + ")"
+
+class StaticChecker(BaseVisitor,Utils):
+
+    global_envi = [
+
+    ]
+
+    returnTypeStack = []
+            
+    
+    def __init__(self,ast):
+        self.ast = ast
+
+    def check(self):
+        return self.visit(self.ast,[])
+
+    def visitProgram(self,ast, c): 
+        c = node(Symbol('Program' , None ), [], None)
+        a = [self.visit(x,c) for x in ast.decl]
+        print(c)
+        return []
+
+    def visitClassDecl(self, ast:ClassDecl, c):
+        children = c.children
+        className = self.visit(ast.classname, (c, 'CHECK_REDECLARED', Class()))
+        superClass = self.visit(ast.parentname, (c, 'UNDECLARED CLASS CHECK', Class(), ast.parentname.name)) if ast.parentname is not None else None
+        nodeClass = node(Symbol(className, CType(), None, None, superClass), [], c) # c is program Node
+        children.append(nodeClass)
+        for mem in ast.memlist:
+            self.visit(mem, nodeClass)
+        return 
+
+    def visitId(self, ast: Id, c):
+        # c[0] is the upper node we pass in.
+        # c[1] is the type of checking, like a service.
+        # c[2] is the object that we need to check. 
+        # c[3] is name of object to check undeclared
+
+        if type(c) != tuple : 
+     
+            while(type(c.symbol.mtype) != CType ) : 
+
+                for node in c.children : 
+                    if ast.name == node.symbol.name : 
+                        return node.symbol.mtype
+                c = c.parentScope
+
+            raise Undeclared(Identifier() , ast.name)
+        
+        currentNode = c[0]       
+        if c[1] == 'CHECK_IS_ARRAYTYPE':
+            typeOfObject = returnType(currentNode, c[2].arr.name)
+
+            if type(typeOfObject) != ArrayType:
+                raise TypeMismatchInExpression(c[2])
+
+        if c[1] =='CHECK_CANNOT_ASSIGN_TO_CONSTANT':
+
+            currentNode = currentNode.parentScope
+
+            while (currentNode.parentScope != None):
+                for x in currentNode.children:
+                    if ast.name == x.symbol.name:
+                        if x.symbol.isConst:
+                            raise CannotAssignToConstant(c[2])
+                        
+
+                currentNode = currentNode.parentScope            
+            return ast.name
+
+        if (c[1] == 'CHECK_UNDECLARED_IDENTIFIER'):            
+            # Current node should be an Assign node. 
+            while (currentNode.parentScope != None):
+                # if ast.name not in [x.symbol.name for x in currentNode.children]:
+                #     currentNode = currentNode.parentScope
+                # else: 
+                #     #print("This is the scope we are looking for" , currentNode)
+                #     return ast.name
+                for child in currentNode.children :
+                    if ast.name == child.symbol.name : 
+                        return child
+                currentNode = currentNode.parentScope 
+            raise Undeclared(Identifier(), ast.name)
+
+        if c[1] == 'UNDECLARED CLASS CHECK': 
+            root = currentNode
+            ClassExist = False
+            while(root.parentScope != None):
+                root = root.parentScope
+            for node in root.children : 
+                if c[3] == node.symbol.name :
+                    ClassExist = True
+                    break
+            if ClassExist == False : 
+                raise Undeclared(Class(), ast.name)
+
+            
+        if c[1] == 'CHECK_UNDECLARED_ATTRIBUTE':
+            # c[3] is the instance => We will have to find which class this object belongs to
+            ClassOfObject = returnType(currentNode, c[3]) # ClassType object with class name  as ID()
+            if(ClassOfObject == None ) : 
+                raise Undeclared(Identifier() , c[3])
+            ClassAttributes = findMembers(currentNode, ClassOfObject.classname.name )
+            for att_node in ClassAttributes : 
+                if ast.name == att_node.symbol.name : 
+                    return att_node
+            raise Undeclared(c[2], ast.name)
+
+        if c[1] == 'CHECK_UNDECLARED_METHOD':
+            # c[3] is the instance => We will have to find which class this object belongs to
+            # c[3] is ID.
+
+            ClassOfObject = returnType(currentNode, c[3]) # ClassType object with classname as ID() from AST
+            # if(ClassOfObject == None ) : ####### REMEMBER THIS ##### 
+            #     pass # handle later.
+            ClassMethods = findMembers(currentNode, ClassOfObject.classname.name, False)
+ 
+            for method_node in ClassMethods : 
+                if ast.name == method_node.symbol.name : 
+                    return method_node
+            raise Undeclared(c[2], ast.name) # undeclared method
+                
+
+        if c[1] == 'CHECK_REDECLARED':
+            # the current node should be the upper node of the scope we want to check. 
+            # Ex : if c[2] is attribute then currentNode should be a Class Node.
+            if ast.name in [child.symbol.name for child in currentNode.children]:
+                raise Redeclared(c[2], ast.name)
+            else: # 2 Static vars may not have the same ClassNode but they have global scope. 
+                if (type(c[2]) == Attribute or type(c[2]) == Method ): 
+                    root = currentNode 
+                    while(root.parentScope != None) : root = root.parentScope
+                    for class_node in root.children : 
+                        for att_method_node in class_node.children : 
+                            if type(att_method_node.symbol.kind) == Static and ast.name == att_method_node.symbol.name:
+                                raise Redeclared(c[2], ast.name)      
+                    # if ast.name in [j.symbol.name for x in root.children for j in x.children if type(j.symbol.kind) is Static]:
+                    #     raise Redeclared(c[2], ast.name)
+                
+        return ast.name
+    
+
+# class AttributeDecl(MemDecl):
+#     kind: SIKind  # Instance or Static
+#     decl: StoreDecl  # VarDecl for mutable or ConstDecl for immutable
+    def visitAttributeDecl(self,ast: AttributeDecl, c):
+        children = c.children
+        name = None
+        if type(ast.decl) == VarDecl : 
+            name = self.visit(ast.decl.variable, (c, 'CHECK_REDECLARED', Attribute()))
+        else :
+            name = self.visit(ast.decl.constant, (c, 'CHECK_REDECLARED', Attribute()))
+        #### REMEMBER THIS ####
+        ## Havent checked the type and the class yet.
+        mtype = ast.decl.varType if type(ast.decl) is VarDecl else ast.decl.constType
+        value = ast.decl.varInit if type(ast.decl) is VarDecl else ast.decl.value
+        kind = ast.kind
+        isConst = False if type(ast.decl) == VarDecl else True
+        AttNode= node(Symbol(name, mtype, value, kind , None, isConst ), [], c) # c is Class Node.
+        children.append(AttNode)
+
+        return 
+
+    def visitMethodDecl(self,ast: MethodDecl, c):
+        children = c.children
+        name = self.visit(ast.name, (c, 'CHECK_REDECLARED', Method()))
+        mtype = MType([], VoidType())
+        symbolMethod = Symbol(name, mtype, None, ast.kind)
+        MethodNode = node(symbolMethod, [], c)
+        children.append(MethodNode)
+        for param in ast.param:
+            self.visit(param, (MethodNode, 'PARAM'))
+        self.visit(ast.body, MethodNode) # Visit Block
+        symbolMethod.mtype.partype = [param.varType for param in ast.param]
+        symbolMethod.mtype.rettype = self.returnTypeStack.pop() if len(self.returnTypeStack) != 0 else VoidType()    
+        return
+
+
+
+# class VarDecl(StoreDecl):
+#     variable: Id
+#     varType: Type
+#     varInit: Expr = None  # None if there is no initial
+
+    def visitVarDecl(self,ast: VarDecl, c_flag):
+        c, flag = c_flag
+        name = self.visit(ast.variable, (c, 'CHECK_REDECLARED', Parameter() if flag=='PARAM' else Variable()))
+        mtype = ast.varType
+        value = ast.varInit
+        if type(mtype) is ClassType:
+            self.visit(ast.varType.classname, (c, 'UNDECLARED CLASS CHECK', Class(), mtype.classname.name))
+        VarDeclNode = node(Symbol(name, mtype, value, Instance()), [], c)
+        c.children.append(VarDeclNode)
+        if not((value is None) or ( isinstance(value, NullLiteral))):
+            VarInit = self.visit(ast.varInit, c)
+
+            if  isCoerced(ast.varType, VarInit , c) == False:
+                raise TypeMismatchInStatement(ast)
+        
+        return
+
+
+# class ConstDecl(StoreDecl):
+#     constant: Id
+#     constType: Type
+#     value: Expr = None # None if there is no initial
+
+    def visitConstDecl(self,ast: ConstDecl, c_flag):
+
+        c, flag = c_flag
+        children = c.children
+        name = self.visit(ast.constant, (c, 'CHECK_REDECLARED', Constant()))
+        mtype = ast.constType
+        if type(mtype) is ClassType:
+            self.visit(ast.constType.classname, (c, 'CHECK_UNDECLARED_CLASS', Class(), mtype.classname.name))
+        value = ast.value
+
+        #print("type of c is" , type(c)) # this is a node
+        if value == None : 
+            raise IllegalConstantExpression(None)
+        else : 
+
+            typeRHS = self.visit(ast.value, c)
+            if  isCoerced(ast.constType, typeRHS , c) == False:
+                raise TypeMismatchInConstant(ast)
+
+        if isValueConst(ast.value ,c) == False :
+            raise IllegalConstantExpression(ast.value)
+
+        nodeConstDecl = node(Symbol(name, mtype, value, Instance(), None, isConst = True), [], c)
+        children.append(nodeConstDecl )
+        # if value != None and type(value) != NullLiteral:
+        #     expr = self.visit(ast.value, c)
+        #     if not isCoerced(ast.constType, expr , c):
+        #         raise TypeMismatchInConstant(ast)
+        return
+
+
+    # class Block(Stmt):
+    #     inst: List[Inst]
+    def visitBlock(self, ast: Block, c):
+        children = c.children
+        
+        for inst in ast.inst:
+            if type(inst) in [VarDecl, ConstDecl]:
+                self.visit(inst, (c, 'INST'))
+            else:
+                nodeScope = None
+                if type(inst) is Assign:
+                    nodeScope = node(Symbol("Assign", (None, None)),[], c)
+                elif type(inst) == CallStmt:
+                    nodeScope = node(Symbol("CallStmt", (None, None)),[], c)
+                elif type(inst) == Block:
+                    nodeScope = node(Symbol("Block", (None, None)),[], c)
+                elif type(inst) == Return:
+                    nodeScope = node(Symbol("Return", (None, None)),[], c)
+                elif type(inst)  == Break:
+                    nodeScope = node(Symbol("Break", None),[], c)
+                elif type(inst) == Continue:
+                    nodeScope = node(Symbol("Continue", None),[], c)
+                elif type(inst) == If:
+                    nodeScope = node(Symbol("If", IfFlag()),[], c)
+                elif type(inst) == For:
+                    nodeScope = node(Symbol("For", ForFlag()),[], c)
+                children.append(nodeScope)
+                
+                self.visit(inst, nodeScope)
+        return
+
+
+
+    def visitAssign(self, ast: Assign, c):
+        # c is an Assign node
+        children = c.children
+        typeLHS = None
+        if type(ast.lhs) == Id:
+            self.visit(ast.lhs, (c, 'CHECK_CANNOT_ASSIGN_TO_CONSTANT', ast))
+            clone = self.visit(ast.lhs, (c, 'CHECK_UNDECLARED_IDENTIFIER')) # the node
+            nameID = clone.symbol.name
+            mtype = clone.symbol.mtype
+            typeLHS = mtype
+            nodeAssignID = node(Symbol(nameID, mtype), [], c)
+            children.append(nodeAssignID)
+
+        elif type(ast.lhs) == FieldAccess:
+            if type(ast.lhs.obj) == Id:
+                nodeFieldAccess = self.visit(ast.lhs.fieldname, (c, 'CHECK_UNDECLARED_ATTRIBUTE', Attribute(), ast.lhs.obj.name))
+                if nodeFieldAccess == None:
+                    raise Undeclared(Attribute(), ast.lhs.fieldname.name)
+                typeLHS = nodeFieldAccess.symbol.mtype
+            elif type(ast.lhs.obj) == SelfLiteral:
+                # Visit the Field Access 
+                typeLHS = self.visit(ast.lhs , c)
+                
+        
+        elif type(ast.lhs) == ArrayCell:
+
+            if type(ast.lhs.arr) == Id:
+
+                nameID = self.visit(ast.lhs.arr, (c, 'CHECK_IS_ARRAYTYPE', ast.lhs))
+                typeLHS = returnType(c, nameID).eleType
+                
+            if not all(isinstance(ele, IntLiteral) for ele in ast.lhs.idx):
+                raise TypeMismatchInExpression(ast.lhs)
+        
+        typeRHS = self.visit(ast.exp, c)
+        # print("typeLHS is " , type(typeLHS))
+        # print("typeRHS is " , type(typeRHS))
+
+        if isCoerced(typeLHS, typeRHS , c) == False:
+            raise TypeMismatchInStatement(ast)
+
+    # class If(Stmt):
+    #     expr: Expr
+    #     thenStmt: Stmt
+    #     elseStmt: Stmt = None  # None if there is no else branch
+    def visitIf(self,ast:If, c): 
+        self.visit(ast.expr, c)
+        self.visit(ast.thenStmt, c)
+        if ast.elseStmt != None : #### REMEMBER THIS #####
+            nodeElseIf = node(Symbol("ElseIf", ElifFlag()), [], c.parentScope)
+            c.parentScope.children.append(nodeElseIf)
+            self.visit(ast.elseStmt, nodeElseIf)
+        else: None #### REMEMBER THIS #####
+        return
+
+    # class For(Stmt):
+    #     id: Id
+    #     expr1: Expr
+    #     expr2: Expr 
+    #     loop: Stmt
+    #     expr3: Expr = None
+    def visitFor(self,ast:For, c): 
+        expr1Type = self.visit(ast.expr1, c)
+        expr2Type = self.visit(ast.expr2, c)
+        if not (isCoerced(expr1Type, IntType() , c) and isCoerced(expr2Type,IntType() , c)):
+            raise TypeMismatchInStatement(ast)
+        expr3Type = self.visit(ast.expr3, c) if ast.expr3 is not None else None
+        self.visit(ast.loop, c) # Visit the statement
+    
+
+    # class CallStmt(Stmt):
+    #     obj: Expr
+    #     method: Id
+    #     param: List[Expr]
+    def visitCallStmt(self,ast:CallStmt, c): 
+        # c should be a CallStmt node. 
+        #children = c.children
+        if type(ast.obj) == Id:
+            # ast.obj.name is the name type STRING.
+            method_id = ast.method
+            nodeMethod = self.visit(method_id, (c, 'CHECK_UNDECLARED_METHOD', Method(), ast.obj.name))
+            if type(nodeMethod.symbol.mtype.rettype) is not VoidType:
+                raise TypeMismatchInStatement(ast)
+            typeDeclList = [x for x in nodeMethod.symbol.mtype.partype]
+            typeAssignList = [self.visit(x, c) for x in ast.param]
+            if len(typeDeclList) != len(typeAssignList):
+                raise TypeMismatchInStatement(ast)
+            for (typeDecl, typeAssign) in zip(typeDeclList,typeAssignList):
+                if not isCoerced(typeDecl, typeAssign , c):
+                    raise TypeMismatchInStatement(ast)
+            #print("node method is :" , nodeMethod )
+            return nodeMethod.symbol.mtype.rettype
+        elif type(ast.obj) == SelfLiteral : 
+            return
+
+    def visitReturn(self,ast:Return, c):
+        print("this will return : " , ast.expr) 
+        print("type of c is : " , type(c))
+        returnType = self.visit(ast.expr, c)
+        self.returnTypeStack.append(returnType)
+    
+
+    #  while(c.parentScope != None ): 
+    #     if (type(c.parentScope.symbol.mtype) == ForFlag):
+    #         return True
+    #     c = c.parentScope   
+    def visitBreak(self,ast:Break, c): 
+        parent = c.parentScope
+        while(parent.parentScope != None) : 
+            if type(parent.symbol.mtype) == ForFlag : 
+                return
+            parent = parent.parentScope
+        
+        raise MustInLoop(ast)
+
+    def visitContinue(self,ast:Continue, c): 
+        parent = c.parentScope
+        while(parent.parentScope != None) : 
+            if type(parent.symbol.mtype) == ForFlag : 
+                return
+            parent = parent.parentScope
+        raise MustInLoop(ast)
+
+# class CallExpr(Expr):
+#     obj: Expr
+#     method: Id
+#     param: List[Expr]
+    def visitCallExpr(self, ast:CallExpr, c):
+        if type(ast.obj) == Id:
+            nodeMethod = self.visit(ast.method, (c, 'CHECK_UNDECLARED_METHOD' , Method(), ast.obj.name))
+
+            # Quesionable ? because if no method is returned then it should be a undelcared method ?
+            if nodeMethod == None:
+                raise TypeMismatchInExpression(ast)
+            
+            if type(nodeMethod.symbol.mtype.rettype) is VoidType:
+                raise TypeMismatchInExpression(ast)
+            
+            typeDeclList = [x for x in nodeMethod.symbol.mtype.partype] # List of parameters
+            typeAssignList = [self.visit(x, c) for x in ast.param] # Arguments 
+            if len(typeDeclList) != len(typeAssignList):
+                raise TypeMismatchInExpression(ast)
+            for (typeDecl, typeAssign) in zip(typeDeclList,typeAssignList):
+                if not isCoerced(typeDecl, typeAssign , c):
+                    raise TypeMismatchInExpression(ast)
+            return nodeMethod.symbol.mtype.rettype
+
+
+    # class BinaryOp(Expr):
+    #     op: str
+    #     left: Expr
+    #     right: Expr
+    def visitBinaryOp(self, ast:BinaryOp, c):
+
+        typeLeft = self.visit(ast.left, c) # Type() -> object
+        typeRight = self.visit(ast.right, c)
+        op = ast.op
+
+        if op in ['+', '-', '*', '/']:  
+            if type(typeLeft) not in [IntType , FloatType] or type(typeRight) not in [IntType, FloatType]:
+                raise TypeMismatchInExpression(ast)
+            if type(typeLeft) == IntType and type(typeRight) == IntType:
+                return IntType()
+            return FloatType()
+
+        elif op in ['||' , '&&']:
+            if type(typeLeft) == BoolType and type(typeRight) == BoolType :
+                return BoolType()
+            raise TypeMismatchInExpression(ast)
+
+        elif op in ['==.', '+.']:
+            if type(typeLeft) != StringType or type(typeRight) != StringType :
+                raise TypeMismatchInExpression(ast)
+            if op == '+.' :
+                return StringType()
+            return BoolType() # op == '==.'
+
+        elif op in ['==', '!=']:
+            if type(typeLeft) in [BoolType, IntType] and type(typeRight) in [BoolType, IntType] :
+                return BoolType()
+            raise TypeMismatchInExpression(ast)
+
+        elif op in ['<', '>', '<=', '>=']:
+            if type(typeLeft) in [FloatType, IntType] and type(typeRight) in [FloatType, IntType] :
+                return BoolType()
+            raise TypeMismatchInExpression(ast)
+
+        elif op == '%':
+            if type(typeLeft) == IntType and type(typeRight) == IntType :
+                raise IntType()
+            raise TypeMismatchInExpression(ast)
+
+    # class UnaryOp(Expr):
+    #     op: str
+    #     body: Expr
+    def visitUnaryOp(self, ast: UnaryOp, c):
+        ExpType = self.visit(ast.body, c)
+        op = ast.op
+        if op  == '-':
+            if type(ExpType) not in [IntType , FloatType] : 
+                raise TypeMismatchInExpression(ast)
+            return IntType() if type(ExpType) == IntType else FloatType()
+
+        elif op  == '!':
+            if type(ExpType) != BoolType :
+                raise TypeMismatchInExpression(ast)
+            return BoolType()
+    
+    def visitNewExpr(self,ast:NewExpr, c): 
+        return ClassType(Id(ast.classname.name))
+
+
+    # class FieldAccess(LHS):
+    #     obj: Expr
+    #     fieldname: Id
+    def visitFieldAccess(self,ast:FieldAccess, c): 
+        resultType = None
+        if type(ast.obj) == Id:  
+            nodeFieldAccess = self.visit(ast.fieldname, (c, 'CHECK_UNDECLARED_ATTRIBUTE' , Attribute(), ast.obj.name))
+            if nodeFieldAccess != None:
+                resultType = nodeFieldAccess.symbol.mtype
+            else : 
+                raise Undeclared(Attribute(), ast.fieldname.name)
+            
+        ## REMEMBER THIS    
+        elif type(ast.obj) == SelfLiteral:
+            found = False
+            parentClass = c.parentScope
+            while(type(parentClass.symbol.mtype) != CType) : 
+                parentClass = parentClass.parentScope
+            Attributes_Nodes = [child for child in parentClass.children if type(child.symbol.mtype) != MType] # list of Node
+            for i in Attributes_Nodes:
+                if ast.fieldname.name == i.symbol.name:
+                    resultType = i.symbol.mtype
+                    found = True
+            if found == False:
+                raise Undeclared(Attribute(), ast.fieldname.name)
+        return resultType   
+
+
+    def visitInstance(self,ast, c): 
+        pass
+
+    def visitStatic(self,ast, c): 
+        pass
+
+    def visitArrayType(self,ast, c): 
+        return ArrayType()
+    
+    def visitClassType(self,ast, c): 
+        return ClassType()
+    
+    def visitVoidType(self,ast, c): 
+        return VoidType()
+
+    def visitIntType(self,ast, c): 
+        return IntType()
+    
+    def visitFloatType(self,ast, c): 
+        return FloatType()
+    
+    def visitBoolType(self,ast, c): 
+        return BoolType()
+    
+    def visitStringType(self,ast, c): 
+        return StringType()
+    
+    # class ArrayType(Type):
+        # size: int
+        # eleType: Type
+
+
+    # class ArrayLiteral(Literal): # Array(1,2,3,4,5)
+    #   value: List[Expr]
+    def visitArrayLiteral(self,ast, c): 
+        print("go here")
+        if len(ast.value) == 0 : 
+            return ArrayType(None,None)
+        type_list = [self.visit(x,c) for x in ast.value]
+        clone = list(map(lambda x : type(x) , type_list))
+        if type_list.count(clone[0]) != len(clone) : 
+            raise IllegalArrayLiteral(ast) 
+        return ArrayType(size = len(ast.value) , eleType = type_list[0])
+
+    def visitIntLiteral(self,ast, c): 
+        return IntType()
+
+    def visitFloatLiteral(self,ast, c): 
+        return FloatType()
+    
+    def visitStringLiteral(self,ast, c): 
+        return StringType()
+    
+    def visitBooleanLiteral(self,ast, c): 
+        return BoolType()
+    
+    def visitNullLiteral(self,ast, c): 
+        pass
+
+    def visitSelfLiteral(self,ast, c): 
+        pass
+
+    

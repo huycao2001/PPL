@@ -1,0 +1,16 @@
+
+        Class Parent{}
+        Class Child:Parent{}
+        Class Program{
+          main(){
+            Var a: Child = New Child();
+            Var b: Parent = New Child();
+            Var c: Parent = a;
+            c = a;
+            c = New Child();
+            Var d: Child;
+            Val e: Child = Null;
+            Val f: Parent;
+          }
+        }
+        

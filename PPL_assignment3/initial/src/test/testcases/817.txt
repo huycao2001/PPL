@@ -1,0 +1,16 @@
+
+        Class Program {
+            Val a : Int = 1;
+            mainAAA(){
+                Val a : Int = Self.a;
+                Val b : Int = a;
+                Return;
+            }
+            main() {
+                Return;
+            }
+            $method() {
+                Val a : Int = 1.2;
+            }
+        }
+        

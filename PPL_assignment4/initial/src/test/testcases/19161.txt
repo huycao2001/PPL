@@ -1,0 +1,16 @@
+
+        Class SubData{
+          Var iV: Int;
+          Var $sV: Int;
+          Val $sC: Int = 4;
+          Val iC: Int = SubData::$sC;
+          Val d0: SubData = New SubData();
+          foo() {
+            Self.iV = Self.d0.iC;
+            Self.d0.iC = Self.iV;
+          }
+        }
+        Class Program {
+          main(){}
+        }
+        

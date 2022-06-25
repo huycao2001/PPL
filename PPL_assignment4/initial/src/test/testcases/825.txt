@@ -1,0 +1,10 @@
+
+        Class A{}
+        Class B{}
+        Class Program {
+            Var x: A = New B();
+            main(){
+                Return;
+            }
+        }
+        

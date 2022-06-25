@@ -1,0 +1,7 @@
+
+        Class Program{
+            func(){
+               Return Self.a.a.a.a.a.a.a.a.a.a;
+            }
+        }
+        

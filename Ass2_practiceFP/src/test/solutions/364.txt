@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Swap),[MethodDecl(Id(func),Instance,[],Block([AssignStmt(Id(temp),Id(p1)),AssignStmt(Id(p1),Id(p2)),AssignStmt(Id(p2),Id(temp)),Return(BooleanLit(True))]))])])

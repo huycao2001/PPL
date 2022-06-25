@@ -1,0 +1,54 @@
+import unittest
+from TestUtils import TestParser
+
+class ParserSuite(unittest.TestCase):
+    def test_simple_program(self):
+        """Simple program: int main() {} """
+        input = """ Class main {
+            Var $num1, $num2, $num3, $num4 :  Int = 123 + 123;
+            Var $num1, $num2, $num3, $num4 :  Float = expression,expression, expression , expression;
+            Var $num1, $num2, $num3, $num4 :  String = expression;
+            Var $num1, $num2, $num3, $num4 :  Boolean = expression;
+            MyFunc(a,b : Int ; c : Float){
+               Var num1, num2, num3, num4 :  Int = 100 + 100,123 + 1299, 54 + 55;
+               If(True && True && True){
+                a = b;   
+               }
+               Else{
+                   Var num1, num2, num3, num4 :  Int = expression, expression;
+                   If ( a>= b ){
+                       a = b && f; 
+                       b =  ant + ant2 + 22; 
+                       c =d ;
+                       Foreach (i In 1 .. 100 By 2 ){
+                            If(a >= b ){
+                                a = b +1 ;
+                                Continue;
+                            }
+                            Elseif(a < b ){
+                                a = b-1; 
+                                Break;
+                            }
+                       } 
+                       return a;
+                   }
+               }
+            }
+        }
+        """
+        expect = "successful"
+        self.assertTrue(TestParser.test(input,expect,201))
+
+    # def test_more_complex_program(self):
+    #     """More complex program"""
+    #     input = """int main () {
+    #         putIntLn(4);
+    #     }"""
+    #     expect = "successful"
+    #     self.assertTrue(TestParser.test(input,expect,202))
+    
+    # def test_wrong_miss_close(self):
+    #     """Miss ) int main( {}"""
+    #     input = """int main( {}"""
+    #     expect = "Error on line 1 col 10: {"
+    #     self.assertTrue(TestParser.test(input,expect,203))

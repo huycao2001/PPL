@@ -1,0 +1,7 @@
+
+        Class Program{
+            main(){
+                Var _ : Int = 0b1011; 
+            }
+        }
+    

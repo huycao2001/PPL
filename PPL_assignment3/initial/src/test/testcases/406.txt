@@ -1,0 +1,5 @@
+Class Shape{
+                        foo(a:Int){
+                            Val a:Int = 1;
+                        }
+                    }

@@ -1,0 +1,65 @@
+1) while(exp) stmt 
+
+emitLabel(label0) 
+visit(exp)
+emitIFFALSE(label1)
+visit(stmt)
+emitGOTO(label0)
+emitLabel(label1)
+
+2) Let op be a binary operator like = or *, Assume that visit(op) is used to generate 
+code for op and visit(exp1) for exp1 and visit(exp2) for exp2.
+The order of code gen is : 
+visit(exp1)
+visit(exp2)
+visit(op)
+
+3) for(exp1 ; exp2 ; exp3 ) stmt;
+visit(exp1)
+emitLABEL(label0)
+visit(exp2)
+emitIFFALSE(label1)
+
+visit(stmt)
+
+visit(exp3)
+emitGOTO(label0)
+
+emitLabel(label1)
+
+4) Let op be a unary (- or !)
+Code generation : 
+visit(exp)
+visit(op)
+
+5) do stmt while exp
+
+emitLABEL(label0)
+visit(stmt)
+visit(exp)
+emitIFTRUE(label0)
+
+6) in do while, where is the ins emitLABEL(breakLabel) to help generating
+break inside stmt ? 
+
+-> After the conditional jump instruction to move the control up to stmt. 
+
+7) In for(exp1 ; exp2 ; exp3 ) stmt; , where is the ins emitLABEL(continueLabel) to help generating
+continue inside stmt ? 
+-> Before visit(exp3) (maybe)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,18 @@
+
+        Class Vinfast{
+            Var running: Boolean = True;
+            Val speed: Int;
+            Constructor(){
+                Self.speed = 10000000;
+            }
+            Constructor(speed: Int){
+                Self.speed = speed;
+            }
+            run(){
+                Self.running = True;
+            }
+            stop(){
+                Self.running = False;
+            }
+        }
+        

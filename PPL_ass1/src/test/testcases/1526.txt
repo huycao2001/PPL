@@ -1,0 +1,1 @@
+Class F:_{Var pn_,_,$2:Array [Boolean ,0b1];Var $s,$V_,____,F:Int ;Destructor (){Continue ;_::$v();}Destructor (){Var ____:_;} }Class B{$_(){} }Class v{Constructor (){} }Class _{Var D4:Int ;____(){}Destructor (){Continue ;Break ;} }

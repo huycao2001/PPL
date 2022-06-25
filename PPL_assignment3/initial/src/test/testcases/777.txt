@@ -1,0 +1,8 @@
+
+        Class Program {
+            Val a : Array[Int, 1] = Array(1);
+            main(){
+                Self.a[0] = 1;
+            }
+        }
+        

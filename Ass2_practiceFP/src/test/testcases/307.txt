@@ -1,0 +1,5 @@
+
+        Class A{
+            Var x,y,$z : Int;
+        }
+        

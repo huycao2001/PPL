@@ -1,0 +1,1 @@
+Class _:dapt{Destructor (){Continue ;} }Class _T{Destructor (){}Destructor (){Continue ;New M().Ur._();} }Class _:o0{}

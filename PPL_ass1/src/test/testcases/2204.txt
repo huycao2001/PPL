@@ -1,0 +1,1 @@
+Class t____:_a_2{Destructor (){}Constructor (){}Constructor (){}Constructor (_,_,_,_,XiMR:Array [String ,06]){} }Class o{}

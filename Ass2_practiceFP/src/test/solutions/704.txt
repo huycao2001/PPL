@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(x),[]),ClassDecl(Id(_),[]),ClassDecl(Id(P),[]),ClassDecl(Id(NR19),[AttributeDecl(Static,ConstDecl(Id($w),ArrayType(84,IntType),None)),AttributeDecl(Static,ConstDecl(Id($_),ArrayType(96,ArrayType(98,ArrayType(74,ArrayType(3,ArrayType(19,BoolType))))),None)),AttributeDecl(Static,ConstDecl(Id($p),ArrayType(8,ArrayType(2,IntType)),None))])])

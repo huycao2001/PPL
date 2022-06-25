@@ -1,0 +1,11 @@
+
+        Class Program {
+            main() {
+                (abc[123]).funct();
+                a[123] = "1";
+                Out.println(f.a[1]);
+                ((((efh[32][1]).a[21]).funct()[0]).a[21]).funct();
+                Return;
+            }
+        }
+        

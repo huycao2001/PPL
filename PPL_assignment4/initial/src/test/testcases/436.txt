@@ -1,0 +1,6 @@
+
+                        Class Shape{
+                            ffufuf(){
+                                Var a : Int = 1 + 1 + 1 + 1 + True;
+                            }
+                        }

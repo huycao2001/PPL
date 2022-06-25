@@ -1,0 +1,27 @@
+    def visitBinExpr(self,ctx,o):
+        lhsCode, lhsType = self.visit(ctx.e1 , o)
+        rhsCode, rhsType = self.visit(ctx.e2 , o)
+        if type(lhsType) == IntType and type(rhsType) == IntType:
+            if ctx.op in ['+', '-']:
+                return lhsCode + rhsCode + self.emit.emitADDOP(ctx.op, IntType(), o.frame), IntType()
+            elif ctx.op == '*':
+                return lhsCode + rhsCode + self.emit.emitMULOP(ctx.op, IntType(), o.frame), IntType()
+            elif ctx.op == '/':
+                lhsCode += self.emit.emitI2F(o.frame)
+                rhsCode += self.emit.emitI2F(o.frame)
+                return lhsCode + rhsCode + self.emit.emitMULOP(ctx.op, FloatType(), o.frame), FloatType()
+            else:    
+                return lhsCode + rhsCode + self.emit.emitREOP(ctx.op, IntType(), o.frame), BoolType()
+                
+        if type(lhsType) is  IntType:
+            lhsCode += self.emit.emitI2F(o.frame)
+        if type(rhsType) is IntType:
+            rhsCode += self.emit.emitI2F(o.frame)
+        
+        if ctx.op in ['+', '-']:
+            return lhsCode + rhsCode + self.emit.emitADDOP(ctx.op, FloatType(), o.frame), FloatType()
+        elif ctx.op == '*' or ctx.op == '/':
+            return lhsCode + rhsCode + self.emit.emitMULOP(ctx.op, FloatType(), o.frame), FloatType()
+        else:    
+            return lhsCode + rhsCode + self.emit.emitREOP(ctx.op, FloatType(), o.frame), BoolType()
+            

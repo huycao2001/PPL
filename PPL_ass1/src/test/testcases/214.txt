@@ -1,0 +1,30 @@
+
+        Class Rectangle : Shape{
+            Var width : Float;
+            Val length : Float;
+
+            Constructor(a,b : Float){
+                Self.width = a; 
+                Self.length = b;
+            }
+
+            getArea(){
+                Return Self.width * Self.length; 
+            }
+            
+            Destructor(){
+                ## Might do something here ##
+            }
+            
+        }
+
+        Class Program{
+            main(){
+                Var a : Float = 12.5; 
+                Var b : Float = 23.101;
+                Var rect: Rectangle = New Rectangle(a,b);
+                Out.Println(rect.getArea());
+            }
+            
+        }
+        

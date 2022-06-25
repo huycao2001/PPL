@@ -1,0 +1,7 @@
+
+                        Class Shape{
+                            
+                                Val a:Int ;
+                                
+                            
+                        }

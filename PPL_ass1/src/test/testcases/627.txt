@@ -1,0 +1,1 @@
+Class N:G{Constructor (){} }Class _{Destructor (){}Constructor (c:Int ){}Val Q,$zv:P_;Var $W:Array [Int ,0x30];Var $p_:Float ;Destructor (){} }

@@ -1,0 +1,17 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Boolean = True;
+                Val b : Boolean = !a;
+                Val d : Int = 1;
+                Val c : Float = 1.0 + d * 2;
+                Val f : Boolean = (a || b) && (d >= c);
+                Val e : String = a;
+            }
+        }
+        

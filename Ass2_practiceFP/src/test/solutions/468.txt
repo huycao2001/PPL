@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(_9VsIS0tgyA),[MethodDecl(Id(_zZS),Instance,[param(Id(U),ArrayType(98,IntType)),param(Id(_0),ArrayType(21,ArrayType(57,IntType))),param(Id(B_g5A21),ArrayType(45,ArrayType(85,ArrayType(76,ArrayType(24,ArrayType(1,ArrayType(6,BoolType)))))))],Block([]))])])

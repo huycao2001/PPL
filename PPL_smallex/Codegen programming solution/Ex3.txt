@@ -1,0 +1,14 @@
+    #Class BinExpr in AST is declared with field op in str type, e1 and e2 in Expr type
+
+    def visitBinExpr(self,ctx,o):
+        code1, type1  = self.visit(ctx.e1, o) # This should be a tuple 
+        code2, type2  = self.visit(ctx.e2, o) 
+        op = ctx.op
+        if op in ['+' , '-']:
+            return code1 + code2 + self.emit.emitADDOP(op, IntType(), o.frame) , IntType()
+        elif op in ['*' ,'/']:
+            return code1 + code2 + self.emit.emitMULOP(op,IntType(), o.frame ) , IntType()
+        elif op in ['+.' , '-.']:
+            return code1 + code2 + self.emit.emitADDOP(op[:-1] , FloatType() , o.frame), FloatType()
+        elif op in ['*.' , '/.']:
+            return code1 + code2 + self.emit.emitMULOP(op[:-1] , FloatType() , o.frame), FloatType()

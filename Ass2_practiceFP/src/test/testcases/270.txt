@@ -1,0 +1,19 @@
+ 
+        Class Base{
+            print(){
+                Return "This is base class";
+            }
+        }
+
+        Class Subclass : Base{
+            print(){
+                Return "This is sub class";
+            }
+        }
+
+        Class Subsubclass : Subclass{
+            print(){
+                Return "This is sub sub class";
+            }
+        }
+        

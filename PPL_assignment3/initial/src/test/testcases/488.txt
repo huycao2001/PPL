@@ -1,0 +1,7 @@
+     
+                        Class Shape {
+                           Funtion(){
+                                Var a: Array[Array[Int, 2],2] = Array(Array(1,2),Array(4,5));
+                                Var b: Array[Array[Int, 2],2] = Array(Array(2,3),Array(10));
+                           }               
+                        }

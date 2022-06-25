@@ -1,0 +1,11 @@
+
+        Class League_of_Legend{
+            Destructor(){
+                Status = 0x123;
+                Return;
+                Run::$Client.start();
+            } 
+        }
+        
+        Class Master:Rank{}
+        

@@ -1,0 +1,20 @@
+
+                        Class Huycao{
+                            Shape(){
+                                Var i:Int;
+                                Var Flag :Boolean= True; 
+                                Var Clone : Boolean = False;
+                                Foreach(i In 1 .. 10 By 1){
+                                    Var a:Int = 1;
+                                    Break;
+                                    If (True){
+                                        Var a:Int = 1;
+                                        If(Flag || Clone){
+                                            Break;
+                                        }
+                                        Continue;
+                                    }
+                                }
+                                Continue;
+                            }
+                        }

@@ -1,0 +1,1 @@
+Class Y2K{}Class _:_u{Destructor (){}Val $33,_:Boolean ;Val $_:Array [String ,0x2F];Destructor (){}Var _1cr4,$_,$_TI8_,gF__4_is_Y_:Int ;Constructor (){Continue ;} }

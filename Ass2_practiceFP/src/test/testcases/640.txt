@@ -1,0 +1,1 @@
+Class m{Var s_,_:Array [Array [Array [Array [Array [Array [Int ,9],0X8],067],067],0B1110],067];Destructor (){}Val w:Int ;}Class _{}Class G:_V{Constructor (){} }Class F5N{}Class __:wG{Destructor (){} }Class _{}Class _{}

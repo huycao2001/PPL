@@ -1,0 +1,10 @@
+
+        Class Program {
+            Var a : Int;
+            a() {}
+            main(){
+                Return;
+                Val a : Int = Self.a;
+            }
+        }
+        

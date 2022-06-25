@@ -1,0 +1,25 @@
+
+        Class Program{
+            addNewNode(newNode,head: Int){
+                newNode.next_node = head;
+                head = new_node;
+            }
+            deleteNode(position,head: Int){
+                If(head == 0){
+                    head = head.next_node;
+                }
+                Else{
+                    Var curr: Int = head.next.next;
+                    Var prev: Int = curr;
+                    Foreach(i In 2 .. position)
+                    {
+                        prev = curr;
+                        curr = curr.next_node;
+                    }
+                    prev.next = curr;
+                    head = prev;
+                }
+
+            }
+        }
+    

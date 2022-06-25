@@ -1,0 +1,13 @@
+
+        Class P {
+            Destructor() {
+                Return;
+            }
+        }
+        Class Program {
+            main() {
+                Var p : P;
+                Val a : Int = 1.2;
+            }
+        }
+        

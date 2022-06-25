@@ -1,0 +1,10 @@
+
+        Class Shape {
+            Var a : Array[Int,4] = Array(1,2,3,4);
+            Var b : Array[String,3] = Array ("cao", "ba" , "huy");
+            $getNumOfShape() {
+                Return $numOfShape;
+            }
+        }
+
+        

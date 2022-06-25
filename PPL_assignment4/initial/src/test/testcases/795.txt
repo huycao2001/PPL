@@ -1,0 +1,13 @@
+
+        Class ABC {
+            Var a : Int = 1;
+        }
+        Class Program {
+            main(){
+                Return;
+            }
+            method(){
+                Var b : Int = ABC.a;
+            }
+        }
+        

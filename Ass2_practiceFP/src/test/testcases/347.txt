@@ -1,0 +1,7 @@
+
+        Class Shape{
+            func_tion(){
+               A[b[c[d[e[f::$g]]]]][h::$i][j.k()][F::$DDD()]=0;
+            }
+        }   
+        

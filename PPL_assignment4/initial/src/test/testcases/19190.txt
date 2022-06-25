@@ -1,0 +1,13 @@
+
+        Class Program{
+          main() {
+            Val v: Array[Array[Int, 2], 2] = Array(Array(2,3), Array(4,5));
+            Val v2: Int = v[1][0];
+            Var a: Array[Array[Int, 2], 2];
+            a[1] = a[0];
+            Var x: Int;
+            x = a[1][0];
+            x = a[1];
+          }
+        }
+        

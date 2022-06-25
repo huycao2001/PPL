@@ -1,0 +1,9 @@
+
+        Class Animal {}
+        Class Program {
+          main() {
+          }
+          foo(a, b: Int; c: Animal){
+          }
+        }
+        

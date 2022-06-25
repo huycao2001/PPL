@@ -1,0 +1,7 @@
+
+        Class myProgram {
+            Val a, b, c : Int = 10 + 10 , 22*33 , 100/2;
+            Val length, width : Float = (25.2 + 3.0 )/4.2 , 22.3 + 33.1 * 4 / 2e10 ; 
+            Var $x, $y : Int = 0, 0;
+        }
+        

@@ -1,0 +1,12 @@
+
+        Class ABC {
+            Constructor(w: Int) {}
+        }
+        Class Program{
+            main() {
+                Var a : ABC = New ABC(1);
+                Var b : ABC = New ABC();
+                Return;
+            }
+        }
+        

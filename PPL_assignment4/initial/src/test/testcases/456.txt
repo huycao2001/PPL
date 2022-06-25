@@ -1,0 +1,14 @@
+
+        Class Program
+        {
+            Var $myArray: Array[Array[Array[Int,5],2],2] = Array(
+                    Array(
+                        Array(1,2,3,4),
+                        Array(1,2,3,4)
+                    ),
+                    Array(
+                        Array(1,2,3,4),
+                        Array(1,2,3,4)
+                    )
+                );
+        }

@@ -1,0 +1,16 @@
+
+        Class Program{
+            main(a : Int){
+            If (1 + 2 == 0) {
+                OutScreen.println(3 * 2);
+            }
+            Elseif (1 + 2 == "3") {
+                Sys32.terminate(41241211 - "4124124124");
+            }
+            Else {
+                Break;
+                Return;
+            }
+            }
+        }
+        

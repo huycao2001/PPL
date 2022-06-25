@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Program),[MethodDecl(Id(a),Instance,[],Block([ConstDecl(Id(a),ClassType(Id(ABC)),NullLiteral()),ConstDecl(Id(b),ClassType(Id(BCD)),NewExpr(Id(X),[])),AssignStmt(Id(a),NewExpr(Id(XYZ),[BinaryOp(+,IntLit(291),IntLit(0)),BinaryOp(-,Id(a),BinaryOp(*,IntLit(1),Id(b))),BinaryOp(+,BinaryOp(/,IntLit(153),FloatLit(7.123)),Id(d)),StringLit(Hello World)]))]))])])

@@ -1,0 +1,23 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Float = 1.0 + 2.5;
+                Val b : Int = 1 + 3;
+                Val d : Int = 1 - 2;
+                Val e : Float = 1.0 - 2.0;
+                Val f : Float = 1 - 3.5;
+                Val g : Int = 1 * 2;
+                Val h : Float = 1.0 * 2.5;
+                Val i : Float = 1 * 2.5;
+                Val j : Int = 1 / 2;
+                Val k : Float = 1.0 / 2.0;
+                Val l : Float = 1.0 / 3;
+                Val m : Int = 1 % 10;
+                Val c : Int = 1 + 3.0;
+            }
+        }

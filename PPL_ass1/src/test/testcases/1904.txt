@@ -1,0 +1,1 @@
+Class _{Constructor (tp:Array [Array [Array [Array [Array [Array [Array [Array [Array [Boolean ,10],10],0b1],0XD2_EBF_E],0b1_10],0X5],0b1],0b1011111],10];_,uBZu,_,_:Array [String ,0B100110]){}Var $n_s:D_yb94_a46;}

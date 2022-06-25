@@ -1,0 +1,1 @@
+Type Mismatch In Statement: VarDecl(Id($myArray),ArrayType(3,ArrayType(2,ArrayType(4,IntType))),[[[IntLit(3),IntLit(5),IntLit(2),IntLit(1)],[IntLit(2),IntLit(4),IntLit(5),IntLit(6)]],[[IntLit(5),IntLit(7),IntLit(6),IntLit(5)],[IntLit(1),IntLit(3),IntLit(5),IntLit(7)]]])

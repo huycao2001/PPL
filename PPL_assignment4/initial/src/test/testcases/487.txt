@@ -1,0 +1,14 @@
+     
+                        Class A {
+                           Var a:Int = 1;                      
+                        }                        
+                        Class B{ 
+                            Var $b:A = New A(); 
+                        }
+                        Class C{
+                            foo(){
+                                Var count:B = New B();
+                                Var entity:Int = B::$b.a;
+                                Var flag:Int = B::$b.fun;
+                            }
+                        }

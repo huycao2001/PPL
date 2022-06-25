@@ -1,0 +1,11 @@
+
+        Class Program{
+            main(){
+                If(FFF == True){
+                    Foreach(idx In 1+1 .. 1*2+3 By CPU.nVidia("RTX 3090")){
+                        Foreach (x In E::$F() .. a.b.c.d By H::$XYZ){}
+                    }
+                }
+            }
+        }                
+        

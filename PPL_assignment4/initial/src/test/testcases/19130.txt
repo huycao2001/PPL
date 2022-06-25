@@ -1,0 +1,16 @@
+
+        Class Program {
+          main() {
+            Foreach (i In 1 .. 5) {
+              Break;
+              Foreach (i In 1 .. 100 By 20) {
+                Continue;
+                If (False) {
+                  Val i: Float = 213_321.3e-4;
+                }
+                Var i: Int;
+              }
+            }
+          }
+        }
+        

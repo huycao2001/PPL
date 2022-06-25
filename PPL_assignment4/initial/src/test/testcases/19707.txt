@@ -1,0 +1,12 @@
+
+        Class A {
+          Var b: Int;
+          Var $b: Int;
+        }
+        Class Program {
+          main() {
+            Var b: A;
+            Var x: Int = b::$b;
+          }
+        }
+        

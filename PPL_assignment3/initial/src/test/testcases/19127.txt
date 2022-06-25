@@ -1,0 +1,13 @@
+
+        Class Program {
+          foo(a: Int) {
+            If(False) {
+              Var a: Int;
+            }
+            Else {
+              Var a: Int;
+              Var b, b: String;
+            }
+          }
+        }
+        

@@ -1,0 +1,23 @@
+
+        Class ABC{}
+        Class DEF{}
+        Class Program {
+            a(w : ABC) {
+                Return;
+            }
+            c(w: DEF; a: ABC; c: String) {}
+            b() {
+                Var a : DEF;
+                Var e : ABC;
+                Self.a(e);
+                Val d : String = "Hello World";
+                Self.c(a, e, d);
+                Self.c(Null, e, d);
+                Var b : ABC;
+                Self.c(b, b, d);
+            }
+            main(){
+                Return;
+            }
+        }
+        

@@ -1,0 +1,27 @@
+
+        Class Shape{
+            Var a : Float;
+            Var b : Float;
+            Var $count : Int = 0; 
+            Constructor(a,b : Float){
+                Self.a = a; 
+                Self.b = b; 
+                Shape::$count = Shape::$count + 1; 
+            }
+            $getCount(){
+                Return Shape::$count;
+            }
+            $getArea(){
+                Return Self.a * Self.b;
+            }
+        }
+
+        Class Program {
+            main() {
+                Var a : Shape = New Shape(2.0, 3.0);
+                Var b : Shape = New Shape(12.45 , 13.e10);
+                Var c : Shape = New Shape(.e10 , 12e0);
+                Var list : Array[Shape, 3] = Array(a,b,c);
+            }
+        }
+        

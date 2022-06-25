@@ -1,0 +1,1 @@
+Type Mismatch In Statement: If(IntLit(5),Block([ConstDecl(Id(a),IntType,IntLit(5))]))

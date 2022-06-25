@@ -1,0 +1,7 @@
+
+        Class Program {
+            main(w: Int) {
+                Return;
+            }
+        }
+        

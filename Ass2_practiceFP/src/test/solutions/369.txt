@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Car),[MethodDecl(Id(run),Instance,[],Block([For(Id(hp),NewExpr(Id(Engine),[StringLit(Start)]),CallExpr(FieldAccess(CallExpr(Self(),Id(wheel),[]),Id(A)),Id(bar),[]),Id(BKC),Block([Call(Self(),Id(display),[Id(speed)])])])]))])])

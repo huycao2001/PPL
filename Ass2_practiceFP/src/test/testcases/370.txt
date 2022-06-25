@@ -1,0 +1,9 @@
+
+        Class Program {
+            a() {
+                Val a : ABC = Null;
+                a = New XYZ(1 + 2, a - 4 * b, 10 / 7 + d, "Hello World");
+                Self.display(a.b.c.d);
+            }
+        }
+        

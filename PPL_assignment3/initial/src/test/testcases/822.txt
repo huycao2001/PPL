@@ -1,0 +1,13 @@
+
+        Class CED {
+            Var c : Int;
+        }
+        Class ABC {
+            Var ced : CED;
+        }
+        Class Program{
+            main() {
+                Val x : Int = ABC.ced.c;
+            }
+        }
+        

@@ -1,0 +1,8 @@
+
+        Class Program {
+          main() {
+            Val arr: Array[Int, 2] = Array(6,9);
+            arr = Array(1,2);
+          }
+        }
+        

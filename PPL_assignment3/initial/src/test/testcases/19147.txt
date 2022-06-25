@@ -1,0 +1,13 @@
+
+        Class Program {
+          foo(a: Float) {
+          }
+          food(a: String) {
+          }
+          Val a: Int = 2;
+          main() {
+            Self.foo(Self.a);
+            Self.food(Self.a);
+          }
+        }
+        

@@ -1,0 +1,8 @@
+
+        Class C{
+            Constructor(a : Int){
+                {}
+                Return D;
+            }
+        }
+        

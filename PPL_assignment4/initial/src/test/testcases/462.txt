@@ -1,0 +1,9 @@
+
+                        Class Program{
+                            main(){
+                                Val flag:Int = 0;
+                                Val b:Int = 1;
+                                Val c:Float = b+1;
+                                Val d:Float = flag + 1;
+                            }
+                        }

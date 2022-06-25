@@ -1,0 +1,15 @@
+
+        Class CED {
+            Val c : Int = 1;
+        }
+        Class ABC {
+            Var ced : CED;
+        }
+        Class Program{
+            main() {
+                Val a : ABC = New ABC();
+                Val x : Int = a.ced.c;
+                Return;
+            }
+        }
+        

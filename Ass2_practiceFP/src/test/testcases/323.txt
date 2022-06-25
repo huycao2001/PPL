@@ -1,0 +1,8 @@
+
+        Class Programming{
+            Val $x: Int = 10_3;
+            main(){
+                Val y: Int = 11.23123;
+            }
+        }
+        

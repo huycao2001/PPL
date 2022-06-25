@@ -1,0 +1,8 @@
+
+        Class Shape {
+            foo() {
+                Val a : Int = ABC::$a.b.c.d[1][2][3][4][(0 + 012 + 0xA5 + 0XA3 + 0b10101 + 0B1010)];
+                Var b : Int = 0x0 + 0X0 + 0b0 + 0B0 + 00 + 0;
+            }
+        }
+        

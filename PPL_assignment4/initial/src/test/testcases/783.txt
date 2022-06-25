@@ -1,0 +1,9 @@
+
+        Class Program {
+            main(){
+                Var b : Int;
+                Val a : Int = b;
+                Return;
+            }
+        }
+        

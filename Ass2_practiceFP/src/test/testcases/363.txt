@@ -1,0 +1,7 @@
+
+        Class Shape {
+            foo() {
+                Val c, d : Float = .e123 , 1e-101;
+            }
+        }
+        

@@ -1,0 +1,11 @@
+    def visitId(self,ctx,o):
+        for i in o.sym:
+            if i.name == ctx.name:
+                if type(i.value.value) is int : 
+                    return self.emit.emitREADVAR(i.name,i.mtype,i.value.value,o.frame),i.mtype
+                else : # Loading a static variable of a class. type(i.value.value) ==  CName
+                    return self.emit.emitGETSTATIC(i.value.value + '.' + i.name, i.mtype,o.frame),i.mtype
+                
+    # Note : when loading a static var to stack, the jasmin code is 
+    # getstatic VD12.a I, so thats why we should have a dot.
+    # Beside a dot , Forward slash '/' works fine too

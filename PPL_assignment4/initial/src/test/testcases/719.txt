@@ -1,0 +1,14 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val d : Int = -1;
+                Val e : Float = -1.1;
+                Val b : Boolean = !True;
+                Val a : Int = -1.0;
+            }
+        }

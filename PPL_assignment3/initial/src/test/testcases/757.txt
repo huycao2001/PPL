@@ -1,0 +1,15 @@
+
+        Class ABC{}
+        Class Program {
+            a(w : Float) {
+                Return;
+            }
+            b() {
+                Self.a(1);
+                Self.c();
+            }
+            main(){
+                Return;
+            }
+        }
+        

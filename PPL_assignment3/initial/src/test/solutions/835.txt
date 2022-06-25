@@ -1,0 +1,1 @@
+Type Mismatch In Statement: For(Id(b),IntLit(100),IntLit(10000),IntLit(1),Block([ConstDecl(Id(a),IntType,IntLit(1))])])

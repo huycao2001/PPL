@@ -1,0 +1,14 @@
+
+        Class iPhone:Apple{
+                Val $os: String = "iOS";
+                Var IMEI: String; 
+                Var $phone_number: Int;
+                Var $phone: Array[Boolean, 100];
+                insertSIM(sim: SIM){
+                    Self.phone_number = SIM.number;
+                }
+                detachSIM(){
+                    Self.phone_number = Null;
+                }
+        }
+        

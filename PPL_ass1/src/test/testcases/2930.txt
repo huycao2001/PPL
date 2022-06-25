@@ -1,0 +1,1 @@
+Class _{Constructor (_,__2,_:Array [Boolean ,0B111100];m1,e6_,f,w_X_:Float ;L,__3:String ;M_:Array [Array [Boolean ,63],05]){}Destructor (){Break ;} }

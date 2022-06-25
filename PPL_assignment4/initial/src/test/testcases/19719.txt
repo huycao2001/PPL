@@ -1,0 +1,13 @@
+
+        Class Parent{
+          Val $c: Int = 1;
+          Var $v: Int = 1;
+        }
+        Class Child:Parent{}
+        Class Program{
+          main(){
+            Val a: Int = Parent::$c;
+            Val b: Int = Parent::$v;
+          }
+        }
+        

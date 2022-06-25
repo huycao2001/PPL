@@ -1,0 +1,4 @@
+
+        Class Child : Parent {
+        }
+        

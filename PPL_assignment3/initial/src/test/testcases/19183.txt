@@ -1,0 +1,19 @@
+
+        Class Program {
+          main() {
+          }
+        }
+        Class P {
+          Var a: Int;
+          Var $a: Int;
+        }
+        Class C : P{
+          Var b: Int;
+          Var $b: Int;
+          foo() {
+            Var c: Int = Self.b;
+            Var c2: Int = P::$a;
+            Var c3: Int = P::$b;
+          }
+        }
+        

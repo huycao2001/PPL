@@ -1,0 +1,32 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Int = 1;
+                Var b, d : Int;
+                If (True) {
+                    Foreach (b In 1 .. 10 By -1) {
+                        Val a : Float = 1.0;
+                    }
+                } Else {
+                    Val c : Int = 1;
+                    Foreach (d In 10 .. 100) {
+                        If (d == 1) {
+                            Val d : String = "abc";
+                        } Elseif (d >= 2.0) {
+                            Val a : Int = 1;
+                        } Elseif ("abc" ==. "def") {
+                            Val c : Float = 1.0;
+                            If (c == 2) {
+                                Val e : Int = 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        

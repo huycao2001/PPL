@@ -1,0 +1,6 @@
+
+        Class Device{
+                Var weight: Float = 0.0;
+                Var smart: Boolean = False;
+        }
+        

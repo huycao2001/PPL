@@ -1,0 +1,8 @@
+
+        Class A {
+            Var a : Int;
+            $a() {
+                Var a : Int = Self.a;
+            }
+        }
+        

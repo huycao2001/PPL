@@ -1,0 +1,14 @@
+
+        Class Bullet {
+          Constructor(a: Int) {
+          }
+        }
+        Class Program {
+          main() {
+            Var aV: Bullet = New Bullet(1);
+            Val aC: Bullet = New Bullet(2);
+            Val b1: Bullet = aC;
+            Val b2: Bullet = aV;
+          }
+        }
+        

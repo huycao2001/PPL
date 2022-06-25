@@ -1,0 +1,10 @@
+
+        Class Program {
+          main() {
+          }
+          Var $a: Int = 420;
+          Val b: Int = 2;
+          Val c: Float = 3;
+          Val d: Float = Self.b + Self.c - 2 * (Self.b % Program::$a);
+        }
+        

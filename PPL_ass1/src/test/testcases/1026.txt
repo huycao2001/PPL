@@ -1,0 +1,1 @@
+Class _:_{Var W,$_:Array [String ,3];}Class _:C{Var $_:Array [Float ,0b1010111];Var $_,$_:String ;Var N,_8,$_:F_8;Var w,_5,_:_3;}

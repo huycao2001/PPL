@@ -1,0 +1,11 @@
+
+        Class Program {
+          main() {
+          }
+        }
+        Class A : B {
+          foo() {
+            a = 1;
+          }
+        }
+        

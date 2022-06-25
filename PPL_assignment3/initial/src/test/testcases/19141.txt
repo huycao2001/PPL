@@ -1,0 +1,18 @@
+
+        Class Parent {
+        }
+        Class Child : Parent {
+        }
+        Class Shape {
+          foo() {
+          }
+          Constructor (a: Float; b: Parent) {
+          }
+        }
+        Class Program {
+          main() {
+            Var a: Shape = New Shape(4, New Child());
+            Val b: Shape = New Shape();
+          }
+        }
+        

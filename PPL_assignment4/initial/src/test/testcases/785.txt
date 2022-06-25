@@ -1,0 +1,15 @@
+
+        Class ABC {
+            Val b : Int = 1;
+            Constructor(){}
+        }
+        Class Program {
+            main(){
+                Var c : ABC = New ABC();
+                Val d : ABC = New ABC();
+                Val a : Int = d.b;
+                Val b : ABC = c;
+                Return;
+            }
+        }
+        

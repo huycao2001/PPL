@@ -1,0 +1,12 @@
+
+        Class Shape {
+          foo() {
+          }
+        }
+        Class Program {
+          main() {
+            Var a: Shape = New Shape();
+            Val b: Shape = New Shape(1);
+          }
+        }
+        

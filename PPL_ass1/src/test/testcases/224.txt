@@ -1,0 +1,10 @@
+
+        Class Program{
+            main(){
+                Var a : Array[Int,4] = Array(1,2,3,4); 
+                Foreach (i In 1 .. 4 By 1){
+                    a[i] = a[i] * a[i] + 200 - 100/4; 
+                }
+            }
+        }
+        

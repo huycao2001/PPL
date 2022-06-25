@@ -1,0 +1,40 @@
+
+        Class ABC{
+            Constructor() {
+                Return;
+            }
+            bbb(j, i: String; k: Boolean) {
+                If (k) {
+                    Return j;
+                } Else {
+                    Return i;
+                }
+            }
+        }
+        Class CED {
+            Constructor(w, h: Int; a : String) {
+                Var b : Boolean = a ==. "Hi";
+                Var c : Float = w * h;
+                Return;
+            }
+        }
+        Class Program {
+            a(w: Float; h: Int; a : ABC) {
+                If ((a.bbb("Hello", "World", True) +. "Cool") ==. "Amazing") {
+                    Return h + 1.0;
+                } Else {
+                    Return w;
+                }
+            }
+            b() {
+                Var a : ABC = New ABC();
+                Var b : Float = Self.a(1.0, 1, a) + 1;
+                Var c : CED = New CED(1, 2, "Hi");
+                Self.a(1.0, 1, a);
+            }
+            main(){
+                Return;
+            }
+            c(){}
+        }
+        

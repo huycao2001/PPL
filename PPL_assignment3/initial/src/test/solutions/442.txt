@@ -1,0 +1,1 @@
+Type Mismatch In Statement: VarDecl(Id(huycao),IntType,BinaryOp(+,Id(a),Id(b)))

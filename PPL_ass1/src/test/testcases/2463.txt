@@ -1,0 +1,1 @@
+Class XX4p:c{}Class _1{Constructor (){}Var _:Array [Int ,0b1010001];Constructor (E8:Array [String ,0B1];_:Array [Array [Int ,0B10_0_0],12];Y,H:Int ){Continue ;Continue ;} }

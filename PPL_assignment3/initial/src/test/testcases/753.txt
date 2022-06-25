@@ -1,0 +1,9 @@
+
+        Class Program {
+            main() {
+            }
+            method() {
+                Val a : Int = 1.2;
+            }
+        }
+        

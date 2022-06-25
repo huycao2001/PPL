@@ -1,0 +1,14 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val b : Int = 1;
+                Val c : Int = 1 + b;
+                Val d : String = 1 + b;
+            }
+        }
+        

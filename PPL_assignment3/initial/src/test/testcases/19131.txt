@@ -1,0 +1,8 @@
+
+        Class Program {
+          main() {
+            Var arr: Array[Int, 5];
+            Var arr: Array[Float, 4];
+          }
+        }
+        

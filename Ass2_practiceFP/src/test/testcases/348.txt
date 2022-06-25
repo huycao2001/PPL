@@ -1,0 +1,10 @@
+
+        Class Shape{
+            func_tion(){
+                If (a == -1--1){
+                    If(b == "c"+."c"){}
+                    Elseif(SHAPE == b ==. c){}
+                }
+            }
+        }   
+        

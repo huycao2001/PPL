@@ -1,0 +1,20 @@
+
+        Class Shape{
+            Var name : String;
+        }
+
+        Class Circle : Shape{
+            Var radius : Float; 
+            Constructor(a : Float){
+                Self.radius = float; ## This will not be printed ##
+            }
+
+            getArea(){
+                Return Self.radius * Self.Radius * 3.14; 
+            }
+            ## Define function ##
+            getPerimeter(){
+                Return Self.radius * 2 * 3.14;
+            }
+        }
+        

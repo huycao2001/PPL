@@ -1,0 +1,11 @@
+
+        Class ABC {
+            Val b : Array[Int, 1] = Array(1);
+        }
+        Class Program {
+            main(){
+                Var b : ABC;
+                b.b[0] = 1;
+            }
+        }
+        

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Router),Id(Device),[MethodDecl(Id(start),Instance,[],Block([Return(CallExpr(Self(),Id(status),[]))])),MethodDecl(Id(status),Instance,[],Block([Continue])),MethodDecl(Id($Refresh),Static,[],Block([For(Id(i),FieldAccess(Id(_),Id($quantity)),IntLit(0),UnaryOp(-,IntLit(1)),Block([])])]))])])

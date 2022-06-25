@@ -1,0 +1,13 @@
+
+        Class Program {
+          Val g: Int = 2;
+          foo() {
+          }
+        }
+        Class Subprogram : Program {
+          food(){
+          }
+          food(a: Int){
+          }
+        }
+        

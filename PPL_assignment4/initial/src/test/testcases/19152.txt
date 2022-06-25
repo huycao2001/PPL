@@ -1,0 +1,9 @@
+
+        Class Program {
+          main() {
+            Var b: String;
+            b = "Mahou '"Fainaru Supaaku'"";
+            b = Array("It\'s", "over", "9000");
+          }
+        }
+        

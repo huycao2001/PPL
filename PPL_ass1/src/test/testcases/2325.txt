@@ -1,0 +1,1 @@
+Class K{Destructor (){}Destructor (){Var X:t;Return ;}Destructor (){}Constructor (_,__A_a,_:Int ;_,_92_,_:RZK_){} }Class W:_{}

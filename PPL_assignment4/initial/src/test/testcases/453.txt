@@ -1,0 +1,9 @@
+
+        Class Program
+        {
+            Var myArray : Array[Int, 5];
+            main()
+            {
+                Val Clone: Array[String, 5] = 5;
+            }
+        }

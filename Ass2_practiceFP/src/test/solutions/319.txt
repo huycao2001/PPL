@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(C),[MethodDecl(Id(Destructor),Instance,[],Block([Return(Id(GG))]))])])

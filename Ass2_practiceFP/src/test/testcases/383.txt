@@ -1,0 +1,15 @@
+
+        Class Router:Device{
+            start(){
+                    Return Self.status();
+            }
+            
+            status(){
+                Continue;
+            }
+            
+             $Refresh(){
+                Foreach(i In _::$quantity .. 0 By -1){}
+            }
+        }
+        

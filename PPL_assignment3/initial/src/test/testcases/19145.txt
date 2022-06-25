@@ -1,0 +1,9 @@
+
+        Class Program {
+          main() {
+            Var arr: Array[Int, 5];
+            Val v: String = "Reifu [Musou Fuuin]";
+            Val a: Int = v[0];
+          }
+        }
+        

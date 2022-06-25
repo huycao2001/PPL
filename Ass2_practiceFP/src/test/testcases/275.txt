@@ -1,0 +1,21 @@
+
+        Class Base {
+            Var $numOfObjs: Int = 0;
+            Constructor() {
+                Base::$numOfObjs = BaseClass::$numOfObjs + 1;
+            }
+            $staticMethod() {
+                Out.printLn(Program.gcd(123_456,46*75%3));
+            }
+
+            Destructor() {
+                Base::$numOfObjs = Base::$numOfObjs - 1;
+                Out.printLn("Can't do this forever");
+            }
+        }
+        Class DerivedClass : Base{
+            DerivedClass(){
+                ## Do sth##
+            }
+        }
+    

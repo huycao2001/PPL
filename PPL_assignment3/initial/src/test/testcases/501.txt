@@ -1,0 +1,10 @@
+
+
+
+        Class Program{
+            func(a,b : Int){
+                Var c : Int;
+            }
+            
+        }
+        

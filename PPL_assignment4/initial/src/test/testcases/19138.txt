@@ -1,0 +1,12 @@
+
+        Class Shape {
+          $soo() {
+          }
+        }
+        Class Program {
+          main() {
+            Var a: Shape;
+            a::$soo();
+          }
+        }
+        

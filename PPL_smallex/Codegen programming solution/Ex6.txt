@@ -1,0 +1,52 @@
+    def visitVarDecl(self, ast, o):
+        #class VarDecl in AST is declared with field name in str type, typ in Type type. 
+        #o.frame => manage information
+        # Symbol which has field name in str type, mtype in Type type and val in Val type.
+        # The Val type has 2 concrete classes: Index with field value in int type  
+        #(contain index of variable) and CName with field value in 
+        # str type (contains name of the class which can get from self.className)
+        #o.sym = [name, mtype, value], innermost -> outermost
+
+        frame = o.frame
+        #print(frame)
+        if frame: #local
+            newSym = Symbol(ast.name, ast.typ, Index(frame.getCurrIndex()))
+            self.emit.printout(self.emit.emitVAR(frame.getCurrIndex(), ast.name, ast.typ, frame.getStartLabel(), frame.getEndLabel()))
+            frame.getNewIndex()
+            return newSym
+        else: #global
+            newSym = Symbol(ast.name, ast.typ, CName(self.className))
+            self.emit.printout(self.emit.emitATTRIBUTE(ast.name, ast.typ, False, None))
+            return newSym
+            
+    ''' generate the field (static) directive for a class mutable or immutable attribute.
+    *   @param lexeme the name of the attribute.
+    *   @param in the type of the attribute.
+    *   @param isFinal true in case of constant; false otherwise
+    '''
+    # def emitATTRIBUTE(self, lexeme, in_, isFinal, value):
+    #     #lexeme: String
+    #     #in_: Type
+    #     #isFinal: Boolean
+    #     #value: String
+
+    #     return self.jvm.emitSTATICFIELD(lexeme, self.getJVMType(in_), false)            
+
+            
+            
+    '''    generate the var directive for a local variable.
+    *   @param in the index of the local variable.
+    *   @param varName the name of the local variable.
+    *   @param inType the type of the local variable.
+    *   @param fromLabel the starting label of the scope where the variable is active.
+    *   @param toLabel the ending label  of the scope where the variable is active.
+    '''
+    # def emitVAR(self, in_, varName, inType, fromLabel, toLabel, frame):
+    #     #in_: Int
+    #     #varName: String
+    #     #inType: Type
+    #     #fromLabel: Int
+    #     #toLabel: Int
+    #     #frame: Frame
+        
+    #     return self.jvm.emitVAR(in_, varName, self.getJVMType(inType), fromLabel, toLabel)

@@ -1,0 +1,14 @@
+
+        Class Program
+        {
+            main()
+            {
+                Var firstArray : Array[Array[Int ,2], 3] = Array(
+                    Array(1,2),
+                    Array(3,4),
+                    Array(5,6)
+                );
+                Var secondArray : Array[Int , 2] = firstArray[1];
+                Var thirdArray : Array[Int, 2] = firstArray;
+            }
+        }

@@ -1,0 +1,23 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            Var a : Int = 1;
+            Var $b : Int = 1;
+        }
+        Class BCD {
+            Val a : String = "";
+            Val $b : Float = 0.5;
+            something(){
+                Var c : ABC;
+                Var b : Int = c.a + 1;
+                Val a : Int = 1;
+                Var d : Float = ABC::$b + 1.0;
+                Val e : String = Self.a +. "Hello";
+                Var f : Int = a + 2 + c.a;
+                Var g : Boolean = CDE::$b >= 2.0;
+            }
+        }

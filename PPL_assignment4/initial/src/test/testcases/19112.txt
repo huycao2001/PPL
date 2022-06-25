@@ -1,0 +1,9 @@
+
+        Class Program {
+          Val g: Int = 2;
+          foo(a, b: Int) {
+          }
+          foo(a, b: Int){
+          }
+        }
+        

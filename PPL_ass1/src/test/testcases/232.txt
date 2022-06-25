@@ -1,0 +1,44 @@
+
+        Class Program {
+            main() {
+                Var a : Int = 100; 
+                If(a > 0){
+                    ## do sth ##
+                    a = a + 2; 
+                    If(a > 3){
+                        a = a * 2; 
+                        a = a / 2 + 1;
+                    }
+                    Else{
+                        If(True){
+                            If(True){
+                                ## do sth ##
+                            }
+                            Else{
+
+                            }
+                        }
+                        Else{
+
+                        }
+                    }
+                }
+                Else{
+                    If(False || False && True){
+                        a = a * 2;
+                    }
+                    Else{
+                        If(a > 0){
+                            a = a * 3 / 3;
+                        }
+                        Else{
+                            a = a - 1 - 2 -3; 
+                        }
+                    }
+
+                }
+                Out.println(a);
+            }
+        }
+
+        

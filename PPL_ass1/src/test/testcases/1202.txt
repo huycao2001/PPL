@@ -1,0 +1,1 @@
+Class _:_{Val _2:Array [Float ,61];Destructor (){}Var _1:String ;}Class RZ{Var $R:Array [Array [Array [Array [Int ,7],0b1010001],9_8],6];}

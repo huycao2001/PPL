@@ -1,0 +1,419 @@
+from D96Visitor import D96Visitor
+from D96Parser import D96Parser
+from AST import *
+from functools import reduce
+
+class ASTGeneration(D96Visitor):
+    # program: class_declaration+  EOF;
+    def visitProgram(self, ctx: D96Parser.ProgramContext):
+        lst = []
+        for x in ctx.class_declaration():
+            lst += self.visit(x)
+        return Program(lst)
+        # return Program(reduce(lambda prev, curr : prev + self.visit(curr)  , ctx.class_declaration() , []))
+
+    #
+    # class_declaration : CLASS ID ( COLON ID )? LP member*  RP;
+    def visitClass_declaration(self, ctx : D96Parser.Class_declarationContext ):
+        members = []
+        for x in ctx.member() : 
+            members += self.visit(x)
+        if ctx.ID(1) and ctx.COLON(): # with inheritance
+            return [ClassDecl(Id(ctx.ID(0).getText()),members,Id(ctx.ID(1).getText()) )] 
+        else :
+            return [ClassDecl(Id(ctx.ID(0).getText()),members)] 
+
+    #member : attribute_declaration | method_declaration | constructor | destructor ;
+    def visitMember(self, ctx: D96Parser.MemberContext):
+        return self.visitChildren(ctx)
+    
+    # attribute_declaration : attribute_type attribute_decl_list SEMI_COLON;
+    # [(Int,a) , (Int ,b)]
+    def visitAttribute_declaration(self, ctx: D96Parser.Attribute_declarationContext):
+        att_type = self.visit(ctx.attribute_type())
+        res = []
+        att_decl_list = self.visit(ctx.attribute_decl_list()) # [(int,a) (int , $b)]
+        if(len(att_decl_list[0]) == 2) : # No expression for vars
+            if(att_type == 'Var') : # return Vardecl
+                for data_type,id in att_decl_list : 
+                    if id[0] == '$' : 
+                        res += [AttributeDecl(Static(), VarDecl(Id(id),data_type))]
+                    else : 
+                        res += [AttributeDecl(Instance(), VarDecl(Id(id),data_type))]
+            else : 
+                for data_type, id in att_decl_list : 
+                    if id[0] == '$' :
+                        res += [ AttributeDecl(Static(), ConstDecl(Id(id),data_type ))]
+                    else : 
+                        nullable = None 
+                        if type(data_type) == ClassType : 
+                            nullable = NullLiteral()
+                        res += [AttributeDecl(Instance(), ConstDecl(Id(id),data_type , nullable ))]
+            return res
+        else : # initial values for vars
+            my_data_type = []
+            my_id = []
+            my_expr = []
+            for data_type,id,expr in att_decl_list : 
+                my_data_type.append(data_type)
+                my_id.append(id)
+                my_expr.append(expr)
+            att_decl_list = zip(my_data_type , my_id , reversed(my_expr))
+
+            if(att_type == 'Var') : # return Vardecl
+                for data_type,id,expr in att_decl_list : 
+                    if id[0] == '$' : 
+                        res += [AttributeDecl(Static(), VarDecl(Id(id),data_type,expr ))]
+                    else : 
+                        res += [AttributeDecl(Instance(), VarDecl(Id(id),data_type,expr))]
+            else : 
+                for data_type, id , expr in att_decl_list : 
+                    if id[0] == '$' :
+                        res += [ AttributeDecl(Static(), ConstDecl(Id(id),data_type , expr ))]
+                    else : 
+                        res += [AttributeDecl(Instance(), ConstDecl(Id(id),data_type , expr))]
+            return res
+
+    def visitAttribute_type(self, ctx: D96Parser.Attribute_typeContext):
+        if ctx.IMMUTABLE() : 
+            return 'Val'
+        return 'Var'
+    # attribute_decl_list : testing | testing2 ;
+    def visitAttribute_decl_list(self, ctx: D96Parser.Attribute_decl_listContext):
+        return self.visitChildren(ctx)
+
+    #testing : att_name ( COLON compound_type (ASSIGN expression)) | (att_name COMMA testing (COMMA expression));
+    def visitTesting(self, ctx: D96Parser.TestingContext):
+        if ctx.compound_type() : 
+            data_type = self.visit(ctx.compound_type())
+            att_name = self.visit(ctx.att_name())
+            expr = self.visit(ctx.expression())
+            return [(data_type,att_name , expr)]
+        else : 
+            att_list = [self.visit(ctx.att_name())]
+            expr_list = [self.visit(ctx.expression())]
+            clone = self.visit(ctx.testing())
+            for data_type,att_name , expr in clone : 
+                att_list.append(att_name)
+                expr_list.append(expr)
+                x = data_type
+            data_type_list = [x] * len(att_list)
+            return list(zip(data_type_list,att_list,expr_list))
+        # Var a , b,c : Int = 1,2,3 -> [(Int,a , 3) , (Int,b,2)  , (Int,c , 1)]
+
+
+    # testing2 :  att_name (COMMA att_name )* COLON compound_type ; // Int a,b,c : = Int;
+    def visitTesting2(self, ctx: D96Parser.Testing2Context):
+        data_type = self.visit(ctx.compound_type())
+        att_list = [] 
+        for i in ctx.att_name() : 
+            att_list.append(self.visit(i)) # att_list is now a list of var with text only
+        return list(map(lambda att : (data_type, att), att_list )) # [(int,a)]
+
+    # att_name LB parameter_decl_list? RB block_statement;
+    def visitMethod_declaration(self, ctx: D96Parser.Method_declarationContext):
+        id = self.visit(ctx.att_name()) ## text of id
+        if id[0] == '$' : 
+            id = Id(id[1:])
+            kind = Static()
+        else : 
+            id = Id(id)
+            kind = Instance()
+        param = self.visit(ctx.parameter_decl_list()) if ctx.parameter_decl_list() else []
+        block = Block([]) ## not handle yet
+        return [MethodDecl(kind,id,param,block)]
+
+    def visitAtt_name(self, ctx: D96Parser.Att_nameContext):
+        if ctx.ID() : 
+            return ctx.ID().getText()
+        return ctx.DOLLAR_ID().getText()
+
+    # constructor : CONSTRUCTOR LB parameter_decl_list? RB block_statement; 
+    def visitConstructor(self, ctx: D96Parser.ConstructorContext):
+        kind = Instance()
+        id = Id('Constructor')
+        param = self.visit(ctx.parameter_decl_list()) if ctx.parameter_decl_list() else []
+        block = Block([])
+        return [MethodDecl(kind,id,param,block)]
+
+    def visitDestructor(self, ctx: D96Parser.DestructorContext):
+        kind = Instance()
+        id = Id('Destructor')
+        param = []
+        block = Block([])
+        return [MethodDecl(kind,id,param,block)]
+
+
+    # parameter_decl_list : (parameter_decl (SEMI_COLON parameter_decl)*)
+    def visitParameter_decl_list(self, ctx: D96Parser.Parameter_decl_listContext):
+        para_decl_list = []
+        for i in ctx.parameter_decl() : 
+            para_decl_list += self.visit(i)
+        return [VarDecl(id, dataType) for (id, dataType) in para_decl_list]
+
+    # parameter_decl : ids_list COLON compound_type
+    def visitParameter_decl(self, ctx: D96Parser.Parameter_declContext):
+        ids_list = self.visit(ctx.ids_list())
+        data_type = self.visit(ctx.compound_type())
+        return [(id, data_type) for id in ids_list]
+
+
+    # ids_list : ID ( COMMA ID)*;
+    def visitIds_list(self, ctx: D96Parser.Ids_listContext):
+        return [Id(id.getText()) for id in ctx.ID()]
+
+    # primitive_type | array_type | ID ;
+    def visitCompound_type(self, ctx: D96Parser.Compound_typeContext):
+        if ctx.ID() : 
+            id_value = ctx.ID().getText()
+            return ClassType(Id(id_value))
+        # elif ctx.primitive_type() : 
+        #     return self.visitPrimitive_type(ctx)
+        return self.visitChildren(ctx)
+
+    # array_type: (ARRAY LS compound_type  COMMA (INTLIT_ARR)  RS) 
+    def visitArray_type(self, ctx: D96Parser.Array_typeContext):
+        array_type = self.visit(ctx.compound_type())
+        array_size = int(ctx.INTLIT_ARR().getText())
+        return ArrayType(array_size , array_type)
+
+    def visitPrimitive_type(self, ctx: D96Parser.Primitive_typeContext):
+        if ctx.INT_TYPE():
+            return  IntType()
+        elif ctx.FLOAT_TYPE():
+            return FloatType()
+        elif ctx.BOOLEAN_TYPE(): 
+            return BoolType()
+        elif ctx.STRING_TYPE():
+            return StringType()
+
+    # def visitIndex_operator(self, ctx: D96Parser.Index_operatorContext):
+    #     return self.visit(ctx.expression())
+
+    # expression : expression1 (CONCATE | STRCOMPARE) expression1 | expression1;
+    def visitExpression(self, ctx: D96Parser.ExpressionContext):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression1(0))
+        if ctx.CONCATE() : 
+            op = ctx.CONCATE().getText()
+        elif ctx.STRCOMPARE() : 
+            op = ctx.STRCOMPARE().getText()  
+        left = self.visit(ctx.expression1(0))
+        right = self.visit(ctx.expression1(1))
+        return BinaryOp(op,left,right)
+
+    # expression1 : expression2 ( EQUAL | NOTEQUAL | LARGER | SMALLER | LE | SE) expression2 | expression2 ;
+    def visitExpression1(self, ctx: D96Parser.Expression1Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression2(0))
+        if ctx.EQUAL() : 
+            op = ctx.EQUAL().getText()
+        elif ctx.NOTEQUAL() : 
+            op = ctx.NOTEQUAL().getText()
+        elif ctx.LARGER() : 
+            op = ctx.LARGER().getText()
+        elif ctx.SMALLER() : 
+            op = ctx.SMALLER().getText()
+        elif ctx.LE() : 
+            op = ctx.LE().getText()
+        elif ctx.SE() : 
+            op = ctx.SE().getText()
+        left = self.visit(ctx.expression2(0))
+        right = self.visit(ctx.expression2(1))
+        return BinaryOp(op,left,right)
+
+
+    #expression2 : expression2 (OR | AND) expression3 | expression3;
+    def visitExpression2(self, ctx: D96Parser.Expression2Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression3())
+        if ctx.OR() : 
+            op = ctx.OR().getText() 
+            left = self.visit(ctx.expression2())
+            right = self.visit(ctx.expression3())
+            return BinaryOp(op,left,right)
+        if ctx.AND(): 
+            op = ctx.AND().getText() 
+            left = self.visit(ctx.expression2())
+            right = self.visit(ctx.expression3())
+            return BinaryOp(op,left,right)
+
+    # expression3 : expression3 (ADD | SUB) expression4 | expression4;
+    def visitExpression3(self, ctx: D96Parser.Expression3Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression4())
+        if ctx.ADD() : 
+            op = ctx.ADD().getText()
+            left = self.visit(ctx.expression3())
+            right = self.visit(ctx.expression4())
+            return BinaryOp(op,left,right)
+        if ctx.SUB():
+            op = ctx.SUB().getText()
+            left = self.visit(ctx.expression3())
+            right = self.visit(ctx.expression4())
+            return BinaryOp(op,left,right)
+
+    # expression4 : expression4 (MUL | DIV | MOD) expression5 | expression5;
+    def visitExpression4(self, ctx: D96Parser.Expression4Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression5())
+        if ctx.MUL() : 
+            op = ctx.MUL().getText() 
+            left = self.visit(ctx.expression4())
+            right = self.visit(ctx.expression5())
+            return BinaryOp(op,left,right)
+        if ctx.DIV() : 
+            op = ctx.DIV().getText() 
+            left = self.visit(ctx.expression4())
+            right = self.visit(ctx.expression5())
+            return BinaryOp(op,left,right)
+        if ctx.MOD() : 
+            op = ctx.MOD().getText() 
+            left = self.visit(ctx.expression4())
+            right = self.visit(ctx.expression5())
+            return BinaryOp(op,left,right)
+
+    # expression5 : NOT expression5 | expression6;
+    def visitExpression5(self, ctx: D96Parser.Expression5Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression6())
+        op = ctx.NOT().getText() 
+        body = self.visit(ctx.expression6())
+        return UnaryOp(op,body)
+
+
+    # expression6 : SUB expression6 | expression7;
+    def visitExpression6(self, ctx: D96Parser.Expression6Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression7())
+        op = ctx.SUB().getText() 
+        body = self.visit(ctx.expression6())
+        return UnaryOp(op,body)
+
+    # expression7 : expression7 (LS expression RS)+ | expression8;
+    def visitExpression7(self, ctx: D96Parser.Expression7Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression8())
+        idx = []
+        for i in ctx.expression(): 
+            idx.append(self.visit(i))
+        arr = self.visit(ctx.expression7())
+        return ArrayCell(arr,idx)
+
+    #expression8 : expression8 DOT ID (LB expressions_list? RB)?  | expression9;   
+    def visitExpression8(self, ctx: D96Parser.Expression8Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression9())
+        if ctx.expressions_list():
+            obj = self.visit(ctx.expression8())
+            method = Id(ctx.ID().getText())
+            params = self.visit(ctx.expressions_list())
+            return CallExpr(obj,method,params)
+        else : 
+            obj = self.visit(ctx.expression8())
+            field_name = Id(ctx.ID().getText())
+            return FieldAccess(obj, field_name)
+
+
+
+    # expression9 : expression10 DOUBLE_COLON DOLLAR_ID (LB expressions_list? RB)? | expression10;
+    def visitExpression9(self, ctx: D96Parser.Expression9Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.expression10())
+        if ctx.expressions_list() : # a::$f(a,b,c) -> CallExpr
+            obj = self.visit(ctx.expression10())  # fix this later
+            method = Id(ctx.DOLLAR_ID().getText())
+            params = self.visit(ctx.expressions_list())
+            return CallExpr(obj,method,params)
+        else : # a::$f -> FieldAccess
+            obj = self.visit(ctx.expression10()) 
+            field_name = Id(ctx.DOLLAR_ID().getText())
+            return FieldAccess(obj,field_name)
+
+    # expression10 : NEW expression10 LB expressions_list? RB | operands;
+    def visitExpression10(self, ctx: D96Parser.Expression10Context):
+        if ctx.getChildCount() == 1 : 
+            return self.visit(ctx.operands())
+        class_id = self.visit(ctx.expression10())
+        class_params = self.visit(ctx.expressions_list())
+        return NewExpr(class_id,class_params)
+
+# operands : literals| ID | (LB expression RB)  | indexed_array // Array(1,2,3,4)| multi_array | SELF | NULL;
+    def visitOperands(self, ctx: D96Parser.OperandsContext):
+        if ctx.ID() : 
+            return Id(ctx.ID().getText())
+        if ctx.SELF():
+            return SelfLiteral()
+        if ctx.NULL() : 
+            return NullLiteral()
+        return self.visitChildren(ctx)
+    
+    # literals : ( INTLIT_ARR | STRING_LITERAL | INT_LITERAL | FLOAT_LITERAL | BOOL_LITERAL ) ;
+    def visitLiterals(self, ctx: D96Parser.LiteralsContext):
+        if ctx.BOOL_LITERAL():
+            return BooleanLiteral(ctx.BOOL_LITERAL().getText() == 'True')
+        if ctx.STRING_LITERAL(): 
+            return StringLiteral(ctx.STRING_LITERAL().getText())
+        if ctx.INT_LITERAL(): 
+            val = ctx.INT_LITERAL().getText() 
+            if len(val) == 1 : 
+                return IntLiteral(int(val))
+            if (val[1] == 'X' or val[1] == 'x') and len(val) > 1 : # hexa 
+                return IntLiteral(int(val, 16))
+            if val[1] == 'B' or val[1] == 'b' : # Binary 
+                return IntLiteral(int(val, 2))   
+            if val[0] == '0' and len(val) > 1: #octal 
+                return IntLiteral(int(val, 8))
+            return IntLiteral(int(val))
+
+        if ctx.FLOAT_LITERAL() : 
+            val = ctx.FLOAT_LITERAL().getText()
+            if val[0] == '.' and val[1] == 'e' : # .e10
+                return FloatLiteral(float( '0'+ val ))  
+            return FloatLiteral(float(val))
+
+        if ctx.INTLIT_ARR(): 
+            val = ctx.INTLIT_ARR().getText() 
+            if len(val) == 1 : 
+                return IntLiteral(int(val))
+            if (val[1] == 'X' or val[1] == 'x')  : # hexa 
+                return IntLiteral(int(val, 16))
+            if val[1] == 'B' or val[1] == 'b' : # Binary 
+                return IntLiteral(int(val, 2))   
+            if val[0] == '0' and len(val) > 1: #octal 
+                return IntLiteral(int(val, 8))
+            return IntLiteral(int(val))
+
+
+    # function_call : (ID (LB expressions_list? RB)? );
+    # def visitFunction_call(self, ctx: D96Parser.Function_callContext):
+    #     id = Id(ctx.ID().getText())
+    #     params = self.visit(ctx.expressions_list())
+    #     return id , params
+
+    # expressions_list : (expression ( COMMA expression)*); 
+    def visitExpressions_list(self, ctx: D96Parser.Expressions_listContext):
+        res = []
+        for exp in ctx.expression() : 
+            res.append(self.visit(exp))
+        return res
+    # #class a : b { var a ;}
+    # #classDecls: classDecl classDecls | classDecl
+    # def visitClassdecls(self, ctx: D96Parser.ClassdeclsContext):
+    #     if ctx.getChildCount() > 1:
+    #         left = self.visit(ctx.classdecl())
+    #         right = self.visit(ctx.classdecls())
+    #         return left + right
+        
+    #     return self.visit(ctx.classdecl())
+        
+
+    # def visitClassdecl(self, ctx: D96Parser.ClassdeclContext):
+    #     return [ClassDecl(Id(ctx.ID().getText()),[])]
+       
+    # def visitIdClass(self, ctx: D96Parser.IdlistContext):
+    #     return list(map(lambda x: Id(x.getText()),ctx.ID()))
+
+
+
+

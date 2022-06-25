@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Car),Id(Vehicle),[AttributeDecl(Instance,ConstDecl(Id(sunScreen),BoolType,BooleanLit(False))),MethodDecl(Id(open),Instance,[],Block([If(BinaryOp(==,Id(Hood),BooleanLit(False)),Block([AssignStmt(Id(Hood),BooleanLit(True)),Return(BooleanLit(True))]),Block([Return(BooleanLit(False))]))]))])])

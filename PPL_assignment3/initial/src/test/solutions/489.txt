@@ -1,0 +1,1 @@
+Type Mismatch In Statement: VarDecl(Id(b),ArrayType(2,ArrayType(2,IntType)),[[StringLit(pirate),StringLit(king)],[StringLit(lffy),StringLit(zoro)]])

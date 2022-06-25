@@ -1,0 +1,8 @@
+
+        Class Shape {
+            foo() {
+                Obj.doSth();
+                Return New X(123, 124, 10 * 20 + 30);
+            }
+        }
+        

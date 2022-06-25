@@ -1,0 +1,8 @@
+
+        Class a{}
+        Class Program{
+          main() {
+            Var x: Int = a;
+          }
+        }
+        

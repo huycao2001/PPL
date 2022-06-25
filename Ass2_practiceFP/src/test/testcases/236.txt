@@ -1,0 +1,32 @@
+
+        Class Rational{
+            Var a : Int;
+            Var b : Int;
+            Var g : Int;
+            Var $count : Int = 0; 
+            Constructor(a,b : Int){
+                Self.g = Rational::$getGCD(a,b);
+                Self.a = Self.a / Self.g;
+                Self.b = Self.b / Self.g; 
+                Rational::$count = Rational::$count + 1; 
+            }
+            $getCount(){
+                Return Rational::$count;
+            }
+            $getGCD(a,b : Int){
+                If(b == 0){
+                    Return a; 
+                }
+                Else{
+                    Return Rational::$getGCD(b,a % b);
+                }
+            }
+        }
+
+        Class Program {
+            main() {
+               Var num1 : Rational = New Rational(2,3); 
+               Var num2 : Rational = New Rational(10,12); 
+            }
+        }
+        

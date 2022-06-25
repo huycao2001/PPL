@@ -1,0 +1,22 @@
+     
+                        Class E{
+
+                            foo(b : Int){
+                                Var a : Int = 1;
+                                
+                            }
+
+                            Destructor(){
+                                
+                            }
+                            func(){
+                                Self.foto();
+                            }
+                        }
+                        Class Program{
+                            main(){
+                                Var a : E = New E();
+                            }
+                        }
+                        
+                        

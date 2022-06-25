@@ -1,0 +1,12 @@
+
+                    Class B{
+                        Var b:Int = 1;
+                    }
+                    Class A{
+                    foo(){
+                        Var b:Int = 1;
+                        Var obj:B;
+                        obj.b = 1;
+                        obj.aa = 1;
+                    }
+                    }

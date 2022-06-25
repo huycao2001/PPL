@@ -1,0 +1,1 @@
+Class K{Val _,___,$__k:Array [Array [Boolean ,0B111011],0102];Val v:xz;Constructor (){}Destructor (){}$__(_,_gK6,_7,_:Float ){} }

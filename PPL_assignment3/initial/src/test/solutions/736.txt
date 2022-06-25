@@ -1,0 +1,1 @@
+Type Mismatch In Statement: If(BinaryOp(+,Id(a),IntLit(1)),Block([For(Id(b),IntLit(1),IntLit(10),UnaryOp(-,IntLit(1)),Block([ConstDecl(Id(a),FloatType,FloatLit(1.0))])])]))

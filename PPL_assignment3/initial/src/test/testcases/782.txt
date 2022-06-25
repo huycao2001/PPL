@@ -1,0 +1,14 @@
+
+        Class ABC {
+            Var b : Array[Int, 1] = Array(1);
+        }
+        Class Program {
+            main(){
+                Var b : ABC;
+                Val a : Int = 1;
+                b.b[a + 1] = 1;
+                a = 2;
+                Return;
+            }
+        }
+        

@@ -1,0 +1,6 @@
+
+                    Class huycao{
+                        Var a :Int;
+                        Var a : Float;
+                    }
+                    

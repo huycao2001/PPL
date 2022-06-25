@@ -1,0 +1,11 @@
+
+        Class Program {
+          main() {
+            Var a: Int = 4;
+            If(True) {
+              Val a: Int = 5;
+              Var a: Float = 1.0;
+            }
+          }
+        }
+        

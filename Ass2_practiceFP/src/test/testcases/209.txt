@@ -1,0 +1,10 @@
+
+        Class myProgram{
+            Val num1 : Int;
+
+            increment(){
+                num1 = num1 + 1;
+                Return num1;
+            }
+        }
+        

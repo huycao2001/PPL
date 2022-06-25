@@ -1,0 +1,7 @@
+
+        Class Loop {
+            function(){
+                i=-1;
+             } 
+        }
+        

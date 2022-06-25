@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(ygh),[]),ClassDecl(Id(I),Id(_tl),[MethodDecl(Id(Constructor),Instance,[param(Id(_E6),ClassType(Id(_))),param(Id(v1l),ArrayType(7,ArrayType(26,ArrayType(1,ArrayType(88,ArrayType(48,ArrayType(424,StringType)))))))],Block([])),MethodDecl(Id(Destructor),Instance,[],Block([]))]),ClassDecl(Id(k),Id(_v82lG_),[]),ClassDecl(Id(u),[])])

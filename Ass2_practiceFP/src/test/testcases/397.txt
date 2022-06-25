@@ -1,0 +1,17 @@
+
+        Class Smart:Home{
+            Val $Camera : Module;
+            detect(Camera : Module){
+                If(Self.detect() == True){
+                    Return True;
+                }
+                Else{
+                    Return False;
+                }
+                Break;
+            }
+            func(){
+                Self.DoSth();
+            }
+        }
+        

@@ -1,0 +1,23 @@
+
+        Class Program{
+            main(){
+               Var a : Int = 100;
+               Var b : Boolean = False;
+               
+
+               Foreach(i In 1 .. a By 1){
+                   If(a % i == 0){
+                       b = True; 
+                       Break;
+                       
+                   }
+               }
+               If(b == True){
+                    Out.println("a is not Prime number");
+               }
+               Else{
+                    Out.println("a is Prime number");
+               }
+            }
+        }
+        

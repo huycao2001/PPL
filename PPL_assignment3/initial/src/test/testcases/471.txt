@@ -1,0 +1,11 @@
+
+        Class Shape{
+            Val isCopied: Boolean = True;
+            compose(){
+            }
+        }
+        Class Program{
+        main(){
+            Shape.compose();
+        }
+        }

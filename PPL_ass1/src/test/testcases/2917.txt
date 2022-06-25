@@ -1,0 +1,1 @@
+Class _:Z{Var _8:Array [Array [Array [Int ,47],02],0b1010111];Var $9:Array [Boolean ,7];Val $K:Array [Int ,0B101];}Class b:R4s{}

@@ -1,0 +1,9 @@
+
+        Class Program {
+            main(){
+                Val a : Int = 1;
+                a = 2;
+                Return;
+            }
+        }
+        

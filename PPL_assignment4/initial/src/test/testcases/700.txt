@@ -1,0 +1,10 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {}
+        Class DEF {}
+        Class ABC {}
+        

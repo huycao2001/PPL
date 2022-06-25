@@ -1,0 +1,9 @@
+
+        Class Program {
+          Var d: String = "Koikaze";
+          main() {
+            Val a: String = "Sutaaraito taifuun";
+            Var c, a: String = "Kougeki", "Shuuto za Muun";
+          }
+        }
+        

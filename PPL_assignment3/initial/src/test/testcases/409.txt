@@ -1,0 +1,12 @@
+Class Shape{
+                    foo(){
+                        Var a:Int = 1;
+                        {
+                            {
+                            Var a:Int = 1;
+                            Var b:Int = 1;
+                            Val b:Int = 1;
+                            }
+                        }
+                    }
+                    }

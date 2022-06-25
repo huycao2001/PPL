@@ -1,0 +1,17 @@
+
+        Class ABC {
+            Val $b : Int = 1;
+            Var $e : Int = 1;
+        }
+        Class Program {
+            Val $a : Int = 1;
+            main(){
+                Val c : Array[Int, 1] = Array(1);
+                Val a : Int = c[0];
+                Val b : Int = Program::$a;
+                Val d : Int = ABC::$b;
+                Val e : Int = ABC::$e;
+                Return;
+            }
+        }
+        

@@ -1,0 +1,8 @@
+
+        Class Shape{
+            Var $a : Int;
+            Var b : int;
+            Val c : Int;
+            Val $d : Int;
+        }   
+        

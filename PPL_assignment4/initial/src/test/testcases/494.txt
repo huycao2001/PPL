@@ -1,0 +1,13 @@
+
+                Class A {
+                      Var $foo: Int = 1;
+                      $foo() {
+                      }
+                }
+
+                Class B{
+                    flag(){
+                        huycao::$foo();
+                    }
+                }
+            

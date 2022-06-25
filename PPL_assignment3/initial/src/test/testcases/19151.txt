@@ -1,0 +1,10 @@
+
+        Class Program {
+          main() {
+            Var b: Float;
+            b = 2;
+            b = 41.2;
+            b = True;
+          }
+        }
+        

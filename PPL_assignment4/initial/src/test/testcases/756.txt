@@ -1,0 +1,27 @@
+
+        Class ABC{}
+        Class Program {
+            a(w : Int) {
+                Return;
+            }
+            c(w, h: Int) {
+                Val a : Int = 1;
+            }
+            d(w, h: Int; a : String) {
+                Return;
+            }
+            e(w, h: Int; a : String; b: ABC) {
+                Return;
+            }
+            b() {
+                Self.a(1);
+                Self.c(1, 2 * 2 + 3);
+                Var c : ABC;
+                Self.e(1 * 2 + 3 - 4, 26 % 50, "Hello World", c);
+                Self.d(1, "He", 2);
+            }
+            main(){
+                Return;
+            }
+        }
+        

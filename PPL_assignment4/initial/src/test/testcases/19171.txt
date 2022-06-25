@@ -1,0 +1,13 @@
+
+        Class Program {
+          main() {
+          }
+          Var $a: Float = 420;
+          Val b: Int = 2;
+          Val c: Float = 3;
+          Val d: Float = Self.b + Self.c;
+          Val e: Boolean = Self.b > 1;
+          Val f: Float = Self.c - Self.d * 2;
+          Val eatThis: Int = 69 * Program::$a;
+        }
+        

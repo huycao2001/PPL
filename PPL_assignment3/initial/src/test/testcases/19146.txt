@@ -1,0 +1,10 @@
+
+        Class Program {
+          foo() {
+          }
+          main() {
+            Self.foo();
+            Self.food();
+          }
+        }
+        

@@ -1,0 +1,7 @@
+
+                        Class Shape{
+                            Var a : Int = 1; 
+                            Foo(){
+                                Self.a = 12;
+                            }
+                        }

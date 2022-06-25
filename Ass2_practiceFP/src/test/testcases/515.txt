@@ -1,0 +1,1 @@
+Class s{Var _:String ;Constructor (__r:Array [Boolean ,0B111010];u_:_;_2:Array [Array [Int ,02],8];_s:Array [Float ,0b1001110];_,_2_,n,_:Array [Boolean ,0b1001110];n_:Array [Int ,0b1001110]){}Destructor (){} }

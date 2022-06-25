@@ -1,0 +1,9 @@
+
+                        Class Shape{
+                            foo(){
+                                Var a:Int = 1;
+                                Var b:Float = 1;
+                                Var c:Float = a+b;
+                                Var huycao:Int = a+b;
+                            }
+                        }

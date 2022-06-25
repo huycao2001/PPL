@@ -1,0 +1,1 @@
+Class,Shape,{,Var,name,:,String,;,},Class,Circle,:,Shape,{,Var,radius,:,Float,;,Constructor,(,a,:,Float,),{,Self,.,radius,=,float,;,},getArea,(,),{,Return,Self,.,radius,*,Self,.,Radius,*,3.14,;,},getPerimeter,(,),{,Return,Self,.,radius,*,2,*,3.14,;,},},<EOF>

@@ -1,0 +1,7 @@
+
+        Class A {
+            Var d, e: Int;
+            Val f: Array[Array[Int,1], 2] = Array( Array(Self.d), Array(Self.e) );
+        }
+        Class Program{main(){}}
+        

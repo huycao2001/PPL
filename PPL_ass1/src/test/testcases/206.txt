@@ -1,0 +1,5 @@
+
+        Class myProgram {
+            Val a, d: Int = 1,2,3; 
+        }
+        

@@ -1,0 +1,15 @@
+
+        Class ABC {
+            Var x : Int = 1;
+        }
+        Class Program{
+            main() {
+                Val a : ABC = New ABC();
+                a.x = 2;
+                Return;
+            }
+            $method() {
+                Val a : Int = 1.2;
+            }
+        }
+        

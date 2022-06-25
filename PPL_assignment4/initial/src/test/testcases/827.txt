@@ -1,0 +1,14 @@
+
+        Class A {
+            Val x : Int = 1;
+        }
+        Class D : A {
+            Val x : Int = 1;
+        }
+        Class B : C {}
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        

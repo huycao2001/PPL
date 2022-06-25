@@ -1,0 +1,1 @@
+Class __{j(g3,Kn:Float ;_:Array [Array [Array [String ,0b111001],4],4];pE:Float ;_,_,G,_,k:Array [Array [Boolean ,0B10000],0B10000];_,_p76:Array [Array [Array [Array [Array [Int ,0X7],0B10000],045],4],0b111001];q,_:Array [Array [Array [String ,0B1],0B10000],4]){} }

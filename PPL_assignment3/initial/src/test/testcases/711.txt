@@ -1,0 +1,11 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            main(w: Int; h, f: Float; a: Int) {
+                Val w : Int = 10;
+            }
+        }

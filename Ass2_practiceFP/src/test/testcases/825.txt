@@ -1,0 +1,1 @@
+Class Giu{Val _:Array [Boolean ,0B10011];Var _:Array [Array [Boolean ,0x1],0b11];Destructor (){}Constructor (F:_N;_,_Q:Array [Array [Boolean ,65],65];T__9:V_){}Constructor (_:_){}Val $7,Fh,$GB,$1,$_1,$9_,$_8,$6,$0,j,$_,$5L,J68,DZ,$NB:__8;Constructor (){} }

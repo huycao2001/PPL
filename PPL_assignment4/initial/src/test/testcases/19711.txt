@@ -1,0 +1,13 @@
+
+        Class A {
+          Val i: Int = 2;
+        }
+        Class B : A {
+          Var i: Int;
+        }
+        Class Program {
+          main() {
+            A = 2;
+          }
+        }
+        

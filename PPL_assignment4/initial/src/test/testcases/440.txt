@@ -1,0 +1,12 @@
+
+        Class Person
+        {
+            Var name: String;
+        }
+        Class Dog
+        {
+            goOut(myPerson: Person)
+            {
+                Val owner: String = myPerson.getName();
+            }
+        }

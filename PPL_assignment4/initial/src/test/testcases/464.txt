@@ -1,0 +1,6 @@
+         
+                        Class Shape{
+                        flag(){
+                            obj.foo();
+                        }
+                        }

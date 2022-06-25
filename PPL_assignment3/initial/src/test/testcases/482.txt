@@ -1,0 +1,11 @@
+     
+                        Class Shape {
+                           func() {                        
+                           } 
+                           Constructor(a:Int){
+                           }                       
+                        }                        
+                        Class Test{                        
+                          Var e: Shape = New Shape(1);              
+                          Var b: Shape = New Shape();                                
+                        } 

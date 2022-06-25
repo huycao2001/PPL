@@ -1,0 +1,1 @@
+Class R_621{Var x:Array [Int ,0b110100];}Class R{}Class _6_:U3{Var $_V0_:Array [String ,06];Destructor (){} }Class r:M{}

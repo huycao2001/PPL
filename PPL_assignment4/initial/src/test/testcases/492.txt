@@ -1,0 +1,15 @@
+
+                        Class Person{
+                            Var name: String;
+                            Var phone: Int;
+                            Constructor(newName: String; newphone : Int){
+                                Self.name = newName;
+                                Self.phone = newphone;
+                            }
+                        }
+                        Class Program{
+                            main(){
+                                Var huycao: Person = New Person ();
+                            }
+                        }
+            

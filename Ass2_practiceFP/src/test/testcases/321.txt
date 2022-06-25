@@ -1,0 +1,7 @@
+
+        Class Program{
+            main(){
+                Var x,y: Int = 1+1, 2+2;
+            }
+        }
+        

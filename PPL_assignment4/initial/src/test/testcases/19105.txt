@@ -1,0 +1,6 @@
+
+        Class Program {
+          Val i: Int = 2;
+          Var i: Float;
+        }
+        

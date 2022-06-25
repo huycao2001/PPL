@@ -1,0 +1,1 @@
+Class,Program,{,main,(,),{,Var,andy,:,String,=,/n/n/n/n/n,;,},},<EOF>

@@ -1,0 +1,72 @@
+
+        Class People{
+            Var $count : Int; 
+            Var name : String; 
+            Var gender : String; 
+            Var phone : String; 
+            Constructor(name,gender,phone : String){
+                Self.name = name; 
+                Self.gender = gender; 
+                Self.phone = phone; 
+            }
+            Constructor(){
+                Self.name = "Unknown";
+                Self.gender = "Unknown";
+                Self.phone = "Unknown"; 
+            }
+            getCount(){
+                Return People::$count;
+            }
+
+            $getStacticCount(){
+                Return People::$count;
+            }
+            Destructor(){
+
+            }
+        }
+
+        Class Employee: People{
+            Var salary : Float; 
+            Constructor(name,gender,phone : String ; salary : Float){
+                Self.name = name; 
+                Self.gender = gender; 
+                Self.phone = phone; 
+                Self.salary = salary;
+            }
+
+            GetSalary(){
+                Return Self.salary ;
+            }
+        }
+
+        Class CEO : People{
+            Var salary : Float; 
+            Var branchID : Int; 
+            Constructor(name,gender,phone : String ; salary : Float ; branchID : Int){
+                Self.name = name; 
+                Self.gender = gender; 
+                Self.phone = phone; 
+                Self.salary = salary;
+                Self.branchID = branchID;
+            }
+
+            GetSalary(){
+                Return Self.salary + Self.salary * 1.5;
+            }
+
+            GetBranch(){
+                Return Self.branchID; 
+            }
+        }
+
+        Class Program{
+            main(){
+                Var a : Array[Int,5];
+                Foreach(i In 1 .. 5 By 1){
+                    a[i] = New Employee("Cao ba huy", "Gay" , "012345" , "999");
+                }
+                Out.println("The number of employees is", People::$getStacticCount());
+            }
+        }
+        

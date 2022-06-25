@@ -1,0 +1,14 @@
+
+
+        Class Program{
+            Greeting(a : String){
+                Var newString : String = ("Hello " +. a) +. " Welcome to Gulag :D";
+                Out.println(newString);
+            }
+            main(){
+                Var a : String = "Player1";
+                Greeting(a);
+                Return;
+            }
+        }
+        

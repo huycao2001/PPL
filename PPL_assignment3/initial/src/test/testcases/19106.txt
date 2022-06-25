@@ -1,0 +1,10 @@
+
+        Class Program {
+          Val i: Int = 2;
+          main(){
+          }
+        }
+        Class Subprogram : Program {
+          Var s, s: String = "OMEGALUL", "KEKW";
+        }
+        

@@ -1,0 +1,10 @@
+
+        Class C{
+                function(){
+                    a = b%c + Self.foo();
+                    a = b*c*d + Self.foo();
+                    Self.foo();
+                    Return True;
+                }
+        }
+        

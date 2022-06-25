@@ -1,0 +1,17 @@
+
+        Class A{
+            Val x : Int = 1;
+        }
+        Class B : A {
+            x(w: Int) {
+                Return Self.x;
+            }
+        }
+        Class Program {
+            main(){
+                Var b : B;
+                Var a : Int = b.x(1);
+                Val a : String = "Hi";
+                Return;
+            }
+        }

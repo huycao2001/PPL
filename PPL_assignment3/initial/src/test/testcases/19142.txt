@@ -1,0 +1,14 @@
+
+        Class Shape {
+          Constructor () {
+          }
+          Destructor () {
+          }
+          Constructor (a, b: Float) {
+          }
+        }
+        Class Program {
+          main() {
+          }
+        }
+        

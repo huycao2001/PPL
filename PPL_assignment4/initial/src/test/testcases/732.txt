@@ -1,0 +1,16 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class A{
+            Constructor(){}
+        }
+        Class B{}
+        Class ABC {
+            somehin() {
+                Val a : A = New A();
+                Val b : B = a;
+            }
+        }

@@ -1,0 +1,13 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            somehing(w, i: Int; h, e: Float) {
+                Val a : Array[Int, 1] = Array(1);
+                Val b : Boolean = a[1 + 10 - 2] + 1 > 2;
+                Val d : String = a[2 * 3];
+            }
+        }

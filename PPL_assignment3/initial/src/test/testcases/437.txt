@@ -1,0 +1,7 @@
+
+                        Class Shape{
+                            ffufuf(){
+                                Var a : String = "abc" +. "def" ;
+                                Val b : Boolean = "aaaa" ==. "sss";
+                            }
+                        }

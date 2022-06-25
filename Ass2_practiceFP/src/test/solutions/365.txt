@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Swap),[MethodDecl(Id(func),Instance,[],Block([If(BinaryOp(==,IntLit(1),BinaryOp(-,UnaryOp(-,IntLit(1)),UnaryOp(-,IntLit(1)))),Block([If(BinaryOp(+.,BinaryOp(==,Id(b),StringLit(f)),StringLit(h)),Block([]),If(BinaryOp(==.,BinaryOp(==,Id(a),Id(b)),Id(c)),Block([])))]))]))])])

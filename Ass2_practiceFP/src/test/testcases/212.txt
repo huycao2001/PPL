@@ -1,0 +1,9 @@
+
+        Class List {
+            Val a : Array[Int,4] = Array(1,2,3,4);
+            Var b : Array[Float,4] = Array(1.1 , 2.2e10 , 0.001 , .12e10);
+            Val c : Array[Boolean,4] = Array(True, False , True , False );
+            Var d : Array [String,4] = Array("huy", "cao" , "ba" , "ppl");
+            Val e : Array[Int,4] = Array(1, 0b1010 , 0123, 0xFFFF);
+        }
+        

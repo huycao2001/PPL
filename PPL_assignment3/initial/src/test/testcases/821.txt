@@ -1,0 +1,10 @@
+
+        Class ABC {
+            Var x : Int = 1;
+        }
+        Class Program{
+            main() {
+                Var a : Int = ABC.x;
+            }
+        }
+        

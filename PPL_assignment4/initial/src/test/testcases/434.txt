@@ -1,0 +1,6 @@
+
+                        Class Shape{
+                            ffufuf(){
+                                Val a : Int = "1.2.2.2";
+                            }
+                        }

@@ -1,0 +1,9 @@
+
+        Class Program {
+          main() {
+          }
+          Var $a: Boolean = !False && !True;
+          Var b: Boolean = !("String" ==. "CharArray") != !("Reimu" ==. "Marisa");
+          Var c: Boolean = -1;
+        }
+        

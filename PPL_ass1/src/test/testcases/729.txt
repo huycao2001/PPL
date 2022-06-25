@@ -1,0 +1,1 @@
+Class a:E{Var $C:Array [Boolean ,0b1_1_0];}Class S{Var $_Dy_5__,_,$X,$7s:Q;}Class o{Destructor (){}Val $g4D,$_:j2_;Var $k,$_:Array [Array [Boolean ,070_4],037];Val $_,$2Zy,W_1S,_:Array [Float ,0x63];}Class r3{}Class W{}

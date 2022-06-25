@@ -1,0 +1,16 @@
+
+        Class Data {
+          Var iV: Int;
+          Var $sV: Int;
+          Val $sC: Int = 4;
+          Val iC: Int = Data::$sC;
+        }
+        Class Program {
+          Var d1: Data;
+          Val d2: Data = New Data();
+          main() {
+            Data::$sV = 4;
+            Data::$sC = Data::$sV;
+          }
+        }
+        

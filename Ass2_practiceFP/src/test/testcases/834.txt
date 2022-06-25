@@ -1,0 +1,1 @@
+Class g:_{Val $_,$_:Array [Array [Array [Boolean ,0b11011],0x20],01];$2_(F,jn_,m:Array [Array [Array [Array [Boolean ,0130],0X37],2],0445_0];_,_,b_,__8:CrMz;f,_3u,G,_8_8k:Array [Array [Array [Boolean ,0X37],6_8],05];io,_:Array [Array [Array [Array [Boolean ,0xA7],0130],0x9],0X37];_:Array [Int ,79];__:Array [String ,0x1]){} }

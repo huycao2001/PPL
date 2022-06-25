@@ -1,0 +1,1 @@
+Type Mismatch In Expression: BinaryOp(==.,FieldAccess(Id(Program),Id($a)),BinaryOp(==.,StringLit(Not all is bad),StringLit(Not everything is good)))

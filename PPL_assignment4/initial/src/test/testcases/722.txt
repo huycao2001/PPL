@@ -1,0 +1,15 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Int = 1 % 10;
+                Val b : Float = 10 % 100;
+                Val c : Boolean = True && False;
+                Val d : Boolean = ((True || False) && True) || False;
+                Val e : Bool = 1 && True;
+            }
+        }

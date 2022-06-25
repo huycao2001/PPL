@@ -1,0 +1,8 @@
+
+        Class A{
+            Destructor(){}
+        }
+        Class B:A{
+            Destructor(){Return;}
+        }
+        

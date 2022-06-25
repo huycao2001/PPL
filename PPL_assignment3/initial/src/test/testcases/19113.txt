@@ -1,0 +1,8 @@
+
+        Class Program {
+          Val g: Int = 2;
+          Val foo: String = "Lmao";
+          foo(a, b: Int){
+          }
+        }
+        

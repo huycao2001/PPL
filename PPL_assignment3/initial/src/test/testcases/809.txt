@@ -1,0 +1,8 @@
+
+        Class Program{
+            main() {
+                Var x : Int = 1.2;
+                Return;
+            }
+        }
+        

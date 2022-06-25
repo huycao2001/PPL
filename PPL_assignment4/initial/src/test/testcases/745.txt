@@ -1,0 +1,22 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            Var a : Int = 1;
+            Var $b : Int = 1;
+            Constructor() {}
+        }
+        Class BCD {
+            Val a : String = "";
+            Val $b : Float = 0.5;
+            something(){
+                Val c : ABC = New ABC();
+                Var b : Int = c.a + 1;
+                Val a : Int = 1;
+                Var d : Float = ABC::$b + 1.0;
+                Val e : String = Self.b +. "Hello";
+            }
+        }

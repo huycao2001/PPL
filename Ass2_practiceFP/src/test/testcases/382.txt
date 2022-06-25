@@ -1,0 +1,12 @@
+
+        Class Device{
+            Var weight: Float = 0.0;
+            Var smart: Boolean = False;
+        }
+        
+        Class Router:Device{
+            start(){
+                    Return Self.status();
+            }
+        }
+        

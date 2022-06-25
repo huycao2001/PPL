@@ -1,0 +1,7 @@
+
+        Class Eval{
+            getSpeedfromKm(a, b, c: Int; e, f: String){
+                Outscreen.get("The speed = " +.  "1000km/h");
+            }
+        }
+        

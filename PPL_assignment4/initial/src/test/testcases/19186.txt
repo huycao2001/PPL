@@ -1,0 +1,16 @@
+
+        Class P {
+          Constructor() {
+          }
+          Var a: Int;
+        }
+        Class C : P {
+          a() {
+          }
+        }
+        Class Program {
+          main() {
+            Break;
+          }
+        }
+        

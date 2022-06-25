@@ -1,0 +1,14 @@
+
+        Class Programming{
+            main(){
+                If(1){
+                Love = 0;
+                }
+                Elseif(2){
+                Love = 1;}
+                Else{
+                Friendzone = True;
+                }
+            }
+        }
+        

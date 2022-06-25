@@ -1,0 +1,7 @@
+
+        Class Shape{
+            func_tion(){
+                Foreach (Step In 1+1 .. 100+100 By D.func_tion()){}
+            }
+        }
+        

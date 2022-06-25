@@ -1,0 +1,10 @@
+
+        Class Program {
+          main() {
+          }
+          Var $a: Boolean = True || True;
+          Val b: Boolean = 2 > 2;
+          Val c: Boolean = Self.b == Self.b;
+          Var eatThis: Boolean = 1 + 2.4;
+        }
+        

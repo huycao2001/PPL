@@ -1,0 +1,8 @@
+
+        Class Program{
+          main() {
+            Var A: Float;
+            Var x: Int = A::$b;
+          }
+        }
+        

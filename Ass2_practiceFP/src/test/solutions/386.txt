@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Clock),Id(Computer),[MethodDecl(Id(func),Instance,[],Block([For(Id(i),Id(real_time),IntLit(0),IntLit(1),Block([Call(Self(),Id($DoSth),[]),Continue])])]))])])

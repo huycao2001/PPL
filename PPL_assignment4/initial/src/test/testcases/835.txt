@@ -1,0 +1,13 @@
+
+        Class Program {
+            Var x : Int = 1;
+            main() {
+                Return;
+            }
+            method() {
+                Var b : String = "Hello";
+                Foreach (b In 100 .. 10000 By 1) {
+                    Val a : Int = 1;
+                }
+            }
+        }

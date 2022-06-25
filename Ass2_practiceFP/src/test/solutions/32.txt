@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Z),Id(t),[MethodDecl(Id($5s5),Static,[param(Id(V),IntType),param(Id(_),IntType),param(Id(_6),IntType),param(Id(ZQ),ArrayType(3,ArrayType(42,ArrayType(57,ArrayType(90,ArrayType(90,ArrayType(71,ArrayType(2,ArrayType(30008,IntType))))))))),param(Id(Y),FloatType),param(Id(k4bi19m),FloatType),param(Id(m),ClassType(Id(__))),param(Id(_),IntType)],Block([]))])])

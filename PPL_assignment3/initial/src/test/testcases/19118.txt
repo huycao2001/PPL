@@ -1,0 +1,9 @@
+
+        Class Program {
+          main() {
+            Var a, b: Int;
+            Val a: String = "Hourai - South Wind, Clear Sky";
+          }
+        }
+        
+        

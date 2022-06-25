@@ -1,0 +1,18 @@
+
+        Class ABC {
+            Val a : Int = 1;
+            Var b : String = "Hello";
+            Constructor(){
+                Return;
+            }
+        }
+        Class Program {
+            Val a : Int = 1;
+            Val b : ABC = New ABC();
+            main(){
+                Self.b.b = "Hi";
+                Self.a = 2;
+                Return;
+            }
+        }
+        

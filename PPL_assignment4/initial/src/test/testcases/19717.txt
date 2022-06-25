@@ -1,0 +1,25 @@
+
+        Class Parent{
+          Var a, $a: Int;
+          b(){
+          }
+          $b(){
+          }
+        }
+        Class Child : Parent{
+          Var a, $a: Int;
+          b(){
+          }
+          $b(){
+          }
+        }
+        Class Program{
+          Var a: Int = 4;
+          a() {
+            Return 4;
+          }
+        	main(){
+            Break;
+	        }
+        }
+        

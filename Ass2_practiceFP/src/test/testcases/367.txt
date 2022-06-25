@@ -1,0 +1,7 @@
+
+            Class Shape {
+                foo(){
+                    Var a : Int = ((b < c) < (e < f)) < (True < False);
+                } 
+            }
+        

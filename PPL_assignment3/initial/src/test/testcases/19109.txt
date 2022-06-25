@@ -1,0 +1,14 @@
+
+        Class Program {
+          Val g: Int = 2;
+        }
+        Class Subprogram : Program {
+          Var a: String = "OMEGALUL";
+        }
+        Class Subsubprogram : Subprogram {
+          Var y: String = "OMEGALUL";
+          Var $y: Int;
+          foo(){}
+          $y(){}
+        }
+        

@@ -1,0 +1,11 @@
+
+        Class Program {
+            main() {
+                (Self[0]).func();
+                Self[1] = "Hello World";
+                Out.println(Self.arr[1]);
+                ((((a[1][2][3]).a[4][5]).func()[arr[0]]).a[1]).func();
+                Return;
+            }
+        }
+        

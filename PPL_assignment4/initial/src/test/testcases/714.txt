@@ -1,0 +1,9 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            Val a : Int = 1.2;
+        }

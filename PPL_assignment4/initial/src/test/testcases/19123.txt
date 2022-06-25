@@ -1,0 +1,14 @@
+
+        Class Program {
+          Var a: Boolean = True;
+          main() {
+            Var a: Boolean = True;
+          }
+          foo(a: Int) {
+            If(False) {
+              Val a: Boolean = True;
+              Var a: Boolean = False;
+            }
+          }
+        }
+        

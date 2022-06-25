@@ -1,0 +1,7 @@
+
+        Class Shape
+        {
+            Var $a: Float = -1 + 80.0;
+            Val $b: Boolean = ! True;
+            Val $c: Int = 1 + False;
+        }

@@ -1,0 +1,10 @@
+
+        Class Program {
+            $foo() {
+                Self.A = Array(1, 02312 + a, a * b);
+                a[1.3412e-3][(i - j)][0x10] = c[i][k] + b[1][(j+1)][(k - 1412)][123];
+                
+                Self.System.Out(a.a);
+            }
+        }
+        

@@ -1,0 +1,9 @@
+- Kiểm số var = số value được thực hiện ở ass1 
+- Return không có expession kèm theo được thực hiện trong ass3/ass4 
+- Output : Id(Constructor) còn ID("Constructor") là trong ASTGen.py
+- Các IntLiteral được chuyển thành base 10 trong expected output của ASTGenSuite. 
+- Float literal : trường hơp .e5 sẽ ko có trong test case
+- Var a : ClassType; => Không có giá trị khởi tạo thì gán vào NullLiteral(); 
+- Var a : ClassType => Tương tự như trên 
+- Val a : ClassType => Gán vào None => ConstDecl(Id(id),data_type , None)
+- Hàm main trong Class Program thì sẽ có kind là Static. 

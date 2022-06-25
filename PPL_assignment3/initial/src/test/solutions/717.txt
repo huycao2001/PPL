@@ -1,0 +1,1 @@
+Type Mismatch In Constant Declaration: ConstDecl(Id(b),ClassType(Id(B)),FieldAccess(Self(),Id(c)))

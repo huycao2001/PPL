@@ -1,0 +1,18 @@
+
+                        Class Shape{
+                            Foo(){
+                                Var a:Int = 1;
+                                Var flag:Int = 1;
+                                If (True){
+                                    Var a : Float = 12.4;
+                                    Var a:Int = 2;
+                                }
+                                Elseif(True){
+                                    Var a:Int = 2;
+                                }
+                                Else{
+                                    Var a:Int = 2;
+                                }
+                                Var flag:Int = 2 ;
+                            }
+                        }

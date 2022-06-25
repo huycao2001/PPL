@@ -1,0 +1,6 @@
+
+        Class A{
+           Var $x, $y : Int = 0, 0;
+           Val a, $b : Int = 0x0, 0B0;
+        }
+        

@@ -1,0 +1,23 @@
+
+        Class Shape{
+            getArea(){}
+        }
+        Class Rectangle : Shape{
+            Var width : Float;
+            Val length : Float;
+
+            Constructor(a,b : Float){
+                Self.width = a; 
+                Self.length = b;
+            }
+
+            getArea(){
+                Return Self.width * Self.length; 
+            }
+            
+            Destructor(){
+                ## Might do something here ##
+            }
+            
+        }
+        

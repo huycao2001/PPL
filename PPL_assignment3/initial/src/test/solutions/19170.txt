@@ -1,0 +1,1 @@
+Type Mismatch In Statement: VarDecl(Id(eatThis),IntType,BinaryOp(>,IntLit(3),IntLit(2)))

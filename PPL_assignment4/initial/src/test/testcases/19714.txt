@@ -1,0 +1,8 @@
+
+        Class Program{
+	        main(){
+		        Var E: Int;
+		        Var v2: Int = E::$v;
+	        }
+        }
+        

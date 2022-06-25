@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Circle),Id(Shape),[AttributeDecl(Instance,ConstDecl(Id(height),IntType,ArrayCell(FieldAccess(NewExpr(Id(Obj),[IntLit(1)]),Id(a)),[IntLit(1)]))),AttributeDecl(Static,VarDecl(Id($width),FloatType,IntLit(4886718345)))])])

@@ -1,0 +1,1 @@
+Class d:_{Constructor (R_:Array [Array [Int ,0b110101],07];v,J,_5_:Array [Array [Array [Array [Array [Array [Float ,0B11],31],0b110101],0b1],0xE],0X7_13D_B];f:Array [Array [Array [Array [Boolean ,0X3],0B10],0B1000111],31]){} }

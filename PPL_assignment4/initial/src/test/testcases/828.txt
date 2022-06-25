@@ -1,0 +1,13 @@
+
+        Class A {
+            Val x : Int = 1;
+        }
+        Class D : A {
+            Val x : Int = 1;
+        }
+        Class E {
+            main() {
+                Var a : A = New D();
+            }
+        }
+        

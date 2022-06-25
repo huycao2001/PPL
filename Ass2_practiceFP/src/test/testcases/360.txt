@@ -1,0 +1,6 @@
+
+        Class Circle : Shape {
+            Val height : Int = New Obj(1).a[1];
+            Var $width : Float = 0x123456789;
+        }
+        

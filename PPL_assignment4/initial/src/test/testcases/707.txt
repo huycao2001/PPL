@@ -1,0 +1,9 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            main(w: Int; h, f: Float; a, w: Int) {}
+        }

@@ -1,0 +1,9 @@
+
+        Class Program {
+            Var b : Int;
+            Val a : Int = Self.b;
+            main(){
+                Return;
+            }
+        }
+        

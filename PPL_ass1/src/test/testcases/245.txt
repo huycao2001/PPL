@@ -1,0 +1,21 @@
+
+        Class Shape{
+            Var width : Float;
+            Var length : Float;
+            Constructor(){
+                Self.width = Self.length = 0;
+            }
+
+            Constructor(a,b : Float){
+                Self.width = a;
+                Self.length = b;
+            }
+
+            Destructor(){
+                a = b = 0; 
+            }
+        }
+        Class Program{
+            ## Do sth ##
+        }
+        

@@ -1,0 +1,6 @@
+Class a{
+                    lelelele(){
+                        Var a: Int;
+                        Var a: Int;
+                    }
+                    }

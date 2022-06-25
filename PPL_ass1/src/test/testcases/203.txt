@@ -1,0 +1,6 @@
+
+        Class myProgram {
+            Var a ,b ,c : Int = 1,2,3; 
+            Val $num1, $num2, $num3 : Float = 2.5, .e2 , 12_34.56e10;    
+        }
+        

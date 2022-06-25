@@ -1,0 +1,11 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            somehin() {
+                Val b : Int = a;
+            }
+        }

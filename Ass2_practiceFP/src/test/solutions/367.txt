@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Shape),[MethodDecl(Id(foo),Instance,[],Block([VarDecl(Id(a),IntType,BinaryOp(<,BinaryOp(<,BinaryOp(<,Id(b),Id(c)),BinaryOp(<,Id(e),Id(f))),BinaryOp(<,BooleanLit(True),BooleanLit(False))))]))])])

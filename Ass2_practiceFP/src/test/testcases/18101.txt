@@ -1,0 +1,7 @@
+
+            Class Program{
+                main() {
+                    a = Self.getRadius(1,2,3);
+                }
+            }
+            

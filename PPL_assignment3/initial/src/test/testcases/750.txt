@@ -1,0 +1,21 @@
+
+        Class Program {
+            a() {
+                Return;
+            }
+            c() {
+                Val a : Int = 1;
+            }
+            d() {
+                Return 1 + 1 * 2;
+            }
+            b() {
+                Self.a();
+                Self.c();
+                Self.d();
+            }
+            main(){
+                Return;
+            }
+        }
+        

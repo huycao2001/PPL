@@ -1,0 +1,10 @@
+     
+                        Class Shape {
+                           func() {                        
+                           } 
+                                                
+                        }                        
+                        Class Test{                        
+                          Var e: Shape = New Shape("ccccc");              
+                                                      
+                        } 

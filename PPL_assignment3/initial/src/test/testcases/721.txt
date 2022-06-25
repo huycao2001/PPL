@@ -1,0 +1,11 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val m : Int = 1 % 10.3;
+            }
+        }

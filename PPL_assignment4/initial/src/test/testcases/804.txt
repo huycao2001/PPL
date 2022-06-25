@@ -1,0 +1,21 @@
+
+        Class ABC {
+            Var a : Int = 1;
+            Var $a : Int = 1;
+            $b(){}
+            b(){}
+            c(){Return 1;}
+            $c(){Return 1;}
+        }
+        Class Program {
+            main(){
+                Return;
+            }
+            method(){
+                ABC::$b();
+            }
+            $method() {
+                Val a : Int = 1.2;
+            }
+        }
+        

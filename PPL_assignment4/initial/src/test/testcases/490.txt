@@ -1,0 +1,9 @@
+     
+                        Class Shape {
+                           funtion(){
+                                Var myArr: Array[Array[Int, 2],2] = Array(Array(1,1),Array(1,1));
+                                myArr[1] = Array(1,1);
+                                myArr[1][1] = 1;
+                                myArr = 1;
+                           }               
+                        }

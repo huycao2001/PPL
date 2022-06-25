@@ -1,0 +1,8 @@
+
+        Class Program : PPL {
+            Val a, b : Int = "Hello", "World";
+            Var c : String = (x ==. y) && (a +. b);
+            Var d : Boolean = (True == False) && (True == True) || True && False;
+            Var e : Boolean = ("Hello" ==. "World") || (a == b);
+        }
+        

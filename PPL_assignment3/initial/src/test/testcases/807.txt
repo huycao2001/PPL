@@ -1,0 +1,10 @@
+
+        Class ABC {}
+        Class Program{
+            main() {
+                Var a : ABC = New ABC();
+                Val a : Int = 1;
+                Return;
+            }
+        }
+        

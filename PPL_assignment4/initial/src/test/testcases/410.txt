@@ -1,0 +1,7 @@
+Class Shape{
+                    function(){
+                        Var gg:Int = 1;
+                        Var hh:Int = 1;
+                        bb = 1234;
+                    }
+                    }

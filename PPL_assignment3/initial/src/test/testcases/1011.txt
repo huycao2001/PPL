@@ -1,0 +1,9 @@
+
+                        Class C{
+                            Var a : Float;
+                            e(){
+                                Self.a = True;  
+                                
+                                
+                            }
+                        }

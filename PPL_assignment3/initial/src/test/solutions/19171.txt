@@ -1,0 +1,1 @@
+Illegal Constant Expression: BinaryOp(*,IntLit(69),FieldAccess(Id(Program),Id($a)))

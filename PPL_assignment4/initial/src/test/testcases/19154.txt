@@ -1,0 +1,10 @@
+
+        Class Program {
+          main() {
+            Var arr: Array[Float, 3];
+            arr = Array(1, 2, 3);
+            arr = Array(4, 5.6, 0.00001e-3);
+            arr = Array(1,1,1,1);
+          }
+        }
+        

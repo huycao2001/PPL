@@ -1,0 +1,9 @@
+
+        Class Program{
+            main() {
+                Val a: Float = 9e4;
+                Var b: Boolean = 1 + (0B101011 - 5) * 0.4 + a;
+                Return;
+            }
+        }
+        

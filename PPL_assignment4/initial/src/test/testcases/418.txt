@@ -1,0 +1,12 @@
+
+                    Class B{
+                        Var b:Int = 1;
+                        Var clone : String;
+                    }
+                    Class A{
+                    foo(){
+                        Var b:Int = 1;
+                        Var obj:B;
+                        obj.clone = "True";
+                    }
+                    }

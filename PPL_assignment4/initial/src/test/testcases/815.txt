@@ -1,0 +1,21 @@
+
+        Class ABC {
+            $a() {}
+        }
+        Class Program {
+            main(){
+                Var a, c : Boolean = True, False;
+                Var b : Int = 1;
+                If (a) {
+                    ABC::$a();
+                } Elseif (b) {
+                    ABC::$a();
+                } Elseif (c) {
+                    ABC::$a();
+                } Else {
+                    ABC::$a();
+                }
+                Return;
+            }
+        }
+        

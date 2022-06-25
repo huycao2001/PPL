@@ -1,0 +1,1 @@
+Class W4:I{Constructor (__,Z:d_C;T_,_:Array [Array [Array [Boolean ,2_7],0b1111],04]){}Constructor (){Break ;}Destructor (){} }Class pt:_0__{}

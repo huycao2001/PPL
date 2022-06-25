@@ -1,0 +1,12 @@
+
+        Class Programming{
+            main(){
+                If( (a < 2) && (b > 3)){
+                    d = "OK";
+                }
+                Else{
+                    e = "FAIL";
+                }
+            }
+        }
+        

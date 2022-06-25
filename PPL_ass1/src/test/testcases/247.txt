@@ -1,0 +1,5 @@
+
+        Class Program{
+            Var a : Array[Array[Array[Array[Array[Array[Array[Int,0b1011],0xABCD],04567],0123],5],4],3];
+        }
+        

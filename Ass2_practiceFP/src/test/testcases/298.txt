@@ -1,0 +1,8 @@
+
+        Class Program {
+            main(){
+                Var a : Shape = New Shape(1,2); 
+                Return a::$GetCount();
+            }
+        }
+        

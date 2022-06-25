@@ -1,0 +1,20 @@
+
+        Class Program
+        {
+            main()
+            {
+                Val myArray: Array[Int, 5] = Array(1,2,3,4,5);
+                Val sum: Int = 0;
+                Foreach (i In 1 .. 5){
+                    sum = sum + myArray[i];
+                    If(i % 2 == 0){
+                        Break;
+                    }
+                    Else{
+                        Continue;
+                    }
+                }
+                Out.println(sum);
+            }
+        }
+        

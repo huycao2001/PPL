@@ -1,0 +1,11 @@
+
+        Class A{}
+        
+        Class B{
+            Val $_ : Float;
+            }
+        
+        Class F6_{
+            Val $P_X_, $_, $91 : String;
+        }
+        

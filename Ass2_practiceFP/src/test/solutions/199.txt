@@ -1,0 +1,1 @@
+Class,Entity,{,Val,$a,:,Int,=,0b1011010,;,Var,b,:,Int,=,00,;,$getA,(,),{,Return,New,X,(,),.,Y,(,),;,},},Class,Program,{,main,(,),{,Var,sum1,:,Int,=,Example,::,$getA,(,),+,Example,.,b,;,Var,sum2,:,Int,=,Example,.,b,+,Example,::,$getA,(,),;,Out,.,printInt,(,res1,+,res2,),;,},},<EOF>

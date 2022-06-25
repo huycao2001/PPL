@@ -1,0 +1,14 @@
+     
+                        Class Shape {
+                           Var a:Int = 1;                      
+                        }                        
+                        Class B{ 
+                            Var b:Shape = New Shape(); 
+                        }
+                        Class C{
+                            foo(){
+                                Var c:B = New B();
+                                Var e:Int = c.b.a;
+                                Var f:Int = c.clone.a;
+                            }
+                        }

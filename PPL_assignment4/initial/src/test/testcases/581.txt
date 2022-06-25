@@ -1,0 +1,13 @@
+   
+        Class Program{
+            main(){
+                Var a : Int = 1; 
+                If(a == 2 ){
+                    io.readInt(4); 
+
+                }
+                Else{
+                    io.readInt(3);
+                }
+            }
+        } 

@@ -1,0 +1,25 @@
+import scala.collection.mutable.Stack
+object HelloWorld {
+    def accu(L : List[Int], N : Int ) = L.map((x) => (N,x) )
+    def foo(x : Int, y : Int ) = x - y
+    def my_test(L : List[Int], N : Int) = {
+        L.filter((x) => x < N) 
+    }
+    def sum_list (L : List[Int]) = L.foldLeft(List[Int]())((acc,ele) => ele :: acc) 
+    def power(x : Int , n : Int ) = (1 to n).foldLeft(1)((acc,b) => acc * x)
+    def main(args: Array[String]) {
+        val inc = (x: Int) => x + 1
+        val dub = (x: Int) => 2 * x
+        // val incdub = (x : Int ) => (inc andThen dub)(x)
+        // print(incdub(4))
+        // print(List(3,4,5).map()
+        // var ints = Stack(999)
+        // ints.push(4,2,3)
+        // print(ints)
+        print (power(2,3) )
+        print('\n')
+        val lst  : List[Int] = List(1,2,3,4,5,6,7,8,9)
+        print(sum_list(lst))
+   }
+   
+}

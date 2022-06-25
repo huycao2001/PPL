@@ -1,0 +1,8 @@
+
+        Class Program {
+            main(){
+                Val f : Array[Array[Int, 2], 2] = Array(Array(2, 3), Array(1));
+                Return;
+            }
+        }
+        

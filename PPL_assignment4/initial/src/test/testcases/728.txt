@@ -1,0 +1,12 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Boolean = ((-1 >= 2.0) && (("abc" +. "bec") ==. "def")) || ((1 + 2 - 4.0 >= 5) && !False);
+                Val b : Float = (((1 % 10 >= 1.0) && !True) == False) ==. "False";
+            }
+        }

@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Home),[MethodDecl(Id(Constructor),Instance,[],Block([AssignStmt(FieldAccess(Id(Home),Id($people)),BinaryOp(+,FieldAccess(Id(Home),Id($people)),IntLit(1)))])),MethodDecl(Id(Destructor),Instance,[],Block([AssignStmt(FieldAccess(Id(Home),Id($people)),NullLiteral()),Return(BooleanLit(True))]))])])

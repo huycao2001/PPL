@@ -1,0 +1,7 @@
+
+        Class C{
+            func(a : Int){
+                Var x,y: Int = 1+1, 2+2;
+            }
+        }
+        

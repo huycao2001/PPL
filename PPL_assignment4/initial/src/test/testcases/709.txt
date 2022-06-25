@@ -1,0 +1,13 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+        }
+        Class ABC {
+            main(w: Int; h, f: Float; a: Int) {
+                Var b : Float;
+                Var c : Int;
+                Var b : String;
+            }
+        }

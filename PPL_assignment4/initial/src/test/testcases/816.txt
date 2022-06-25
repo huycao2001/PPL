@@ -1,0 +1,14 @@
+
+        Class Program {
+            main(){
+                Var a : Int = 1;
+                Var x : Int;
+                Foreach (x In 1 .. 10 By 2) {
+                    Break;
+                    Break;
+                    a = "ABC";
+                }
+                Return;
+            }
+        }
+        

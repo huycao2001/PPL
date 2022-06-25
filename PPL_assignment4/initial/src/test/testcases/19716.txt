@@ -1,0 +1,11 @@
+
+        Class Program{
+          Var a: Int = 4;
+          a() {
+            Return 4;
+          }
+        	main(){
+            Break;
+	        }
+        }
+        

@@ -1,0 +1,15 @@
+
+        Class A {
+            method() {
+                Val a : Int = 1;
+                If (True) {
+                    Return 1;
+                } Elseif (False) {
+                    Return 1 + a;
+                } Elseif (True) {
+                    Return 2 * a;
+                } Else {
+                    Return "String";
+                }
+            }
+        }

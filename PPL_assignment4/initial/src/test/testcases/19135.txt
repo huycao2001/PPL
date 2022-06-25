@@ -1,0 +1,10 @@
+
+        Class Shape {
+        }
+        Class Program {
+          main() {
+          }
+          Val obj: Shape = Null;
+          Val obj2: Shape;
+        }
+        

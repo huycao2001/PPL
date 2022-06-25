@@ -1,0 +1,10 @@
+
+                Class Shape {
+
+                    Function() {
+                        Var a: Array[Int, 3] = Array(12,22,1);
+                        a[4] = 5; 
+                        a[1][2] = 4; 
+                    }
+                }
+            

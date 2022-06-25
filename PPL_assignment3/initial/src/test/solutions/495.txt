@@ -1,0 +1,1 @@
+Type Mismatch In Statement: VarDecl(Id(thirdArray),ArrayType(2,IntType),Id(firstArray))

@@ -1,0 +1,15 @@
+
+                        Class Huycao{
+                            Shape(){
+                                Var i:Int;
+                                Foreach(i In 1 .. 10 By 1){
+                                    Var a:Int = 1;
+                                    Break;
+                                    If (True){
+                                        Var a:Int = 1;
+                                        Continue;
+                                    }
+                                }
+                                Continue;
+                            }
+                        }

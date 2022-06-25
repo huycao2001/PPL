@@ -1,0 +1,11 @@
+
+        Class A {
+          Var b: Int;
+          Var $b: Int;
+        }
+        Class Program {
+          main() {
+            Var x: Int = A.b;
+          }
+        }
+        

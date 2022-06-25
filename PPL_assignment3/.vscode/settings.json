@@ -1,0 +1,10 @@
+{
+    "python.analysis.extraPaths": [
+        "./initial/target",
+        "./initial/src/main/d96/utils",
+        "./initial/src/main/d96/checker",
+        "./initial/src/main/d96/codegen",
+        "./initial/src/main/d96/parser",
+        "./initial/src/main/d96/astgen"
+    ]
+}

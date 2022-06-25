@@ -1,0 +1,1 @@
+Class S{Constructor (F:_){Return ;Val O:Array [Array [Array [Float ,0b10011],0B1_10],020];Var _:Array [Array [Array [Array [Boolean ,05712_1_5],8],0B1000000],7];} }

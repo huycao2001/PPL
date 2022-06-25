@@ -1,0 +1,14 @@
+
+        Class Program {
+          main() {
+          }
+          Constructor() {
+            Return;
+          }
+        }
+        Class B {
+          Constructor() {
+            Return Self;
+          }
+        }
+        

@@ -1,0 +1,6 @@
+
+        Class Program : PPL {
+            Val a : Array[Int, 3] = Array("A","B","C");
+            Val $b : Int = a[Arr[0]];
+        }        
+        

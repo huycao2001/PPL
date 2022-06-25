@@ -1,0 +1,5 @@
+Class Shape{
+                    function(huycao:Int){
+                        Var huycao: Int = 4444555;
+                    }
+                    }

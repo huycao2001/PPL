@@ -1,0 +1,10 @@
+
+        Class ABC{}
+        Class DEF{}
+        Class Program {
+            main(){
+                Var a : ABC = Null;
+                Var d : DEF = Null;
+                d = a;
+            }
+        }

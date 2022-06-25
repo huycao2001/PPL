@@ -1,0 +1,1 @@
+Class _20xjc{$2_(__:Array [Boolean ,06_57];____:String ;A,R_:Int ;__,_F_:Float ;_ZGfF4,C4:Array [Array [Float ,07],4_7];m,c:t){} }

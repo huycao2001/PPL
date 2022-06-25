@@ -1,0 +1,9 @@
+
+        Class Car {
+            run() {
+                Foreach (hp In New Engine("Start") .. Self.wheel().A.bar() By BKC) {
+                    Self.display(speed);
+                }
+            }
+        }
+        

@@ -1,0 +1,7 @@
+ Class myProgram {
+            Var a : Int = 3;
+            Var b : Float = 4e3;
+            Val c : Boolean = True; 
+            Var l : String = "Siuuu";             
+        }
+        

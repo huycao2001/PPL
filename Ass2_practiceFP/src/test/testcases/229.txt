@@ -1,0 +1,17 @@
+
+        Class Shape{
+            Var a : Float;
+            Var b : Float;
+            Var $count : Int = 0; 
+            Constructor(a,b : Float){
+                Self.a = a; 
+                Self.b = b; 
+                Shape::$count = Shape::$count + 1; 
+            }
+        }
+        Class Program{
+            main(){
+                Var ans : Shape = New Shape(); 
+                Out.println(ans.$count);
+            }
+        }

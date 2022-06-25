@@ -1,0 +1,9 @@
+
+        Class Program {
+            main(){
+                Return;
+            }
+            method(w: Int) {
+                Val a : Int = w;
+            }
+        }

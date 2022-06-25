@@ -1,0 +1,7 @@
+
+        Class Program {
+          main() {
+          }
+          Var e: Float = "WTF" % (True && !False);
+        }
+        

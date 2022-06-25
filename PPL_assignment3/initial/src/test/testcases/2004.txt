@@ -1,0 +1,16 @@
+     
+                        Class E{
+                            Val x : Int = 1;
+                            foo(){
+                                
+                            }
+                        }
+                        
+                        Class A{
+                            foo(){
+                                Var flag : E = New E(); 
+                                flag.x = 2;
+                            }
+                        }
+                        
+                        

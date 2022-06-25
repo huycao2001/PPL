@@ -1,0 +1,1 @@
+Class d_Z{Val NI:String ;Val qi,$3:Array [Array [String ,0b1],072];Var Z78_C,_,b_,$mA:Array [Array [Array [Boolean ,0B1_00_1_10],072],7];}

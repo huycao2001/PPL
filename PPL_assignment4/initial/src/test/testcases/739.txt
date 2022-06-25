@@ -1,0 +1,15 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            somehing(w, i: Int; h, e: Float) {
+                Val a : Array[Int, 1] = Array(1);
+                Val b : Int = a[0];
+                Val c : Array[Array[String, 1], 1] = Array(Array("1"));
+                Val d : String = c[0][0];
+                Val f : Array[String, 9] = c[0];
+            }
+        }

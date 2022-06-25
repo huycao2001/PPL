@@ -1,0 +1,7 @@
+
+        Class Shape{
+            func_tion(){
+                Return A::$B * C::$DD--F::$H;
+            }
+        }
+        

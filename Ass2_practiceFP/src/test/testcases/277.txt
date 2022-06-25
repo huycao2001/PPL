@@ -1,0 +1,12 @@
+
+        Class Program{
+            myFunc(_1 , _2 : Int; _1___az_11, _122_2333, _aaaz_123__ : String ; _AA_b_z_, CCcA_aa : Float){
+                ## Do sth ## 
+                ## Do sth else ##
+            }
+            main(){
+                Var a : Int = 0b1011; 
+                Return (1+1).x;
+            }
+        }
+    

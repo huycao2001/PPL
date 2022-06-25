@@ -1,0 +1,12 @@
+
+        Class Program {
+          main(){
+          }
+          foo(a: Int){
+          }
+        }
+        Class Subprogram : Program {
+          food(a: Int; a: String){
+          }
+        }
+        

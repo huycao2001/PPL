@@ -1,0 +1,12 @@
+
+        Class Program{
+          main() {
+            Var a: Array[Array[Int, 10], 1];
+            Var b: Array[Float, 10];
+            Var c: Float;
+            b = a[0];
+            c = a[0][9];
+            c = a[1];
+          }
+        }
+        

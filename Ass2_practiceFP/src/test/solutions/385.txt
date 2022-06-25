@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Sound),Id(Computer),[MethodDecl(Id(startMusic),Instance,[param(Id(link),StringType)],Block([AssignStmt(FieldAccess(Self(),Id(start)),BooleanLit(True)),Break]))])])

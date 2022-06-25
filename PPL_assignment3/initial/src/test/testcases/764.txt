@@ -1,0 +1,29 @@
+
+        Class ABC{
+            bbb(j, i: String; k: Boolean) {
+                If (k) {
+                    Return j;
+                } Else {
+                    Return i;
+                }
+            }
+        }
+        Class Program {
+            a(w: Float; h: Int; a : ABC) {
+                If ((a.bbb("Hello", "World", True) +. "Cool") ==. "Amazing") {
+                    Return h + 1.0;
+                } Else {
+                    Return w;
+                }
+            }
+            b() {
+                Var a : ABC;
+                Var b : Float = Self.a(1.0, 1, a) + 1;
+                Self.a(1.0, 1, a);
+            }
+            main(){
+                Return;
+            }
+            c(){}
+        }
+        

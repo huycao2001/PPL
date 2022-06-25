@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(A),[MethodDecl(Id($func),Static,[param(Id(a_a),IntType),param(Id(b_b),IntType),param(Id(c_c),IntType)],Block([Return(),Return(UnaryOp(!,UnaryOp(!,UnaryOp(!,UnaryOp(!,UnaryOp(!,UnaryOp(!,CallExpr(NewExpr(Id(_),[]),Id(B52),[])))))))),Block([]),Continue]))])])

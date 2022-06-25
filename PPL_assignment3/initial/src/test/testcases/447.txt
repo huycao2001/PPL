@@ -1,0 +1,11 @@
+
+                        Class Shape{
+                            Var a : Int = 1;
+                            func(){
+
+                            } 
+                            Foo(){
+                                Self.func();
+                                
+                            }
+                        }

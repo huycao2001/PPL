@@ -1,0 +1,9 @@
+
+        Class Program{
+            main(){
+                If( number % 2 == 0){
+                    System.printInt(Integer::$HEX);
+                }
+            }
+        }
+        

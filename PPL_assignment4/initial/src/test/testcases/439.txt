@@ -1,0 +1,15 @@
+
+        Class Program
+        {
+            getArea(a, b: Float)
+            {
+                Return a*b;
+            }
+            main()
+            {
+                Var height: Int = 5;
+                Var width: Int = 6;
+                Var myArea: Float = Self.getArea(height, width);
+                Return myArea;
+            }
+        }

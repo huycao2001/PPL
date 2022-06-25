@@ -1,0 +1,14 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            somehing(w, i: Int; h, e: Float) {
+                Val a : Array[Int, 1] = Array(1);
+                Val b : Int = a[1 + 10 - 2];
+                Val c : Array[Array[String, 2], 2] = Array(Array("1", "2"), Array("3", "4"));
+                Val d : String = c[2 * 3][2 > 0];
+            }
+        }

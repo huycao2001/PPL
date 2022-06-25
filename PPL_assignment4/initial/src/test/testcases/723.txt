@@ -1,0 +1,14 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : String = "abc" +. "def";
+                Val b : Boolean = "abc" ==. "def";
+                Val c : Boolean = (("abc" +. "def") ==. "def") && (1 == 1);
+                Val d : String = 1.0 +. "2";
+            }
+        }

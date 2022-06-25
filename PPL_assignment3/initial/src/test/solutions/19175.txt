@@ -1,0 +1,1 @@
+Type Mismatch In Constant Declaration: ConstDecl(Id(eatThis),BoolType,BinaryOp(+.,StringLit(Wut),StringLit(The Hell)))

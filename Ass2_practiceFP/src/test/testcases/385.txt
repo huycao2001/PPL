@@ -1,0 +1,8 @@
+
+        Class Sound:Computer{
+            startMusic(link : String){
+                Self.start = True;
+                Break;
+            }
+        }
+        

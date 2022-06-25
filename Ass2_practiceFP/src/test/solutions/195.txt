@@ -1,0 +1,1 @@
+Class,Shape,{,Var,a,:,Float,;,Constructor,(,b,:,Float,),{,a,=,b,;,},getFunc,(,),{,If,(,a,<,0,),{,a,=,a,+,1,-,2,*,3,/,4,;,},Elseif,(,a,>,0,),{,a,=,a,*,a,*,a,;,},Else,{,a,=,-,a,;,},},},<EOF>

@@ -1,0 +1,14 @@
+
+        Class B{
+                main(){
+                }
+                foo(){
+                    a = b%c + Self.foo();
+                    Self.foo2(param1, param2);
+                    a1 = Self.foo3(param1, param2);
+                    b = 1 >= 3;
+                    val1 = True == False;
+                    b = ! val1;
+                }
+        }
+        

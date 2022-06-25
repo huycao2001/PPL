@@ -1,0 +1,10 @@
+
+        Class Swap{
+            func(){
+                If (1 == -1--1){
+                    If(b == "f"+."h"){}
+                    Elseif(a == b ==. c){}
+                }
+            }
+        }   
+        

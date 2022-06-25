@@ -1,0 +1,9 @@
+
+        Class Program {
+          main() {
+            If(5) {
+              Val a: Int = 5;
+            }
+          }
+        }
+        

@@ -1,0 +1,12 @@
+
+        Class Program
+        {
+            main()
+            {
+                Var a: Int = 6;
+                Foreach (i In 1 .. a By True)
+                {
+                    Var a:Boolean = True;
+                }
+            }
+        }

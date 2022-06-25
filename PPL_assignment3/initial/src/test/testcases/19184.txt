@@ -1,0 +1,25 @@
+
+        Class Program {
+          main() {
+          }
+        }
+        Class P {
+          Var a: Int;
+          Var $a: Int;
+          $food(i: Int; s:String) {
+          }
+        }
+        Class C : P {
+          foo(i: String){
+          }
+          fuuuu(b: Boolean) {
+          }
+          Var a: String;
+          Var $a: String;
+          sub() {
+            Self.foo(Self.a);
+            P::$food(P::$a, C::$a);
+            Self.fuuuu(Self.a);
+          }
+        }
+        

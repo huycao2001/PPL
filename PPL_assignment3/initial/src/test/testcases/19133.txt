@@ -1,0 +1,7 @@
+
+        Class Program {
+          foo(a: Int) {
+            If(5) {}
+          }
+        }
+        

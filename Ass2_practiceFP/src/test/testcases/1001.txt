@@ -1,0 +1,9 @@
+
+        Class Program {
+            Var a, $l, a1, c, cccc: Array[Array[Int, 10], 175];
+            Var c, $b : Sth;
+            mainA () {
+                Self.getIntLn();
+            }
+        }
+        

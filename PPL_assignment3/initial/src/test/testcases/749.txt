@@ -1,0 +1,10 @@
+
+        Class Program {
+            Val a : Int = 1;
+            Val c : Int = Self.a;
+            Val b : Int = a;
+            main() {
+                Return;
+            }
+        }
+        

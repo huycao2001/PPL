@@ -1,0 +1,13 @@
+         
+                        Class Shape{
+                            $a(){}
+                            b(){}
+                        }         
+                        Class CCC{
+                        func(){
+                            Shape::$a();
+                            Var b : Shape = New Shape();
+                            b.b();
+                            b::$a();
+                        }
+                        }

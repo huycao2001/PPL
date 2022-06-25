@@ -1,0 +1,15 @@
+
+        Class Program {
+          main() {
+            Var a: Boolean = 3 == 3;
+            Var b: Int = 2;
+            Var c: Boolean = !False;
+            If (a) {
+            }
+            Elseif (b) {
+            }
+            Elseif (c) {
+            }
+          }
+        }
+        

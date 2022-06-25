@@ -1,0 +1,8 @@
+
+        Class C{
+            func(a : Int){
+                a = True;
+                Return 2+3*4/5; 
+            }
+        }
+        

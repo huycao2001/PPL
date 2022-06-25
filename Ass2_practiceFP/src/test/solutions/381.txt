@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Device),[AttributeDecl(Instance,VarDecl(Id(weight),FloatType,FloatLit(0.0))),AttributeDecl(Instance,VarDecl(Id(smart),BoolType,BooleanLit(False)))])])

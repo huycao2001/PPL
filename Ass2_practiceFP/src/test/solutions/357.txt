@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Program),[MethodDecl(Id(main),Static,[],Block([Call(Id(ABC),Id(function),[]),Call(Self(),Id($func),[])]))])])

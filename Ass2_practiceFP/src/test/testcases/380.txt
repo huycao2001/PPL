@@ -1,0 +1,9 @@
+
+        Class Book{
+            Val $Page: Array[String, 0X34122];
+            Constructor(){}
+            addBook(book: Array[String, 01231_2]){
+                Book::$arr[0] = "Hello World";
+            }
+        }
+        

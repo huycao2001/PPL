@@ -1,0 +1,23 @@
+
+        Class Program
+        {
+            main ()
+            {
+                Var myArray: Array[Array[Array[Int,4],2],2] = Array(
+                        Array(
+                            Array(1,2,3,4),
+                            Array(1,2,3,4)
+                        ),
+                        Array(
+                            Array(1,2,3,4),
+                            Array(1,2,3,4)
+                        )
+                    );
+                Var nextArray : Array[Array[Int,4],2] = myArray[1];
+                Var value : Int = myArray[1][1][1];
+                If (value)
+                {
+                    Var value : Boolean = True;
+                }
+            }
+        }

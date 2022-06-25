@@ -1,0 +1,248 @@
+grammar D96;
+
+@lexer::header {
+from lexererr import *
+}
+
+options {
+	language = Python3;
+}
+
+// Add array as a type and add a syntax for multi-dim array.
+
+//--------------------- Parser-------------------------//
+program: class_declaration+ EOF;
+
+class_declaration : CLASS ID ( COLON ID )? LP member+ RP;
+
+member : attribute_declaration | method_declaration;
+
+// Attribute declare
+// Var $num2 , $num1, $num3 : Int = 1,2,3;
+attribute_declaration : ATTRIBUTE_TYPE (testing | testing2) SEMI_COLON;
+
+testing : att_name (COLON (primitive_type|array_type) (ASSIGN expression)) | (att_name COMMA testing (COMMA expression));
+
+testing2 :  att_name (COMMA att_name )* COLON (primitive_type | array_type) ; // Int a,b,c : = Int;
+
+// testing1: att_name ;
+
+primitive_type : INT_TYPE | FLOAT_TYPE | BOOLEAN_TYPE | STRING_TYPE;
+
+array_type: (ARRAY LS primitive_type COMMA INT_LITERAL  RS) ; //var a: Array[Int, 5];
+
+att_name : (ID|DOLLAR_ID);
+
+
+
+// Method declare
+
+method_declaration : att_name LB (parameter_decl (SEMI_COLON parameter_decl)*)? RB block_statement;
+
+parameter_decl : (ID ( COMMA ID)*) COLON primitive_type ;  // a,b : Int 
+
+constructor : CONSTRUCTOR LB (parameter_decl (SEMI_COLON parameter_decl)*)? RB block_statement; 
+
+destructor : DESTRUCTOR LB RB block_statement;
+
+
+
+block_statement : LP statement* RP; // statement + attribute declare maybe.  
+
+statement : var_declare_statement 
+| assign_statement 
+| if_statement 
+| for_statement 
+| return_statement 
+| break_statement 
+| continue_statement ; 
+
+var_declare_statement : ATTRIBUTE_TYPE ID (COMMA ID )* COLON (primitive_type | array_type)  ASSIGN  expression (COMMA expression)* SEMI_COLON ;
+
+assign_statement : expression ASSIGN expression SEMI_COLON;
+
+if_statement : IF LB  expression RB block_statement (ELSEIF LB  expression RB block_statement)* (ELSE block_statement)? ;
+
+for_statement : FOREACH LB ID IN INT_LITERAL DOUBLEDOT INT_LITERAL (BY INT_LITERAL)?  RB block_statement;
+
+return_statement : RETURN expression SEMI_COLON;
+
+break_statement : BREAK SEMI_COLON;
+
+continue_statement : CONTINUE SEMI_COLON;
+// mptype: INTTYPE | VOIDTYPE;
+
+// body: funcall SEMI_COLON;
+
+// exp: funcall | INTLIT;
+
+// funcall: ID LB exp? RB;
+// literal : INT_LITERAL | FLOAT_LITERAL | BOOL_LITERAL | STRING_LITERAL ;
+// data_type : INT_TYPE | FLOAT_TYPE | BOOLEAN_TYPE | STRING_TYPE;
+expression : expression1 (CONCATE | STRCOMPARE) expression1 | expression1;
+
+expression1 : expression2 ( EQUAL | NOTEQUAL | LARGER | SMALLER | LE | SE) expression2 | expression2 ;
+
+expression2 : expression2 (OR | AND) expression3 | expression3; 
+
+expression3 : expression3 (ADD | SUB) expression4 | expression4;
+
+expression4 : expression4 (MUL | DIV | MOD) expression5 | expression5;
+
+expression5 : NOT expression5 | expression6;
+
+expression6 : SUB expression6 | operands;
+
+operands : (STRING_LITERAL | INT_LITERAL | FLOAT_LITERAL | BOOL_LITERAL) 
+| (ID (LB RB)? ) 
+| (LB expression RB) 
+| indexed_array 
+| multi_array ;
+
+
+//------- INDEXED ARRY-------- // 
+indexed_array : int_array | float_array | bool_array | string_array ;
+
+int_array : ARRAY LB INT_LITERAL (COMMA INT_LITERAL)* RB;
+
+float_array : ARRAY LB FLOAT_LITERAL (COMMA FLOAT_LITERAL)* RB;
+
+bool_array : ARRAY LB BOOL_LITERAL (COMMA BOOL_LITERAL)* RB;
+
+string_array : ARRAY LB STRING_LITERAL (COMMA STRING_LITERAL)* RB;
+
+multi_array : (indexed_array COMMA?) | (ARRAY LB multi_array* RB COMMA? )  ;
+// Var a = New classID; 
+
+
+// --------------------- Lexer-------------------------//
+
+
+
+// // ---------------------Keywords----------------------// 
+BREAK : 'Break';
+CONTINUE : 'Continue'; 
+IF : 'If';
+ELSEIF : 'Elseif';
+ELSE : 'Else';
+FOREACH : 'Foreach';
+// TRUE :'True'; 
+// FALSE : 'False'; 
+ARRAY :'Array'; 
+IN : 'In';
+BY : 'By'; 
+
+//----------------------Type--------------------------// 
+INT_TYPE : 'Int';
+FLOAT_TYPE : 'Float';
+BOOLEAN_TYPE : 'Boolean'; 
+STRING_TYPE : 'String'; 
+NULL : 'Null';
+RETURN : 'Return';
+
+
+//------------------Class Declaration---------------------//
+ATTRIBUTE_TYPE : IMMUTABLE | MUTABLE; 
+SELF : 'self';
+NEW :'New';
+CLASS : 'Class';
+IMMUTABLE : 'Val'; 
+MUTABLE : 'Var';
+CONSTRUCTOR : 'Constructor';
+DESTRUCTOR : 'Destructor';
+DOLLAR_ID: '$'ID;
+
+
+// //--------------------Operator---------------------//
+
+ASSIGN : '=';
+
+// Arithmetic operator
+ADD : '+'; 
+SUB: '-';
+MUL: '*';
+DIV: '/';
+MOD : '%'; 
+
+
+//Boolean operator
+NOT : '!';
+AND : '&&';
+OR : '||'; 
+STRCOMPARE : '==.';
+
+// String operator
+CONCATE : '+.';
+
+// Comparison operator
+EQUAL : '==';
+NOTEQUAL : '!=';
+LARGER : '>';
+SMALLER : '<';
+LE : '>=';
+SE : '<=';
+
+
+
+
+// // ------------------------------- Literal -------------------------------//
+
+
+ 
+fragment BINARY: '0' [bB](('1'[01]* ('_' [01]+)*) | '0');
+fragment OCTAL :	[0]	( [0-7] |('_'[0-7]) )* ;
+fragment HEXA: '0' [xX]( ([1-9A-F][0-9A-F]* ('_' [0-9A-F]+)*) | '0'); 
+fragment NATURAL : '0'| [1-9][0-9]* ('_'[0-9]+)* ; 
+
+INT_LITERAL : NATURAL {self.text = self.text.replace("_","")} |
+ HEXA{self.text = self.text.replace("_","")} | 
+ OCTAL {self.text = self.text.replace("_","")} | 
+ BINARY{self.text = self.text.replace("_","")} ;
+
+BOOL_LITERAL : 'True'| 'False';  
+
+FLOAT_LITERAL : INT_PART DECIMAL EXPONENT? {self.text = self.text.replace("_","")}  | INT_PART? DECIMAL EXPONENT {self.text = self.text.replace("_","")} | INT_PART DECIMAL? EXPONENT  {self.text = self.text.replace("_","")};
+fragment INT_PART : ([0-9] |[1-9][0-9]+) ('_'[0-9]+)*;
+fragment DECIMAL : '.'[0-9]*; 
+fragment EXPONENT : [eE][-+]? ([0-9] | [1-9][0-9]+);
+ 
+
+STRING_LITERAL:QUOTE ( (ESCCHAR | STRCHAR)*) QUOTE{self.text = self.text[1:-1]};
+fragment QUOTE: '"';
+fragment STRCHAR: ~[\\'"]; 
+fragment ESCCHAR: (('\\b')|('\\f')|('\\r')|('\\n')|('\\t')|('\\\'')|('\\\\')|('\'"')); // \b \f \r \n \t ' \\ '"
+
+// BLOCK_COMMENT: (('##' .*? '##') | ('##' ~['##']* )) -> skip ;
+
+
+BLOCK_COMMENT : '##' .*? '##' -> skip; 
+
+
+//--------------------------- Seperators -------------------------// 
+LB: '('; // Left parenthesis
+RB: ')'; // Right parenthesis
+LP: '{'; // Left curly bracket
+RP: '}'; // Right curly bracket
+LS: '['; // Left square Bracket
+RS: ']'; // Right square Bracket
+COLON : ':';
+DOUBLE_COLON : '::';
+DOUBLEDOT : '..';
+DOT : '.';
+COMMA : ',';
+SEMI_COLON: ';'; // Semi colon
+
+ID: ([_a-zA-Z][_a-zA-Z0-9]*); 
+
+WS: [ \t\r\n]+ -> skip; // skip spaces, tabs, newlines
+
+
+
+
+//------------------Error throw--------------------------// 
+ERROR_CHAR: .{raise ErrorToken(self.text)};
+UNCLOSE_STRING: '"' (ESCCHAR | STRCHAR)* EOF {raise UncloseString(self.text[1:])};
+ILLEGAL_ESCAPE: .;
+
+
+

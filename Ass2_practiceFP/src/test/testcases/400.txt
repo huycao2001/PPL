@@ -1,0 +1,18 @@
+
+        Class A{
+            Destructor(){
+            Return;_9::$g3k.m();
+            } 
+        }
+        
+        Class A1:A{}
+        
+        Class A2:A{
+           func_1(){
+                Name = "BKU";
+           }
+           func_2(){
+                Slogan = "vjp pro no 1";
+           }
+        } 
+        

@@ -1,0 +1,11 @@
+
+        Class Program {
+            main() {
+                Return;
+            }
+        }
+        Class ABC {
+            something() {
+                Val a : Boolean = 1.0 + 2.0 == 3.0;
+            }
+        }

@@ -1,0 +1,1 @@
+Class X{Var $8,z:Boolean ;}Class _:v_3Ali3{$8(_,A,_u,I,_,_:Array [Array [Boolean ,1],0107];F,G:Array [Array [Array [String ,0x2C],0b110010],0x1];D,_g9,_W:Array [Int ,0b110010]){} }

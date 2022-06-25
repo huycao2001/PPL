@@ -1,0 +1,8 @@
+
+        Class E{}
+        Class Program {
+          main() {
+            Var x: Int = E.v;
+          }
+        }
+        

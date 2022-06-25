@@ -1,0 +1,10 @@
+
+        Class Vehicle{
+            run(){
+                Self.running = True;
+            }
+            stop(){
+                Self.running = False;
+            }
+        }
+        

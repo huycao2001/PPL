@@ -1,0 +1,10 @@
+
+        Class Program{
+            main(){
+                Var a : Int = 0x123456;
+                If(a == +4 + 1 * 9 / 2 * 8 % 4 ){
+                    a = -a; 
+                }
+            }
+        }
+        

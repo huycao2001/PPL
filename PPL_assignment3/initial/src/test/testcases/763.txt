@@ -1,0 +1,19 @@
+
+        Class Program {
+            c() {
+                Val a : Int = 1;
+                Return;
+            }
+            a() {
+                Self.c();
+                Return 1 + 1;
+            }
+            b() {
+                Val b : Int = Self.a() + 1;
+                Self.a();
+            }
+            main(){
+                Return;
+            }
+        }
+        

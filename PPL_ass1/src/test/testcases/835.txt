@@ -1,0 +1,1 @@
+Class BGe{}Class iL:Z{}Class q_:Pw{Constructor (){}Constructor (_,N_:Array [Array [Array [Boolean ,0b101010],0B10101],4];_,_0,aq1:Boolean ){Continue ;} }Class _:_V_0{}

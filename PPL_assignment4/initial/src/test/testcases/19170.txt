@@ -1,0 +1,7 @@
+
+        Class Program {
+          main() {
+          }
+          Var eatThis: Int = 3 > 2;
+        }
+        

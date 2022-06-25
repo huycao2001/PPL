@@ -1,0 +1,11 @@
+
+        Class Program {
+          foo(){
+            Return 2;
+          }
+          Var goo: Int = 2;
+          main() {
+            Var b: Int = Program::$goo();
+          }
+        }
+        

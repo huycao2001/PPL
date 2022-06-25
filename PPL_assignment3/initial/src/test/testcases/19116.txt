@@ -1,0 +1,14 @@
+
+        Class Program {
+          main() {
+          }
+          foo(a: Int) {
+          }
+        }
+        Class Subprogram {
+          foo(a: Int){
+          }
+          food(a, a: Boolean) {
+          }
+        }
+        

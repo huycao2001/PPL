@@ -1,0 +1,15 @@
+
+        Class Program {
+            main() {
+                Var a, count : Int = 100, 0;
+                Foreach(i In 1 .. 100 By 2){
+                    If(a % i == 0){
+                        Continue;
+                    }
+                    Else{
+                        count = count + 1;
+                    }
+                }
+            }
+        }
+        

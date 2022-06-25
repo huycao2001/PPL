@@ -1,0 +1,1 @@
+Type Mismatch In Statement: AssignStmt(Id(arr),[NewExpr(Id(C),[]),NewExpr(Id(C),[]),NewExpr(Id(C),[])])

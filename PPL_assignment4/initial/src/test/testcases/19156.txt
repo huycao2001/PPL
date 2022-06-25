@@ -1,0 +1,8 @@
+
+        Class Program {
+          main() {
+            Val const: Int = 2;
+            const = 3;
+          }
+        }
+        

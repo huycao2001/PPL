@@ -1,0 +1,15 @@
+
+        Class Program {
+          main() {
+          }
+          Var a: Int = 2 + 2;
+          Var b: Float = 69 + 420;
+          Var c: Float = 21 + 1.4;
+          Var d: Float = 5.4 + (19 + 78);
+          Var e: Boolean = 2 >= 2;
+          Var f: Boolean = 2.1 <= 2.2;
+          Var g: Boolean = 2 > 2.6;
+          Var h: Boolean = (24.5 < 2) && False;
+          Var eatThis: Boolean = 24.5 < 4 && False;
+        }
+        

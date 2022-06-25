@@ -1,0 +1,15 @@
+
+        Class Car:Vehicle{
+            Val sunScreen: Boolean = False;
+            open(){
+                ## Open hood ##
+                If (Hood==False){
+                    Hood = True;
+                    Return True;
+                }
+                Else{
+                    Return False;
+                }
+            }
+        }
+        

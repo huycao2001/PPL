@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(_),[MethodDecl(Id(Destructor),Instance,[],Block([Return()]))]),ClassDecl(Id(_3q),Id(_),[AttributeDecl(Instance,ConstDecl(Id(_),ArrayType(13,ArrayType(36114,ArrayType(880,ArrayType(65,ArrayType(65,ArrayType(65,ArrayType(118,IntType))))))),None))]),ClassDecl(Id(S),[]),ClassDecl(Id(J4),Id(_p),[]),ClassDecl(Id(___),Id(_),[])])

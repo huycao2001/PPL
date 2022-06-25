@@ -1,0 +1,8 @@
+
+        Class Program {
+          main() {
+            Var arr: Array[Int, 5];
+            Val a: Int = arr[0]; ## not ok here because arr is var ##
+          }
+        }
+        

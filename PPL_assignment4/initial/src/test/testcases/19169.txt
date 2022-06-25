@@ -1,0 +1,7 @@
+
+        Class Program {
+          main() {
+          }
+          Var eatThis: Int = 4.2 - (4 % 5);
+        }
+        

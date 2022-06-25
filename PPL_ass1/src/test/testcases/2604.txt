@@ -1,0 +1,1 @@
+Class k4_:k{}Class t6:_{Destructor (){ {Continue ;} }Constructor (){}Constructor (){} }Class _:a6_{Destructor (){} }Class _{}

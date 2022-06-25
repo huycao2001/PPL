@@ -1,0 +1,1 @@
+Illegal Member Access: Call(Id(Program),Id(foo),[IntLit(21)])

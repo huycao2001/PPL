@@ -1,0 +1,10 @@
+
+        Class Process{
+            main(){
+                If(a == True){
+                    Data = True;
+                    Foreach(idx In 1+1 .. 1*2+3 By CPU.nVidia("RTX 3090")){}
+                }
+            }
+        }
+        

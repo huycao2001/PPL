@@ -1,0 +1,9 @@
+
+        Class Program
+        {
+            Var a: Int;
+            main()
+            {
+                Var a: Int = Array(0,1,1,11);
+            }
+        }

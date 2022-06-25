@@ -1,0 +1,9 @@
+
+        Class Program {
+          main() {
+            Val arr: Array[Int, 5] = Array(1,2,3,4,5);
+            Val a: Int = arr[0]; ## ok here because arr is const ##
+            Val b: Int = arr[False];
+          }
+        }
+        

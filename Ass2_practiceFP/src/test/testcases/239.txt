@@ -1,0 +1,9 @@
+
+        Class Program{
+            main(){
+                Var a,b : Int = 10,12; 
+                ## Raise error because no static var in functions ##
+                Var $c , $d : Int = 123,456; 
+            }
+        }
+        

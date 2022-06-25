@@ -1,0 +1,1 @@
+Program([ClassDecl(Id(Motor),Id(Vehicle),[MethodDecl(Id(Foo),Instance,[],Block([Call(Id(motor),Id(foo),[BinaryOp(+,IntLit(1),IntLit(20)),BinaryOp(-,BinaryOp(*,IntLit(30),IntLit(4)),FloatLit(50.5))]),If(IntLit(10),Block([]),If(IntLit(20),Block([]),If(IntLit(30),Block([]))))]))])])

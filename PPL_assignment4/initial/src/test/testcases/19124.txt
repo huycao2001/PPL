@@ -1,0 +1,17 @@
+
+        Class Program {
+          Var a: Boolean = True;
+          main() {
+            Var a: Boolean = True;
+          }
+          foo(a: Int) {
+            If(False) {
+              Var a: Int;
+              If(False) {
+                Var a: Float = 0.0e-0;
+                Val a: String = "No";
+              }
+            }
+          }
+        }
+        

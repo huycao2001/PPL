@@ -1,0 +1,12 @@
+     
+                        Class Shape{
+                        Var x:Int = 1;
+                        Area(){
+                            Return 1;
+                        }
+                        func (){
+                            Var a:Int = Self.x;
+                            a = Self.Area();
+                            Var b:String = Self.Area();
+                        }
+                        } 
